@@ -9,6 +9,8 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/menu-pages/login/login';
@@ -23,8 +25,9 @@ import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
 import { PopoverNotificationPage } from '../pages/menu-pages/popover-notification/popover-notification';
-import { PopoverPage } from '../pages/home/home';
 import { AvisosPage } from '../pages/avisos/avisos';
+import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
+
 
 @NgModule({
   declarations: [
@@ -45,8 +48,8 @@ import { AvisosPage } from '../pages/avisos/avisos';
     PedidoOracaoPage,
     MinisteriosPage,
     PopoverNotificationPage,
-    PopoverPage,
-    AvisosPage
+    AvisosPage,
+    WelcomeTutorialPage
   ],
   imports: [
     BrowserModule,
@@ -71,12 +74,14 @@ import { AvisosPage } from '../pages/avisos/avisos';
     PedidoOracaoPage,
     MinisteriosPage,
     PopoverNotificationPage,
-    PopoverPage,
-    AvisosPage
+    AvisosPage,
+    WelcomeTutorialPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeStorage,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

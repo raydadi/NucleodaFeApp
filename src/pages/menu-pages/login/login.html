@@ -16,8 +16,8 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
+<ion-content padding class="action-sheets-basic-page">
+  <ion-list *ngIf="user == null">
 
     <ion-item>
       <ion-label floating>Usuário</ion-label>
@@ -29,7 +29,18 @@
       <ion-input type="password"></ion-input>
     </ion-item>
 
-    <button ion-button full>Login</button>
+    <button ion-button full>LOGIN</button>
+    <br/>
+    <button (click)="presentActionSheet()" ion-button full outline>NÃO CONSIGO ACESSAR</button>
 
+  </ion-list>
+  <ion-list *ngIf="user != null">
+    <ion-card>
+      <img [src]="user.picture" />
+      <div class="card-title">{{user.name}}</div>
+      <div class="card-subtitle">{{user.email}}</div>
+    </ion-card>
+
+    <button (click)="doGoogleLogout()" ion-button full outline>LOGOUT</button>
   </ion-list>
 </ion-content>

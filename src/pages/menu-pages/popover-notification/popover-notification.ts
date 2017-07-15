@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AvisosPage } from '../../avisos/avisos';
 
 /**
  * Generated class for the PopoverNotificationPage page.
@@ -14,7 +15,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PopoverNotificationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navParams: NavParams, public navCtrl: NavController) {
+  }
+
+  click() {
+    this.navCtrl.push(AvisosPage);
   }
 
   ionViewDidLoad() {
