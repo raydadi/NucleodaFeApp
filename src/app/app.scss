@@ -14,3 +14,65 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar-background-md {
+    background-color: #1e5799;
+}
+
+@font-face {
+font-family: "Roboto Condensed";
+src: url("../assets/font/Nexa Light.otf");
+}
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: white;
+}
+
+.toolbar-title-md {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-md .alert-message {
+    text-align: center;
+}
+
+.alert-md .alert-title {
+    text-align: center;
+}
+
+.alert-md .alert-button-group {
+    padding: 8px 36px 8px 24px;
+}
+
+.alert-md .alert-sub-title {
+    text-align: center;
+}
+
+.button-center {
+    padding: 8px 88px 8px 20px !important;
+}
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 80%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+.popover-md .popover-content {
+    top: 47px !important;
+    left: 30px !important;
+    width: 345px;
+}

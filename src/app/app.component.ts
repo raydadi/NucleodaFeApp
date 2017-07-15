@@ -8,6 +8,14 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/menu-pages/login/login';
+import { SobrePage } from '../pages/menu-pages/sobre/sobre';
+import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral';
+import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
+import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
+import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -16,8 +24,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  // rootPage = HelloIonicPage;
+  rootPage = HomePage;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(
     public platform: Platform,
@@ -30,7 +39,13 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'Login', component: LoginPage },
+      { title: 'Sobre', component: SobrePage },
+      { title: 'Equipe Pastoral', component: EquipePastoralPage },
+      { title: 'Como Chegar', component: ComoChegarPage },
+      { title: 'Como Contribuir', component: ComoContribuirPage },
+      { title: 'Fale Conosco', component: FaleConoscoPage }
     ];
   }
 
@@ -49,4 +64,9 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
+
+  // navigatePageSobre() {
+  //     this.menu.close();
+  //     this.navCtrl.push(SobrePage);
+  // }
 }
