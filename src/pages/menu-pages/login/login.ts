@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../../home/home';
 
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController } from 'ionic-angular';
@@ -18,7 +19,8 @@ import { IonicPage, NavController, NavParams, ActionSheetController, Platform, L
   templateUrl: 'login.html',
 })
 export class LoginPage {
-    user = null;
+  user = null;
+  FB_APP_ID: number = 1091217954342738;
 
   constructor(
     public navCtrl: NavController,
@@ -27,11 +29,13 @@ export class LoginPage {
     public platform: Platform,
     public loadingCtrl: LoadingController,
     public googlePlus: GooglePlus,
+    public facebook: Facebook,
     public nativeStorage: NativeStorage
   ) {
+    //this.facebook.browserInit(this.FB_APP_ID, "v2.8");
     this.nativeStorage.getItem('user')
-    .then((data) => {
-          this.user = data;
+      .then((data) => {
+        this.user = data;
       }, (error) => {
 
       });
@@ -124,10 +128,65 @@ export class LoginPage {
 
   doFacebookLogin(nativeStorage: NativeStorage) {
 
+    let permissions = new Array<string>();
+    let nav = this.navCtrl;
+    //the permissions your facebook app needs from the user
+    permissions = ['public_profile', 'user_friends', 'email'];
+
+    this.facebook.login(permissions)
+      .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
+      .catch(e => console.log('Error logging into Facebook', e));
+
+    // this.facebook.login(['email']).then( (response) => {
+    //     console.log("sucesso");
+    //     console.log(response);
+    //
+    // }).catch((error) => { console.log(error) });
+
+    // this.facebook.login(permissions)
+    //   .then(function(response) {
+    //       console.log("sucesso no login");
+    //     let userId = response.authResponse.userID;
+    //     let params = new Array<string>();
+    //
+    //     //Getting name and gender properties
+    //     this.facebook.api("/me?fields=name,gender", params)
+    //       .then(function(user) {
+    //           console.log("Logado. User:");
+    //           console.log(user);
+    //         user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
+    //         //now we have the users info, let's save it in the NativeStorage
+    //         nativeStorage.setItem('user',
+    //           {
+    //             name: user.name,
+    //             gender: user.gender,
+    //             picture: user.picture
+    //           })
+    //           .then(function() {
+    //             nav.setRoot(HomePage);
+    //           }, function(error) {
+    //               console.log("Error");
+    //             console.log(error);
+    //           })
+    //       })
+    //   }, function(error) {
+    //       console.log("Error2");
+    //     console.log(error);
+    //     loading.dismiss();
+    //   });
   }
 
   doFacebookLogout() {
-
+    var nav = this.navCtrl;
+    this.facebook.logout()
+      .then(function(response) {
+        //user logged out so we will remove him from the NativeStorage
+        this.nativeStorage.remove('user');
+        this.user = null;
+        // nav.push(LoginPage);
+      }, function(error) {
+        console.log(error);
+      });
   }
 
 }

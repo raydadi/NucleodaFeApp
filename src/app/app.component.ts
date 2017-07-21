@@ -1,3 +1,4 @@
+import { AngularFireModule } from 'angularfire2';
 import { Component, ViewChild } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 
@@ -9,6 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/menu-pages/login/login';
@@ -39,11 +41,8 @@ export class MyApp {
     public googlePlus: GooglePlus
   ) {
     this.initializeApp();
-    this.changeRootPage(nativeStorage, app);
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
       { title: 'Login', component: LoginPage },
       { title: 'Sobre', component: SobrePage },
       { title: 'Equipe Pastoral', component: EquipePastoralPage },
@@ -60,29 +59,27 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      // user is previously logged and we have his data
-      // we will let him access the app
-      if (this.platform.is('cordova')) {
-          env.googlePlus.trySilentLogin({
-            'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-            'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-            'offline': true
+      if (env.platform.is('cordova')) {
+        env.googlePlus.trySilentLogin({
+          'scopes': '',
+          'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
+          'offline': true
+      }).then((user) => {
+          env.nativeStorage.setItem('user', {
+            name: user.displayName,
+            email: user.email,
+            picture: user.imageUrl
+          }).then(() => {
+            console.log("sucesso");
+          }, (error) => {
+            console.log(error);
           })
-            .then(function(user) {
-                env.nativeStorage.setItem('user', {
-                  name: user.displayName,
-                  email: user.email,
-                  picture: user.imageUrl
-                }).then(function() {
-                  env.nav.setRoot(HomePage);
-                }, function(error) {
-                  console.log(error);
-                })
-            }, function(error) {
-                console.log(error);
-            });
-   }
+        }, (error) => {
+          console.log(error);
+        });
+      }
 
+      env.changeRootPage(env.nativeStorage, env.app);
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -91,12 +88,9 @@ export class MyApp {
 
   changeRootPage(nativeStorage: NativeStorage, app: App) {
     nativeStorage.getItem('welcome')
-      .then(function(data) {
-        // user is previously logged and we have his data
-        // we will let himaccess the app
+      .then((data) => {
         app.getRootNav().setRoot(HomePage);
-      }, function(error) {
-        //we don't have the user data so we will ask him to log in
+    }, (error) => {
         app.getRootNav().setRoot(WelcomeTutorialPage);
       });
   }
@@ -105,7 +99,7 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 
   // navigatePageSobre() {

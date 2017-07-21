@@ -12,10 +12,16 @@
       </button>
     <ion-title>
         <img src="assets/home/Logo-Nucleo.png" />
+
     </ion-title>
+
     <ion-buttons end>
-      <button (click)="popOver($event)" ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+        <sino></sino>
     </ion-buttons>
+    <!-- <ion-buttons end>
+      <button (click)="popOver($event)" ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+    </ion-buttons> -->
+
   </ion-navbar>
 
 </ion-header>
@@ -26,32 +32,42 @@
   <ion-grid>
     <ion-row>
         <ion-col (click)="navToLogin()" style="text-align: center">
-            <img src="assets/home/Login.png" width="140" height="auto" />
+            <img src="assets/home/Login.png" width="120" height="auto" />
             <p>LOGIN</p>
         </ion-col>
-      <ion-col style="text-align: center">
-          <img src="assets/home/Culto-online.png" width="140" height="auto" />
+      <ion-col (click)="navToCultoOnline()" style="text-align: center">
+          <img src="assets/home/Culto-online.png" width="120" height="auto" />
           <p>CULTO ONLINE</p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col (click)="navToTestemunhos()" style="text-align: center">
-              <img src="assets/home/Testemunhos.png" width="140" height="auto" />
+              <img src="assets/home/Testemunhos.png" width="120" height="auto" />
               <p>TESTEMUNHO</p>
       </ion-col>
       <ion-col (click)="navToPedido()" style="text-align: center">
-          <img src="assets/home/Pedido-de-oracao.png" width="140" height="auto" />
+          <img src="assets/home/Pedido-de-oracao.png" width="120" height="auto" />
           <p>PEDIDO DE ORAÇÃO</p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col (click)="navToMinisterio()" style="text-align: center">
-          <img src="assets/home/Ministerios.png" width="140" height="auto" />
+          <img src="assets/home/Ministerios.png" width="120" height="auto" />
           <p>MINISTÉRIOS</p>
       </ion-col>
-      <ion-col style="text-align: center">
-          <img src="assets/home/Primeiro-contato.png" width="140" height="auto" />
-          <p>PRIMEIRO CONTATO</p>
+      <ion-col (click)="navToAvisos()" style="text-align: center">
+          <img src="assets/home/Avisos.png" width="120" height="auto" />
+          <p>AVISOS</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="navToAcampamento()" style="text-align: center">
+          <img src="assets/home/Acampamento.png" width="120" height="auto" />
+          <p>ACAMPAMENTO</p>
+      </ion-col>
+      <ion-col (click)="navToAwards()" style="text-align: center">
+          <img src="assets/home/Nucleo-Awards.png" width="120" height="auto" />
+          <p>AWARDS</p>
       </ion-col>
     </ion-row>
   </ion-grid>

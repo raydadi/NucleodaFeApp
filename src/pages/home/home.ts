@@ -6,6 +6,11 @@ import { PedidoOracaoPage } from '../pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../ministerios/ministerios';
 import { PopoverNotificationPage } from '../menu-pages/popover-notification/popover-notification';
 import { LoginPage } from '../menu-pages/login/login';
+import { AvisosPage } from '../avisos/avisos';
+import { AwardsJovensPage } from '../awards/awards-jovens/awards-jovens';
+import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampamento-jovens';
+import { CultoOnlinePage } from '../culto-online/culto-online';
+
 
 /**
  * Generated class for the HomePage page.
@@ -25,10 +30,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
-
   navToTestemunhos() {
       this.navCtrl.push(TestemunhosPage);
   }
@@ -43,6 +44,22 @@ export class HomePage {
 
   navToLogin() {
       this.navCtrl.push(LoginPage);
+  }
+
+  navToAvisos() {
+      this.navCtrl.push(AvisosPage);
+  }
+
+  navToAwards() {
+      this.navCtrl.push(AwardsJovensPage);
+  }
+
+  navToAcampamento() {
+      this.navCtrl.push(AcampamentoJovensPage);
+  }
+
+  navToCultoOnline() {
+      this.navCtrl.push(CultoOnlinePage);
   }
 
   popOver(ev) {

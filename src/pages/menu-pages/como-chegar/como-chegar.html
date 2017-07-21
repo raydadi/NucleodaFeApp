@@ -14,8 +14,88 @@
 
 
 <ion-content padding>
-  <ion-item-group>
+  <!-- <ion-item-group>
     <ion-item (click)="navToSede()">Igreja Sede</ion-item>
     <ion-item (click)="navToArniqueiras()">Igreja Arniqueiras</ion-item>
-  </ion-item-group>
+    <ion-item (click)="navToArniqueiras()">Chácara da Igreja</ion-item>
+  </ion-item-group> -->
+
+  <ion-card class="adv-map">
+  <div style="position: relative">
+    <img src="assets/ministerios/acolhimento.jpg">
+    <ion-fab right top>
+      <button ion-fab class="fab-map">
+        <ion-icon name='pin'></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <ion-item>
+    <ion-icon color="subtle" large item-start name='wine'></ion-icon>
+    <h2>Igreja Sede</h2>
+    <p>SIBS 2 - Núcleo Bandeirante, Brasília - DF, 71736-207</p>
+    <p style="font-weight: bold">(61) 3386-2122</p>
+  </ion-item>
+  <ion-item actions>
+    <span ion-text item-start color="secondary" class="item-bold">18 min</span>
+    <span ion-text item-start color="subtle">(2.6 mi)</span>
+    <button ion-button color="primary" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+      Start
+    </button>
+  </ion-item>
+
+</ion-card>
+
+<ion-card class="adv-map">
+  <div style="position: relative">
+    <img src="assets/ministerios/acolhimento.jpg">
+
+    <ion-fab right top>
+      <button ion-fab color="danger" class="fab-map">
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <ion-item>
+    <ion-icon color="subtle" large item-start name='leaf'></ion-icon>
+    <h2>Igreja da Arniqueira</h2>
+    <p>SIBS 2 - Núcleo Bandeirante, Brasília - DF, 71736-207</p>
+    <p style="font-weight: bold">(61) 3386-2122</p>
+  </ion-item>
+  <ion-item actions>
+    <span ion-text item-start class="item-bold">3 hr</span>
+    <span ion-text item-start color="subtle">(4.8 mi)</span>
+    <button ion-button color="danger" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+      Start
+    </button>
+  </ion-item>
+
+</ion-card>
+
+<ion-card class="adv-map">
+  <div style="position: relative">
+    <img src="assets/ministerios/acolhimento.jpg">
+    <ion-fab right top>
+      <button ion-fab color="secondary">
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <ion-item>
+    <ion-icon color="subtle" large item-start name='leaf'></ion-icon>
+    <h2>Chacará da Igreja</h2>
+    <p>SIBS 2 - Núcleo Bandeirante, Brasília - DF, 71736-207</p>
+    <p style="font-weight: bold">(61) 3386-2122</p>
+  </ion-item>
+  <ion-item actions>
+    <span ion-text item-start color="secondary" class="item-bold">26 min</span>
+    <span ion-text item-start color="subtle">(8.1 mi)</span>
+    <button ion-button color="secondary" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+      Start
+    </button>
+  </ion-item>
+
+</ion-card>
 </ion-content>

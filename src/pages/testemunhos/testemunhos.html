@@ -18,29 +18,27 @@
 
 
 <ion-content padding>
-  <ion-list>
+    <form (ngSubmit)="enviar()">
+      <ion-item>
+        <ion-label floating>NOME</ion-label>
+        <ion-input name="nome" [(ngModel)]="testemunho.nome" type="text"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>NOME</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>TELEFONE</ion-label>
+        <ion-input name="telefone" [(ngModel)]="testemunho.telefone" type="tel"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>TELEFONE</ion-label>
-      <ion-input type="tel"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>EMAIL</ion-label>
+        <ion-input name="email" [(ngModel)]="testemunho.email" type="email"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>EMAIL</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>TESTEMUNHO</ion-label>
+        <ion-textarea name="testemunho" [(ngModel)]="testemunho.testemunho" rows="10"></ion-textarea>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>TESTEMUNHO</ion-label>
-      <ion-textarea rows="10"></ion-textarea>
-    </ion-item>
-
-    <button (click)="enviar()" full ion-button color="secondary">ENVIAR</button>
-
-  </ion-list>
+      <button type="submit" full ion-button color="secondary">ENVIAR</button>
+    </form>
 </ion-content>

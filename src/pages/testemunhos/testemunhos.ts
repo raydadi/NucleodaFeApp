@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 /**
  * Generated class for the TestemunhosPage page.
@@ -14,11 +15,12 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class TestemunhosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-  }
+    testemunhos: FirebaseListObservable<any>;
+    testemunho: {nome: string, telefone: string, email: string, testemunho: string, publico: boolean} = {nome: '', telefone: '', email: '', testemunho: '', publico: false};
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestemunhosPage');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public db: AngularFireDatabase) {
+      this.testemunhos = db.list("/testemunhos");
   }
 
   enviar() {
@@ -27,20 +29,22 @@ export class TestemunhosPage {
       message: 'O seu testemunho pode ser visualizado por outras pessoas?',
       buttons: [
         {
-          text: 'DISCORDO',
+          text: 'NÃO',
           handler: () => {
-            console.log('Disagree clicked');
+            this.testemunho.publico = false;
           }
         },
         {
-          text: 'CONCORDO',
+          text: 'SIM',
           handler: () => {
-            console.log('Agree clicked');
+            this.testemunho.publico = true;
           }
         }
       ]
     });
     confirm.present();
+
+    this.testemunhos.push(this.testemunho);
   }
 
 }
