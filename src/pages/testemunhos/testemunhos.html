@@ -18,27 +18,63 @@
 
 
 <ion-content padding>
-    <form (ngSubmit)="enviar()">
+    <form [formGroup]="testemunhoForm" (ngSubmit)="enviar()">
       <ion-item>
         <ion-label floating>NOME</ion-label>
-        <ion-input name="nome" [(ngModel)]="testemunho.nome" type="text"></ion-input>
+        <ion-input [formControl]="testemunhoForm.controls['nome']" name="nome" type="text"></ion-input>
       </ion-item>
+      <div *ngIf="testemunhoForm.controls['nome'].hasError('required') && testemunhoForm.controls['nome'].touched">
+        Nome precisa ser preenchido!
+      </div>
+      <div *ngIf="testemunhoForm.controls['nome'].hasError('minlength') && testemunhoForm.controls['nome'].touched">
+        Nome precisa ter ao menos 3 caracteres!
+      </div>
+      <div *ngIf="testemunhoForm.controls['nome'].hasError('maxlength') && testemunhoForm.controls['nome'].touched">
+        Nome precisa pode ter no máximo 30 caracteres!
+      </div>
 
       <ion-item>
         <ion-label floating>TELEFONE</ion-label>
-        <ion-input name="telefone" [(ngModel)]="testemunho.telefone" type="tel"></ion-input>
+        <ion-input [formControl]="testemunhoForm.controls['telefone']" name="telefone" type="tel"></ion-input>
       </ion-item>
+      <div *ngIf="testemunhoForm.controls['telefone'].hasError('required') && testemunhoForm.controls['telefone'].touched">
+        Telefone precisa ser preenchido!
+      </div>
+      <div *ngIf="testemunhoForm.controls['telefone'].hasError('minlength') && testemunhoForm.controls['telefone'].touched">
+        Telefone precisa ter ao menos 8 caracteres!
+      </div>
+      <div *ngIf="testemunhoForm.controls['telefone'].hasError('maxlength') && testemunhoForm.controls['telefone'].touched">
+        Telefone precisa pode ter no máximo 15 caracteres!
+      </div>
 
       <ion-item>
         <ion-label floating>EMAIL</ion-label>
-        <ion-input name="email" [(ngModel)]="testemunho.email" type="email"></ion-input>
+        <ion-input [formControl]="testemunhoForm.controls['email']" name="email" type="email"></ion-input>
       </ion-item>
+      <div *ngIf="testemunhoForm.controls['email'].hasError('required') && testemunhoForm.controls['email'].touched">
+        Email precisa ser preenchido!
+      </div>
+      <div *ngIf="testemunhoForm.controls['email'].hasError('minlength') && testemunhoForm.controls['email'].touched">
+        Email precisa ter ao menos 10 caracteres!
+      </div>
+      <div *ngIf="testemunhoForm.controls['email'].hasError('maxlength') && testemunhoForm.controls['email'].touched">
+        Email precisa pode ter no máximo 40 caracteres!
+      </div>
 
       <ion-item>
         <ion-label floating>TESTEMUNHO</ion-label>
-        <ion-textarea name="testemunho" [(ngModel)]="testemunho.testemunho" rows="10"></ion-textarea>
+        <ion-textarea [formControl]="testemunhoForm.controls['testemunho']" name="testemunho" rows="10"></ion-textarea>
       </ion-item>
+      <div *ngIf="testemunhoForm.controls['testemunho'].hasError('required') && testemunhoForm.controls['testemunho'].touched">
+        Testemunho precisa ser preenchido!
+      </div>
+      <div *ngIf="testemunhoForm.controls['testemunho'].hasError('minlength') && testemunhoForm.controls['testemunho'].touched">
+        Testemunho precisa ter ao menos 20 caracteres!
+      </div>
+      <div *ngIf="testemunhoForm.controls['testemunho'].hasError('maxlength') && testemunhoForm.controls['testemunho'].touched">
+        Testemunho precisa pode ter no máximo 400 caracteres!
+      </div>
 
-      <button type="submit" full ion-button color="secondary">ENVIAR</button>
+      <button type="submit" full ion-button color="secondary" [disabled]="!testemunhoForm.valid">ENVIAR</button>
     </form>
 </ion-content>
