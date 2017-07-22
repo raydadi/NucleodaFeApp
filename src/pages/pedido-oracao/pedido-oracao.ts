@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
  * Generated class for the PedidoOracaoPage page.
@@ -17,15 +18,23 @@ export class PedidoOracaoPage {
 
   pedidos: FirebaseListObservable<any>;
   pedido: Pedido;
+  pedidoOracaoForm: FormGroup;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
-    public db: AngularFireDatabase
+    public db: AngularFireDatabase,
+    public formBuilder: FormBuilder
   ) {
     this.pedidos = db.list("/pedidos-oracao");
     this.pedido = new Pedido();
+    this.pedidoOracaoForm = formBuilder.group({
+      'nome': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
+      'telefone': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
+      'email': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(40)])],
+      'pedido': [null, Validators.compose([Validators.required, Validators.minLength(20), Validators.maxLength(400)])]
+    })
   }
 
   cadastrar() {
