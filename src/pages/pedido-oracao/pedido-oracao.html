@@ -18,28 +18,64 @@
 
 <ion-content padding>
 
-  <form (ngSubmit)="enviar()">
+  <form [formGroup]="pedidoOracaoForm" (ngSubmit)="enviar()">
     <ion-item>
       <ion-label floating>NOME</ion-label>
-      <ion-input name="nome" [(ngModel)]="nome" type="text"></ion-input>
+      <ion-input [formControl]="pedidoOracaoForm.controls['nome']" name="nome" type="text"></ion-input>
     </ion-item>
+    <div *ngIf="pedidoOracaoForm.controls['nome'].hasError('required') && pedidoOracaoForm.controls['nome'].touched">
+      Nome precisa ser preenchido!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['nome'].hasError('minlength') && pedidoOracaoForm.controls['nome'].touched">
+      Nome precisa ter ao menos 3 caracteres!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['nome'].hasError('maxlength') && pedidoOracaoForm.controls['nome'].touched">
+      Nome precisa pode ter no máximo 30 caracteres!
+    </div>
 
     <ion-item>
       <ion-label floating>TELEFONE</ion-label>
-      <ion-input name="telefone" [(ngModel)]="telefone" type="tel"></ion-input>
+      <ion-input [formControl]="pedidoOracaoForm.controls['telefone']" name="telefone" type="tel"></ion-input>
     </ion-item>
+    <div *ngIf="pedidoOracaoForm.controls['telefone'].hasError('required') && pedidoOracaoForm.controls['telefone'].touched">
+      Telefone precisa ser preenchido!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['telefone'].hasError('minlength') && pedidoOracaoForm.controls['telefone'].touched">
+      Telefone precisa ter ao menos 8 caracteres!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['telefone'].hasError('maxlength') && pedidoOracaoForm.controls['telefone'].touched">
+      Telefone precisa pode ter no máximo 15 caracteres!
+    </div>
 
     <ion-item>
       <ion-label floating>EMAIL</ion-label>
-      <ion-input name="email" [(ngModel)]="email" type="email"></ion-input>
+      <ion-input [formControl]="pedidoOracaoForm.controls['email']" name="email" type="email"></ion-input>
     </ion-item>
+    <div *ngIf="pedidoOracaoForm.controls['email'].hasError('required') && pedidoOracaoForm.controls['email'].touched">
+      Email precisa ser preenchido!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['email'].hasError('minlength') && pedidoOracaoForm.controls['email'].touched">
+      Email precisa ter ao menos 10 caracteres!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['email'].hasError('maxlength') && pedidoOracaoForm.controls['email'].touched">
+      Email precisa pode ter no máximo 40 caracteres!
+    </div>
 
     <ion-item>
       <ion-label floating>PEDIDO</ion-label>
-      <ion-textarea name="pedido" [(ngModel)]="pedido" rows="10"></ion-textarea>
+      <ion-textarea [formControl]="pedidoOracaoForm.controls['pedido']" name="pedido" rows="10"></ion-textarea>
     </ion-item>
+    <div *ngIf="pedidoOracaoForm.controls['pedido'].hasError('required') && pedidoOracaoForm.controls['pedido'].touched">
+      Pedido precisa ser preenchido!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['pedido'].hasError('minlength') && pedidoOracaoForm.controls['pedido'].touched">
+      Pedido precisa ter ao menos 20 caracteres!
+    </div>
+    <div *ngIf="pedidoOracaoForm.controls['pedido'].hasError('maxlength') && pedidoOracaoForm.controls['pedido'].touched">
+      Pedido precisa pode ter no máximo 400 caracteres!
+    </div>
 
-    <button type="submit" full ion-button color="secondary">ENVIAR</button>
+    <button type="submit" full ion-button color="secondary" [disabled]="!pedidoOracaoForm.valid">ENVIAR</button>
   </form>
 
   <ion-fab right bottom>
