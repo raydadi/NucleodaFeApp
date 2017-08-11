@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+
   <!-- <ion-item-group>
     <ion-item (click)="navToSede()">Igreja Sede</ion-item>
     <ion-item (click)="navToArniqueiras()">Igreja Arniqueiras</ion-item>
@@ -22,7 +23,8 @@
 
   <ion-card class="adv-map">
   <div style="position: relative">
-    <img src="assets/ministerios/acolhimento.jpg">
+    <div #map id="map"></div>
+    <!--<img src="assets/ministerios/acolhimento.jpg">-->
     <ion-fab right top>
       <button ion-fab class="fab-map">
         <ion-icon name='pin'></ion-icon>
@@ -84,7 +86,7 @@
   </div>
   <ion-item>
     <ion-icon color="subtle" large item-start name='leaf'></ion-icon>
-    <h2>Chacará da Igreja</h2>
+    <h2>Chácara da Igreja</h2>
     <p>SIBS 2 - Núcleo Bandeirante, Brasília - DF, 71736-207</p>
     <p style="font-weight: bold">(61) 3386-2122</p>
   </ion-item>
