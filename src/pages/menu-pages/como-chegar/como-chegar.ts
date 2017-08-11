@@ -30,7 +30,7 @@ export class ComoChegarPage {
   }
 
   initMap(){
-    let latLng = new google.maps.LatLng(-15.868127, 47.970437);
+    let latLng = new google.maps.LatLng(-15.868119, 47.970526);
 
     let mapOptions = {
       center: latLng,
