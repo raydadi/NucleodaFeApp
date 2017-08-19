@@ -5,6 +5,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { MapaArniqueirasPage } from './mapa-arniqueiras/mapa-arniqueiras';
 import { MapaSedePage } from './mapa-sede/mapa-sede';
 
+declare var google;
+
 /**
  * Generated class for the ComoChegarPage page.
  *

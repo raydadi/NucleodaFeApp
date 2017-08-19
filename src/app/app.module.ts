@@ -37,6 +37,7 @@ import { SinoPage } from '../pages/menu-pages/sino/sino';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import * as CONST from '../constants';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import * as CONST from '../constants';
     GooglePlus,
     Facebook,
     AngularFireDatabase,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
