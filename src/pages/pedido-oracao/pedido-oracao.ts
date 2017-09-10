@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalController } from 'ionic-angular';
+import { ModalPedidosOracaoPage } from './modal-pedidos-oracao/modal-pedidos-oracao';
+
 
 /**
  * Generated class for the PedidoOracaoPage page.
@@ -14,7 +17,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'page-pedido-oracao',
   templateUrl: 'pedido-oracao.html',
 })
-export class PedidoOracaoPage {
+export class PedidoOracaoPage{
 
   pedidos: FirebaseListObservable<any>;
   pedido: Pedido;
@@ -25,7 +28,8 @@ export class PedidoOracaoPage {
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public db: AngularFireDatabase,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public modalCtrl: ModalController
   ) {
     this.pedidos = db.list("/pedidos-oracao");
     this.pedido = new Pedido();
@@ -44,6 +48,7 @@ export class PedidoOracaoPage {
   }
 
   enviar() {
+      console.log(this.pedido);
     this.pedidos.push(this.pedido);
 
     let alert = this.alertCtrl.create({
@@ -61,7 +66,15 @@ export class PedidoOracaoPage {
 
 
   shortText(text: string) {
-    return text.substring(0, 50) + "\u2026";
+      console.log(text);
+      if(text != null)
+        return text.substring(0, 50) + "\u2026";
+    return "";
+  }
+
+  openModal(pedido: Pedido) {
+    let modal = this.modalCtrl.create(ModalPedidosOracaoPage);
+    modal.present();
   }
 }
 

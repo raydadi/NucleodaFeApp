@@ -21,6 +21,7 @@ import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-con
 import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 
+
 @Component({
   templateUrl: 'app.html'
 })

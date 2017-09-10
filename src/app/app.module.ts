@@ -33,6 +33,7 @@ import { AwardsJovensPage } from '../pages/awards/awards-jovens/awards-jovens';
 import { AcampamentoJovensPage } from '../pages/acampamentos/acampamento-jovens/acampamento-jovens';
 import { CultoOnlinePage } from '../pages/culto-online/culto-online';
 import { SinoPage } from '../pages/menu-pages/sino/sino';
+import { ModalPedidosOracaoPage } from '../pages/pedido-oracao/modal-pedidos-oracao/modal-pedidos-oracao';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -63,7 +64,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     CultoOnlinePage,
     AcampamentoJovensPage,
     AwardsJovensPage,
-    SinoPage
+    SinoPage,
+    ModalPedidosOracaoPage
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     CultoOnlinePage,
     AcampamentoJovensPage,
     AwardsJovensPage,
-    SinoPage
+    SinoPage,
+    ModalPedidosOracaoPage
   ],
   providers: [
     StatusBar,
