@@ -17,5 +17,11 @@
 
 
 <ion-content padding>
-
+    <img (click)="openExternalBrowser()" src="assets/home/culto-online/youtube.png" />
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      {{ msg  | async | json }}
+  </ion-toolbar>
+</ion-footer>

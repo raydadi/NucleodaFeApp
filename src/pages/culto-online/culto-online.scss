@@ -1,3 +1,14 @@
-page-culto-online {
+page-culto-online img {
+    max-width: 80%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 
+page-culto-online ion-footer {
+    color: white;
+    text-align: center;
 }
