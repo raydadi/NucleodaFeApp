@@ -37,12 +37,14 @@ export class TestemunhosPage {
       buttons: [
         {
           text: 'NÃO',
+          cssClass: 'botao-testemunho',
           handler: () => {
             this.testemunho.publico = false;
           }
         },
         {
           text: 'SIM',
+          cssClass: 'botao-testemunho',
           handler: () => {
             this.testemunho.publico = true;
           }

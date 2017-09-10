@@ -18,7 +18,7 @@
 
 <ion-content padding>
 
-  <!-- <form [formGroup]="pedidoOracaoForm" (ngSubmit)="enviar()">
+  <form [formGroup]="pedidoOracaoForm" (ngSubmit)="enviar()">
     <ion-item>
       <ion-label floating>NOME</ion-label>
       <ion-input [(ngModel)]="pedido.nome" formControlName="nome" name="nome" type="text"></ion-input>
@@ -76,9 +76,9 @@
     </div>
 
     <button type="submit" full ion-button color="secondary" [disabled]="!pedidoOracaoForm.valid">ENVIAR</button>
-  </form> -->
+  </form>
 
-  <ion-fab right bottom>
+  <!-- <ion-fab right bottom>
     <button ion-fab mini><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
@@ -89,7 +89,7 @@
         <ion-item>
             <h2>{{pedido.nome}}</h2>
             <h3>{{pedido.email}}</h3>
-            <p>{{shortText(pedido.pedido)}}</p>
+            <p>{{shortText(pedido.pedido)}}</p> -->
 
 
 
@@ -97,7 +97,7 @@
             <img src="assets/ministerios/acolhimento.jpg">
           </ion-avatar>
           <h2>Slimer</h2> -->
-        </ion-item>
+        <!-- </ion-item>
 
         <ion-item-options side="right">
           <button ion-button color="primary">
@@ -109,7 +109,7 @@
             Apagar
           </button>
         </ion-item-options>
-        </ion-item-sliding>
+        </ion-item-sliding> -->
 
 
 
@@ -119,7 +119,7 @@
       <ion-icon name="md-create" item-end></ion-icon>
     <ion-icon name="trash" item-end></ion-icon> -->
 
-    </ion-item>
+    <!-- </ion-item>
 
-  </ion-list>
+  </ion-list> -->
 </ion-content>
