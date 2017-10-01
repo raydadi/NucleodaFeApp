@@ -17,7 +17,7 @@ export class WelcomeTutorialPage {
 
   slides = [
     {
-      title: "Welcome to the Docs!",
+      title: "Pequeno Núcleo!",
       description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
       image: "assets/ministerios/acolhimento.jpg",
     },
