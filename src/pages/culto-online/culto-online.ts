@@ -14,14 +14,13 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
   templateUrl: 'culto-online.html',
 })
 export class CultoOnlinePage {
-    msg: FirebaseObjectObservable<any>;
+    cultoOnline: FirebaseObjectObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase,) {
-      this.msg = db.object("/culto-online");
-  }
+      this.cultoOnline = db.object("/culto-online");
+      this.cultoOnline.subscribe(data => {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CultoOnlinePage');
+      });
   }
 
   openExternalBrowser() {

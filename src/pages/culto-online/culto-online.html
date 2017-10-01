@@ -22,6 +22,6 @@
 
 <ion-footer>
   <ion-toolbar>
-      {{ msg  | async | json }}
+      {{(cultoOnline | async)?.msg}}
   </ion-toolbar>
 </ion-footer>
