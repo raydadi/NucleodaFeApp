@@ -18,10 +18,6 @@ export class MinisteriosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MinisteriosPage');
-  }
-
   openAcolhimento() {
       this.navCtrl.push(MinisterioAcolhimentoPage);
   }

@@ -15,6 +15,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// ion-content {
+//     background: #D4ECFC !important;
+// }
+
 #menu-header {
     height: 30%;
     background: #AFD3E8;
@@ -90,8 +94,8 @@ src: url("../assets/font/Nexa Light.otf");
   }
 }
 
-.popover-md .popover-content {
-    top: 47px !important;
-    left: 30px !important;
-    width: 345px;
-}
+// .popover-md .popover-content {
+//     top: 47px !important;
+//     left: 30px !important;
+//     width: 345px;
+// }

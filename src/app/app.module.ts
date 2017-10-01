@@ -35,6 +35,13 @@ import { ModalPedidosOracaoPage } from '../pages/pedido-oracao/modal-pedidos-ora
 import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
 import { MenuPage } from '../pages/menu-pages/menu/menu';
 
+import { IbiAlicePage } from '../pages/menu-pages/equipe-pastoral/ibi-alice/ibi-alice'
+import { AlexAnnePage } from '../pages/menu-pages/equipe-pastoral/alex-anne/alex-anne'
+import { EduardoClaudiaPage } from '../pages/menu-pages/equipe-pastoral/eduardo-claudia/eduardo-claudia'
+import { HiltonHandreaPage } from '../pages/menu-pages/equipe-pastoral/hilton-handrea/hilton-handrea'
+import { PauloCinaraPage } from '../pages/menu-pages/equipe-pastoral/paulo-cinara/paulo-cinara'
+import { DarciSarahPage } from '../pages/menu-pages/equipe-pastoral/darci-sarah/darci-sarah'
+
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -67,7 +74,13 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPage,
     MenuPage,
     MinisterioAcolhimentoPage,
-    ContatoModalPage
+    ContatoModalPage,
+    IbiAlicePage,
+    AlexAnnePage,
+    EduardoClaudiaPage,
+    HiltonHandreaPage,
+    PauloCinaraPage,
+    DarciSarahPage
   ],
   imports: [
     BrowserModule,
@@ -100,7 +113,13 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPage,
     MenuPage,
     MinisterioAcolhimentoPage,
-    ContatoModalPage
+    ContatoModalPage,
+    IbiAlicePage,
+    AlexAnnePage,
+    EduardoClaudiaPage,
+    HiltonHandreaPage,
+    PauloCinaraPage,
+    DarciSarahPage
   ],
   providers: [
     StatusBar,
