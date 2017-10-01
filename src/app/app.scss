@@ -15,6 +15,25 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+#menu-header {
+    height: 30%;
+    background: #AFD3E8;
+}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: url() !important;
+}
+
+#menu-content {
+    background: #AFD3E8;
+    border: 0px;
+}
+
+.menu-button {
+    background: #AFD3E8;
+    color: #113274;
+}
+
 .toolbar-background-md {
     background-color: #1e5799;
 }

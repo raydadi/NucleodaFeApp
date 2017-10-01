@@ -4,10 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeStorage } from '@ionic-native/native-storage';
@@ -26,6 +22,8 @@ import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
+import { MinisterioAcolhimentoPage } from '../pages/ministerios/ministerio-acolhimento/ministerio-acolhimento';
+import { ContatoModalPage } from '../pages/ministerios/contato-modal/contato-modal';
 import { PopoverNotificationPage } from '../pages/menu-pages/popover-notification/popover-notification';
 import { AvisosPage } from '../pages/avisos/avisos';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
@@ -34,6 +32,9 @@ import { AcampamentoJovensPage } from '../pages/acampamentos/acampamento-jovens/
 import { CultoOnlinePage } from '../pages/culto-online/culto-online';
 import { SinoPage } from '../pages/menu-pages/sino/sino';
 import { ModalPedidosOracaoPage } from '../pages/pedido-oracao/modal-pedidos-oracao/modal-pedidos-oracao';
+import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
+import { MenuPage } from '../pages/menu-pages/menu/menu';
+
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -44,9 +45,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   declarations: [
     MyApp,
     HomePage,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
     LoginPage,
     SobrePage,
     EquipePastoralPage,
@@ -65,7 +63,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     AcampamentoJovensPage,
     AwardsJovensPage,
     SinoPage,
-    ModalPedidosOracaoPage
+    ModalPedidosOracaoPage,
+    PequenoNucleoPage,
+    MenuPage,
+    MinisterioAcolhimentoPage,
+    ContatoModalPage
   ],
   imports: [
     BrowserModule,
@@ -76,9 +78,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   entryComponents: [
     MyApp,
     HomePage,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
     LoginPage,
     SobrePage,
     EquipePastoralPage,
@@ -97,7 +96,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     AcampamentoJovensPage,
     AwardsJovensPage,
     SinoPage,
-    ModalPedidosOracaoPage
+    ModalPedidosOracaoPage,
+    PequenoNucleoPage,
+    MenuPage,
+    MinisterioAcolhimentoPage,
+    ContatoModalPage
   ],
   providers: [
     StatusBar,

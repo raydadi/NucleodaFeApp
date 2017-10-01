@@ -4,9 +4,6 @@ import { NativeStorage } from '@ionic-native/native-storage';
 
 import { Platform, MenuController, Nav, App } from 'ionic-angular';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -27,6 +24,7 @@ import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  user = null;
 
   //rootPage = HomePage;
   pages: Array<{ title: string, component: any }>;
@@ -50,6 +48,13 @@ export class MyApp {
       { title: 'Como Contribuir', component: ComoContribuirPage },
       { title: 'Fale Conosco', component: FaleConoscoPage }
     ];
+
+    this.nativeStorage.getItem('user')
+      .then((data) => {
+        this.user = data;
+      }, (error) => {
+
+      });
   }
 
   initializeApp() {
@@ -64,7 +69,8 @@ export class MyApp {
           'scopes': '',
           'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
           'offline': true
-      }).then((user) => {
+        }).then((user) => {
+          this.user = user;
           env.nativeStorage.setItem('user', {
             name: user.displayName,
             email: user.email,
@@ -90,7 +96,7 @@ export class MyApp {
     nativeStorage.getItem('welcome')
       .then((data) => {
         app.getRootNav().setRoot(HomePage);
-    }, (error) => {
+      }, (error) => {
         app.getRootNav().setRoot(WelcomeTutorialPage);
       });
   }
@@ -102,6 +108,42 @@ export class MyApp {
     this.nav.push(page.component);
   }
 
+  openEquipePastoral() {
+    this.menu.close();
+    this.nav.push(EquipePastoralPage);
+  }
+
+  openComoChegar() {
+    this.menu.close();
+    this.nav.push(ComoChegarPage);
+  }
+
+  openComoContribuir() {
+    this.menu.close();
+    this.nav.push(ComoContribuirPage);
+  }
+
+  openSobre() {
+    this.menu.close();
+    this.nav.push(SobrePage);
+  }
+
+  openLogin() {
+    this.menu.close();
+    this.nav.push(LoginPage);
+  }
+
+  logout() {
+    this.menu.close();
+    this.googlePlus.logout()
+      .then((response) => {
+        this.nativeStorage.remove('user');
+        this.user = null;
+        //nav.push(LoginPage);
+      }, function(error) {
+        console.log(error);
+      })
+  }
   // navigatePageSobre() {
   //     this.menu.close();
   //     this.navCtrl.push(SobrePage);
