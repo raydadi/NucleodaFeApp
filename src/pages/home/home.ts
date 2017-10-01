@@ -10,7 +10,7 @@ import { AvisosPage } from '../avisos/avisos';
 import { AwardsJovensPage } from '../awards/awards-jovens/awards-jovens';
 import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampamento-jovens';
 import { CultoOnlinePage } from '../culto-online/culto-online';
-
+import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
 
 /**
  * Generated class for the HomePage page.
@@ -60,6 +60,10 @@ export class HomePage {
 
   navToCultoOnline() {
       this.navCtrl.push(CultoOnlinePage);
+  }
+
+  navToPequenoNucleo() {
+      this.navCtrl.push(PequenoNucleoPage);
   }
 
   popOver(ev) {

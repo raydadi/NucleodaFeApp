@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { MinisterioAcolhimentoPage } from './ministerio-acolhimento/ministerio-acolhimento';
 
 /**
  * Generated class for the MinisteriosPage page.
@@ -21,4 +22,7 @@ export class MinisteriosPage {
     console.log('ionViewDidLoad MinisteriosPage');
   }
 
+  openAcolhimento() {
+      this.navCtrl.push(MinisterioAcolhimentoPage);
+  }
 }
