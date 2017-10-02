@@ -1,3 +1,48 @@
-page-sobre {
+page-sobre .text1 {
+    text-align: center;
+    max-width: 80%;
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 
+page-sobre .text2 {
+    text-align: center;
+    max-width: 80%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+page-sobre .versao {
+    text-align: center;
+    max-width: 80%;
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+page-sobre img {
+    max-width: 60%;
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+page-sobre ion-content {
+    background: #D4ECFC !important;
 }
