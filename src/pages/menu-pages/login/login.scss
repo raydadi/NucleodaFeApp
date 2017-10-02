@@ -12,3 +12,36 @@
         color: #757575;
     }
 }
+
+page-login .logo {
+    max-width: 70%;
+    display: block;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+page-login .google {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    padding: 25px;
+}
+
+page-login .facebook {
+    display: block;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    padding: 25px;
+}

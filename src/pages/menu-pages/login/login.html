@@ -19,7 +19,11 @@
 <ion-content padding class="action-sheets-basic-page">
   <ion-list *ngIf="user == null">
 
-    <ion-item>
+      <img class="logo" src="assets/menu/sobre/logo.png" />
+
+      <img class="google" src="assets/menu/login/logo-google.png" />
+      <img class="facebook" src="assets/menu/login/logo-face.png" />
+    <!-- <ion-item>
       <ion-label floating>Usuário</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
@@ -30,11 +34,11 @@
     </ion-item>
 
     <button ion-button full>LOGIN</button>
-    <br/>
-    <button (click)="presentActionSheet()" ion-button full outline>NÃO CONSIGO ACESSAR</button>
+    <br/> -->
+    <!-- <button (click)="presentActionSheet()" ion-button full outline>NÃO CONSIGO ACESSAR</button> -->
 
   </ion-list>
-  <ion-list *ngIf="user != null">
+  <!-- <ion-list *ngIf="user != null">
     <ion-card>
       <img [src]="user.picture" />
       <div class="card-title">{{user.name}}</div>
@@ -42,5 +46,5 @@
     </ion-card>
 
     <button (click)="doGoogleLogout()" ion-button full outline>LOGOUT</button>
-  </ion-list>
+  </ion-list> -->
 </ion-content>
