@@ -22,6 +22,7 @@ import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
+import { MinisterioApoioPalcoPage } from '../pages/ministerios/ministerio-apoio-palco/ministerio-apoio-palco';
 import { MinisterioAcolhimentoPage } from '../pages/ministerios/ministerio-acolhimento/ministerio-acolhimento';
 import { ContatoModalPage } from '../pages/ministerios/contato-modal/contato-modal';
 import { PopoverNotificationPage } from '../pages/menu-pages/popover-notification/popover-notification';
@@ -74,6 +75,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPage,
     MenuPage,
     MinisterioAcolhimentoPage,
+    MinisterioApoioPalcoPage,
     ContatoModalPage,
     IbiAlicePage,
     AlexAnnePage,
@@ -113,6 +115,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPage,
     MenuPage,
     MinisterioAcolhimentoPage,
+    MinisterioApoioPalcoPage,
     ContatoModalPage,
     IbiAlicePage,
     AlexAnnePage,

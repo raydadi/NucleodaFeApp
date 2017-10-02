@@ -12,14 +12,14 @@ export class MinisterioApoioPalcoPage {
     ministerio: FirebaseObjectObservable<any>;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public db: AngularFireDatabase,public modalCtrl: ModalController) {
-        this.ministerio = db.object("/ministerios/1");
+        this.ministerio = db.object("/ministerios/18");
         this.ministerio.subscribe(data => {
 
         });
     }
 
     openContato() {
-      let modal = this.modalCtrl.create(ContatoModalPage, {ministerio: 1});
+      let modal = this.modalCtrl.create(ContatoModalPage, {ministerio: 18});
       modal.present();
     }
 
