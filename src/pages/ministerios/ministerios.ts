@@ -10,6 +10,20 @@ import { MinisterioIntercessaoPage } from './ministerio-intercessao/ministerio-i
 import { MinisterioLouvorPage } from './ministerio-louvor/ministerio-louvor';
 import { MinisterioMultimidiaPage } from './ministerio-multimidia/ministerio-multimidia';
 import { MinisterioTeatroPage } from './ministerio-teatro/ministerio-teatro';
+import { MinisterioAcaoSocialPage } from './ministerio-acao-social/ministerio-acao-social';
+import { MinisterioCozinhaPage } from './ministerio-cozinha/ministerio-cozinha';
+import { MinisterioNucleoKidsPage } from './ministerio-nucleo-kids/ministerio-nucleo-kids';
+import { MinisterioEstruturaPage } from './ministerio-estrutura/ministerio-estrutura';
+import { MinisterioEvangelismoPage } from './ministerio-evangelismo/ministerio-evangelismo';
+import { MinisterioFamiliaPage } from './ministerio-familia/ministerio-familia';
+import { MinisterioLibertacaoPage } from './ministerio-libertacao/ministerio-libertacao';
+import { MinisterioNucleoEnsinoPage } from './ministerio-nucleo-ensino/ministerio-nucleo-ensino';
+import { MinisterioNucleoJovemPage } from './ministerio-nucleo-jovem/ministerio-nucleo-jovem';
+import { MinisterioPequenosNucleosPage } from './ministerio-pequenos-nucleos/ministerio-pequenos-nucleos';
+import { MinisterioSentinelasPage } from './ministerio-sentinelas/ministerio-sentinelas';
+import { MinisterioOver30Page } from './ministerio-over30/ministerio-over30';
+import { MinisterioPalavraPage } from './ministerio-palavra/ministerio-palavra';
+import { MinisterioRecepcaoPage } from './ministerio-recepcao/ministerio-recepcao';
 
 /**
  * Generated class for the MinisteriosPage page.
@@ -65,5 +79,61 @@ export class MinisteriosPage {
 
   openTeatro(){
     this.navCtrl.push(MinisterioTeatroPage);
+  }
+
+  openAcaoSocial(){
+    this.navCtrl.push(MinisterioAcaoSocialPage);
+  }
+
+  openCozinha(){
+    this.navCtrl.push(MinisterioCozinhaPage);
+  }
+
+  openNucleoKids(){
+    this.navCtrl.push(MinisterioNucleoKidsPage);
+  }
+
+  openEstrutura(){
+    this.navCtrl.push(MinisterioEstruturaPage);
+  }
+
+  openEvangelismo(){
+    this.navCtrl.push(MinisterioEvangelismoPage);
+  }
+
+  openFamilia(){
+    this.navCtrl.push(MinisterioFamiliaPage);
+  }
+
+  openLibertacao(){
+    this.navCtrl.push(MinisterioLibertacaoPage);
+  }
+
+  openNucleoEnsino(){
+    this.navCtrl.push(MinisterioNucleoEnsinoPage);
+  }
+
+  openNucleoJovem(){
+    this.navCtrl.push(MinisterioNucleoJovemPage);
+  }
+
+  openPequenosNucleos(){
+    this.navCtrl.push(MinisterioPequenosNucleosPage);
+  }
+
+  openSentinelas(){
+    this.navCtrl.push(MinisterioSentinelasPage);
+  }
+
+  openOver30(){
+    this.navCtrl.push(MinisterioOver30Page);
+  }
+
+  openPalavra(){
+    this.navCtrl.push(MinisterioPalavraPage);
+  }
+
+  openRecepcao(){
+    this.navCtrl.push(MinisterioRecepcaoPage);
   }
 }

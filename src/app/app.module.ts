@@ -22,6 +22,20 @@ import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
+import { MinisterioRecepcaoPage } from '../pages/ministerios/ministerio-recepcao/ministerio-recepcao';
+import { MinisterioPalavraPage } from '../pages/ministerios/ministerio-palavra/ministerio-palavra';
+import { MinisterioOver30Page } from '../pages/ministerios/ministerio-over30/ministerio-over30';
+import { MinisterioSentinelasPage } from '../pages/ministerios/ministerio-sentinelas/ministerio-sentinelas';
+import { MinisterioPequenosNucleosPage } from '../pages/ministerios/ministerio-pequenos-nucleos/ministerio-pequenos-nucleos';
+import { MinisterioNucleoJovemPage } from '../pages/ministerios/ministerio-nucleo-jovem/ministerio-nucleo-jovem';
+import { MinisterioNucleoEnsinoPage } from '../pages/ministerios/ministerio-nucleo-ensino/ministerio-nucleo-ensino';
+import { MinisterioLibertacaoPage } from '../pages/ministerios/ministerio-libertacao/ministerio-libertacao';
+import { MinisterioFamiliaPage } from '../pages/ministerios/ministerio-familia/ministerio-familia';
+import { MinisterioEvangelismoPage } from '../pages/ministerios/ministerio-evangelismo/ministerio-evangelismo';
+import { MinisterioEstruturaPage } from '../pages/ministerios/ministerio-estrutura/ministerio-estrutura';
+import { MinisterioNucleoKidsPage } from '../pages/ministerios/ministerio-nucleo-kids/ministerio-nucleo-kids';
+import { MinisterioCozinhaPage } from '../pages/ministerios/ministerio-cozinha/ministerio-cozinha';
+import { MinisterioAcaoSocialPage } from '../pages/ministerios/ministerio-acao-social/ministerio-acao-social';
 import { MinisterioTeatroPage } from '../pages/ministerios/ministerio-teatro/ministerio-teatro';
 import { MinisterioMultimidiaPage } from '../pages/ministerios/ministerio-multimidia/ministerio-multimidia';
 import { MinisterioLouvorPage } from '../pages/ministerios/ministerio-louvor/ministerio-louvor';
@@ -82,6 +96,20 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ModalPedidosOracaoPage,
     PequenoNucleoPage,
     MenuPage,
+    MinisterioRecepcaoPage,
+    MinisterioPalavraPage,
+    MinisterioOver30Page,
+    MinisterioSentinelasPage,
+    MinisterioPequenosNucleosPage,
+    MinisterioNucleoJovemPage,
+    MinisterioNucleoEnsinoPage,
+    MinisterioLibertacaoPage,
+    MinisterioFamiliaPage,
+    MinisterioEvangelismoPage,
+    MinisterioEstruturaPage,
+    MinisterioNucleoKidsPage,
+    MinisterioCozinhaPage,
+    MinisterioAcaoSocialPage,
     MinisterioTeatroPage,
     MinisterioMultimidiaPage,
     MinisterioLouvorPage,
@@ -130,6 +158,20 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ModalPedidosOracaoPage,
     PequenoNucleoPage,
     MenuPage,
+    MinisterioRecepcaoPage,
+    MinisterioPalavraPage,
+    MinisterioOver30Page,
+    MinisterioSentinelasPage,
+    MinisterioPequenosNucleosPage,
+    MinisterioNucleoJovemPage,
+    MinisterioNucleoEnsinoPage,
+    MinisterioLibertacaoPage,
+    MinisterioFamiliaPage,
+    MinisterioEvangelismoPage,
+    MinisterioEstruturaPage,
+    MinisterioNucleoKidsPage,
+    MinisterioCozinhaPage,
+    MinisterioAcaoSocialPage,
     MinisterioTeatroPage,
     MinisterioMultimidiaPage,
     MinisterioLouvorPage,
