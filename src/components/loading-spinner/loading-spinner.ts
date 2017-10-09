@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the LoadingSpinnerComponent component.
@@ -11,12 +11,16 @@ import { Component } from '@angular/core';
   templateUrl: 'loading-spinner.html'
 })
 export class LoadingSpinnerComponent {
-
-  text: string;
+  @Input('align') align: string;
+  @Input('color') color: string;
+  @Input('margin') margin: string;
 
   constructor() {
-    console.log('Hello LoadingSpinnerComponent Component');
-    this.text = 'Hello World';
+
+  }
+
+  ngAfterViewInit() {
+    console.log(this.align);
   }
 
 }

@@ -19,11 +19,13 @@ import 'firebase/storage';
 export class EquipePastoralPage {
   equipePastoral: FirebaseListObservable<any>;
   imgsource: Array<any> = [];
+  showSpinner: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase, public modalCtrl: ModalController, public zone: NgZone) {
     this.equipePastoral = db.list("/equipe-pastoral");
 
     this.equipePastoral.subscribe(data => {
+      this.showSpinner = false;
       data.forEach((pastor, index) => {
 
         firebase.storage().ref().child(pastor.fotoRef).getDownloadURL().then((url) => {
@@ -33,6 +35,10 @@ export class EquipePastoralPage {
         })
       });
     });
+
+  }
+
+  ionViewDidLoad() {
 
   }
 
@@ -59,37 +65,4 @@ export class EquipePastoralPage {
         break;
     }
   }
-
-  // getLink(ref) {
-  //     firebase.storage().ref().child(ref).getDownloadURL().then((url) => {
-  //         return url;
-  //       // this.zone.run(() => {
-  //       //   return url;
-  //       // })
-  //     })
-  // }
-
-  // openIbiAlice() {
-  //   this.navCtrl.push(IbiAlicePage);
-  // }
-  //
-  // openAlexAnne() {
-  //   this.navCtrl.push(AlexAnnePage);
-  // }
-  //
-  // openEduardoClaudia() {
-  //   this.navCtrl.push(EduardoClaudiaPage);
-  // }
-  //
-  // openHiltonHandrea() {
-  //   this.navCtrl.push(HiltonHandreaPage);
-  // }
-  //
-  // openPauloCinara() {
-  //   this.navCtrl.push(PauloCinaraPage);
-  // }
-  //
-  // openDarciSarah() {
-  //   this.navCtrl.push(DarciSarahPage);
-  // }
 }

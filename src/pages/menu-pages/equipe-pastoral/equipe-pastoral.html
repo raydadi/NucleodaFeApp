@@ -11,6 +11,8 @@
 
 <ion-content class="card-background-page">
 
+  <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
   <ion-card *ngFor="let pastor of equipePastoral | async" (click)="open(pastor.$key)">
       <img src="{{imgsource[pastor.$key]}}" />
       <div class="card-title">{{pastor.nome}}</div>

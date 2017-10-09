@@ -16,6 +16,6 @@
 <ion-footer>
   <ion-toolbar>
       {{(cultoOnline | async)?.msg}}
-      <loading-spinner *ngIf="showSpinner"></loading-spinner>
+      <loading-spinner color="white" *ngIf="showSpinner"></loading-spinner>
   </ion-toolbar>
 </ion-footer>
