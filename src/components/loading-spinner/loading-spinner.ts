@@ -1,10 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 /**
- * Generated class for the LoadingSpinnerComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
+    Mais componentes: http://tobiasahlin.com/spinkit/
  */
 @Component({
   selector: 'loading-spinner',
