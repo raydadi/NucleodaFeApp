@@ -15,11 +15,16 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 })
 export class CultoOnlinePage {
     cultoOnline: FirebaseObjectObservable<any>;
+    showSpinner: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase,) {
       this.cultoOnline = db.object("/culto-online");
-      this.cultoOnline.subscribe(data => {
 
+  }
+
+  ionViewDidLoad() {
+      this.cultoOnline.subscribe(data => {
+          this.showSpinner = false
       });
   }
 

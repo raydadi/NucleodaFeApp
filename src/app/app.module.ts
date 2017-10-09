@@ -65,6 +65,7 @@ import { HiltonHandreaPage } from '../pages/menu-pages/equipe-pastoral/hilton-ha
 import { PauloCinaraPage } from '../pages/menu-pages/equipe-pastoral/paulo-cinara/paulo-cinara'
 import { DarciSarahPage } from '../pages/menu-pages/equipe-pastoral/darci-sarah/darci-sarah'
 
+import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -126,7 +127,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EduardoClaudiaPage,
     HiltonHandreaPage,
     PauloCinaraPage,
-    DarciSarahPage
+    DarciSarahPage,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -188,7 +190,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EduardoClaudiaPage,
     HiltonHandreaPage,
     PauloCinaraPage,
-    DarciSarahPage
+    DarciSarahPage,
+    LoadingSpinnerComponent
   ],
   providers: [
     StatusBar,
@@ -198,7 +201,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     Facebook,
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    LoadingSpinnerComponent
   ]
 })
 export class AppModule {}
