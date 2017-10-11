@@ -24,6 +24,22 @@
     background: #AFD3E8;
 }
 
+#menu-header div {
+    margin: 0px auto;
+    width: 50%;
+    height: 40px;
+    margin-top: 15%;
+    text-align: center;
+
+    // max-width: 50%;
+    // display: block;
+    // position: absolute;
+    // top: 55%;
+    // left: 50%;
+    // margin-right: -50%;
+    // transform: translate(-50%, -50%)
+}
+
 .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
     background-image: url() !important;
 }
@@ -31,6 +47,12 @@
 #menu-content {
     background: #AFD3E8;
     border: 0px;
+}
+
+#menu-content img {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 10%;
 }
 
 .menu-button {

@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
 
   <ion-header id="menu-header">
-      <div style="max-width: 50%; display: block; position: absolute; top: 55%; left: 50%; margin-right: -50%;   transform: translate(-50%, -50%)">
+      <div>
           <img *ngIf="user == null" src="assets/home/menu/login.png" />
           <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
 
@@ -15,30 +15,26 @@
   <ion-content id="menu-content">
       <ion-list>
             <button class="menu-button" (click)="openEquipePastoral()" ion-item>
-                <img style="margin-right: 15px; margin-left: 15px; width: 10%;" src="assets/home/menu/equipe-pastoral.png" item-start />
+                <img src="assets/home/menu/equipe-pastoral.png" item-start />
                 Equipe Pastoral
             </button>
             <button class="menu-button" (click)="openComoChegar()" ion-item>
-                <img style="margin-right: 15px; margin-left: 15px; width: 10%;" src="assets/home/menu/como-chegar.png" item-start />
+                <img src="assets/home/menu/como-chegar.png" item-start />
                 Como Chegar
             </button>
             <button class="menu-button" (click)="openComoContribuir()" ion-item>
-                <img style="margin-right: 15px; margin-left: 15px; width: 10%;" src="assets/home/menu/como-contribuir.png" item-start />
-                <span style="display: inline-block; vertical-align: middle; line-height: normal;">
+                <img src="assets/home/menu/como-contribuir.png" item-start />
                     Como Contribuir
-                </span>
             </button>
             <button class="menu-button" (click)="openSobre()" ion-item>
-                <img style="margin-right: 15px; margin-left: 15px; width: 10%;" src="assets/home/menu/sobre-isso.png" item-start />
+                <img src="assets/home/menu/sobre-isso.png" item-start />
                 Sobre este App
             </button>
             <button *ngIf="user != null" class="menu-button" (click)="logout()" ion-item>
-                <img style="margin-right: 15px; margin-left: 15px; width: 10%;" src="assets/home/menu/sair.png" item-start />
+                <img src="assets/home/menu/sair.png" item-start />
                 Sair
             </button>
       </ion-list>
-
-
 
     <!-- <ion-list>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
