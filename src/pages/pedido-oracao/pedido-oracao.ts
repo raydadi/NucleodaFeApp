@@ -5,13 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from 'ionic-angular';
 import { ModalPedidosOracaoPage } from './modal-pedidos-oracao/modal-pedidos-oracao';
 
-
-/**
- * Generated class for the PedidoOracaoPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-pedido-oracao',
@@ -48,7 +41,6 @@ export class PedidoOracaoPage{
   }
 
   enviar() {
-      console.log(this.pedido);
     this.pedidos.push(this.pedido);
 
     let alert = this.alertCtrl.create({
@@ -62,6 +54,10 @@ export class PedidoOracaoPage{
       }]
     });
     alert.present();
+
+
+    this.pedidoOracaoForm.reset()
+
   }
 
 

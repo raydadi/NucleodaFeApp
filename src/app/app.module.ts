@@ -3,6 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -133,7 +134,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(CONST.FIREBASE_CONFIG)
+    AngularFireModule.initializeApp(CONST.FIREBASE_CONFIG),
+    TextMaskModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

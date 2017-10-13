@@ -1,15 +1,9 @@
-<!--
-  Generated template for the TestemunhosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
     <ion-title>TESTEMUNHOS</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+      <sino></sino>
     </ion-buttons>
   </ion-navbar>
 
@@ -21,7 +15,8 @@
     <form [formGroup]="testemunhoForm" (ngSubmit)="enviar()">
       <ion-item>
         <ion-label floating>NOME</ion-label>
-        <ion-input [formControl]="testemunhoForm.controls['nome']" name="nome" type="text"></ion-input>
+        <!-- <ion-input [formControl]="testemunhoForm.controls['nome']" name="nome" type="text"></ion-input> -->
+        <ion-input [(ngModel)]="testemunho.nome" formControlName="nome" name="nome" type="text"></ion-input>
       </ion-item>
       <div *ngIf="testemunhoForm.controls['nome'].hasError('required') && testemunhoForm.controls['nome'].touched">
         Nome precisa ser preenchido!
@@ -30,12 +25,13 @@
         Nome precisa ter ao menos 3 caracteres!
       </div>
       <div *ngIf="testemunhoForm.controls['nome'].hasError('maxlength') && testemunhoForm.controls['nome'].touched">
-        Nome precisa pode ter no máximo 30 caracteres!
+        Nome precisa pode ter no máximo 40 caracteres!
       </div>
 
       <ion-item>
         <ion-label floating>TELEFONE</ion-label>
-        <ion-input [formControl]="testemunhoForm.controls['telefone']" name="telefone" type="tel"></ion-input>
+        <!-- <ion-input [formControl]="testemunhoForm.controls['telefone']" name="telefone" type="tel"></ion-input> -->
+        <ion-input [(ngModel)]="testemunho.telefone" formControlName="telefone" name="telefone" type="tel"></ion-input>
       </ion-item>
       <div *ngIf="testemunhoForm.controls['telefone'].hasError('required') && testemunhoForm.controls['telefone'].touched">
         Telefone precisa ser preenchido!
@@ -49,7 +45,8 @@
 
       <ion-item>
         <ion-label floating>EMAIL</ion-label>
-        <ion-input [formControl]="testemunhoForm.controls['email']" name="email" type="email"></ion-input>
+        <!-- <ion-input [formControl]="testemunhoForm.controls['email']" name="email" type="email"></ion-input> -->
+        <ion-input [(ngModel)]="testemunho.email" formControlName="email" name="email" type="email"></ion-input>
       </ion-item>
       <div *ngIf="testemunhoForm.controls['email'].hasError('required') && testemunhoForm.controls['email'].touched">
         Email precisa ser preenchido!
@@ -63,7 +60,8 @@
 
       <ion-item>
         <ion-label floating>TESTEMUNHO</ion-label>
-        <ion-textarea [formControl]="testemunhoForm.controls['testemunho']" name="testemunho" rows="10"></ion-textarea>
+        <!-- <ion-textarea [formControl]="testemunhoForm.controls['testemunho']" name="testemunho" rows="10"></ion-textarea> -->
+        <ion-textarea [(ngModel)]="testemunho.testemunho" formControlName="testemunho" name="testemunho" rows="10"></ion-textarea>
       </ion-item>
       <div *ngIf="testemunhoForm.controls['testemunho'].hasError('required') && testemunhoForm.controls['testemunho'].touched">
         Testemunho precisa ser preenchido!
