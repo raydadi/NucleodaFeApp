@@ -23,22 +23,31 @@ export class EquipePastoralPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase, public modalCtrl: ModalController, public zone: NgZone) {
     this.equipePastoral = db.list("/equipe-pastoral");
-
-    this.equipePastoral.subscribe(data => {
-      this.showSpinner = false;
-      data.forEach((pastor, index) => {
-
-        firebase.storage().ref().child(pastor.fotoRef).getDownloadURL().then((url) => {
-          this.zone.run(() => {
-            this.imgsource[pastor.$key] = url;
-          })
-        })
-      });
-    });
-
   }
 
+
+  // ionViewDidLoad() {
+  //     this.cultoOnline.subscribe(data => {
+  //         this.showSpinner = false
+  //     });
+  // }
+
   ionViewDidLoad() {
+      this.equipePastoral.subscribe(data => {
+
+        data.forEach((pastor, index) => {
+
+          firebase.storage().ref().child(pastor.fotoRef).getDownloadURL().then((url) => {
+            this.zone.run(() => {
+              this.imgsource[pastor.$key] = url;
+            })
+          })
+
+          if(index == data.length-1) {
+              this.showSpinner = false;
+          }
+        });
+      });
 
   }
 
