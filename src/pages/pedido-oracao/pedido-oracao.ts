@@ -4,6 +4,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from 'ionic-angular';
 import { ModalPedidosOracaoPage } from './modal-pedidos-oracao/modal-pedidos-oracao';
+import { Toast } from '@ionic-native/toast';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,8 @@ export class PedidoOracaoPage{
     public alertCtrl: AlertController,
     public db: AngularFireDatabase,
     public formBuilder: FormBuilder,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private toast: Toast
   ) {
     this.pedidos = db.list("/pedidos-oracao");
     this.pedido = new Pedido();
@@ -54,12 +56,8 @@ export class PedidoOracaoPage{
       }]
     });
     alert.present();
-
-
     this.pedidoOracaoForm.reset()
-
   }
-
 
   shortText(text: string) {
       console.log(text);

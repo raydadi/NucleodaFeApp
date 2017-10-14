@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Toast } from '@ionic-native/toast';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,14 @@ export class TestemunhosPage {
     testemunhoForm: FormGroup;
     masks: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public db: AngularFireDatabase, public formBuilder: FormBuilder) {
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public alertCtrl: AlertController,
+      public db: AngularFireDatabase,
+      public formBuilder: FormBuilder,
+      private toast: Toast
+  ) {
       this.testemunhos = db.list("/testemunhos");
       this.testemunho = new Testemunho();
       this.testemunhoForm = formBuilder.group({
@@ -39,7 +47,9 @@ export class TestemunhosPage {
           text: 'NÃO',
           cssClass: 'botao-testemunho',
           handler: () => {
+              this.toast.show(`Testemunho não enviado!`, 'short', 'bottom').subscribe(toast => {
 
+              });
           }
         },
         {
@@ -48,6 +58,9 @@ export class TestemunhosPage {
           handler: () => {
             this.testemunhos.push(this.testemunho);
             this.clear();
+            this.toast.show(`Testemunho enviado com sucesso!`, 'short', 'bottom').subscribe(toast => {
+
+            });
           }
         }
       ]
