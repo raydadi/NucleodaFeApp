@@ -15,7 +15,7 @@
 
   <ion-card *ngFor="let pastor of equipePastoral | async" (click)="open(pastor.$key)">
       <img src="{{imgsource[pastor.$key]}}" />
-      <div class="card-title">{{pastor.nome}}</div>
+      <div class="card-title"><span>{{pastor.nome}}</span></div>
   </ion-card>
 
   <!-- <ion-card (click)="openIbiAlice()">

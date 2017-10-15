@@ -11,7 +11,7 @@ import 'firebase/storage';
 })
 export class AlexAnnePage {
     imgsource: any;
-
+    showSpinner: boolean = true;
     equipePastoral: FirebaseObjectObservable<any>;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public db: AngularFireDatabase, public zone: NgZone) {
@@ -27,5 +27,7 @@ export class AlexAnnePage {
         })
     }
 
-
+    showSpinnerMeth() {
+        this.showSpinner = false;
+    }
 }

@@ -25,13 +25,6 @@ export class EquipePastoralPage {
     this.equipePastoral = db.list("/equipe-pastoral");
   }
 
-
-  // ionViewDidLoad() {
-  //     this.cultoOnline.subscribe(data => {
-  //         this.showSpinner = false
-  //     });
-  // }
-
   ionViewDidLoad() {
       this.equipePastoral.subscribe(data => {
 

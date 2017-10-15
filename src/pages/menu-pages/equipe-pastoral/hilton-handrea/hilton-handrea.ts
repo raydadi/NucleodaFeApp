@@ -12,6 +12,7 @@ import 'firebase/storage';
 export class HiltonHandreaPage {
     imgsource: any;
     equipePastoral: FirebaseObjectObservable<any>;
+    showSpinner: boolean = true;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public db: AngularFireDatabase, public zone: NgZone) {
         this.equipePastoral = db.object("/equipe-pastoral/3");
@@ -24,5 +25,9 @@ export class HiltonHandreaPage {
                 this.imgsource = url;
             })
         })
+    }
+
+    showSpinnerMeth() {
+        this.showSpinner = false;
     }
 }

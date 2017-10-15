@@ -12,6 +12,7 @@ import 'firebase/storage';
 export class DarciSarahPage {
     imgsource: any;
     equipePastoral: FirebaseObjectObservable<any>;
+    showSpinner: boolean = true;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public db: AngularFireDatabase, public zone: NgZone) {
         this.equipePastoral = db.object("/equipe-pastoral/0");
@@ -24,6 +25,10 @@ export class DarciSarahPage {
                 this.imgsource = url;
             })
         })
+    }
+
+    showSpinnerMeth() {
+        this.showSpinner = false;
     }
 
 }

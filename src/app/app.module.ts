@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
+import { Toast } from '@ionic-native/toast';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/menu-pages/login/login';
@@ -201,6 +202,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     NativeStorage,
     GooglePlus,
     Facebook,
+    Toast,
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,

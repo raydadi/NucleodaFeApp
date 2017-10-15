@@ -1,3 +1,9 @@
-page-equipe-pastoral {
+page-equipe-pastoral .card-title {
+    background-color: rgb(230, 242, 255);
+    opacity: 0.50;
+}
 
+page-equipe-pastoral .card-title span {
+    opacity: 1;
+    color: black;
 }

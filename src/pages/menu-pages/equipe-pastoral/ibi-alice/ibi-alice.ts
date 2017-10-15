@@ -11,8 +11,8 @@ import 'firebase/storage';
 })
 export class IbiAlicePage {
     imgsource: any;
-
     equipePastoral: FirebaseObjectObservable<any>;
+    showSpinner: boolean = true;
 
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
@@ -29,5 +29,9 @@ export class IbiAlicePage {
                 this.imgsource = url;
             })
         })
+    }
+
+    showSpinnerMeth() {
+        this.showSpinner = false;
     }
 }
