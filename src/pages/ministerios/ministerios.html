@@ -3,7 +3,7 @@
   <ion-navbar>
     <ion-title>MINISTÉRIOS</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+        <sino></sino>
     </ion-buttons>
   </ion-navbar>
 
@@ -12,7 +12,13 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card (click)="openAcolhimento()">
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
+    <ion-card *ngFor="let ministerio of ministerios | async" (click)="open(ministerio.$key)">
+        <img src="{{imgsource[ministerio.$key]}}" />
+        <div class="card-title"><span>{{ministerio.nome}}</span></div>
+    </ion-card>
+  <!-- <ion-card (click)="openAcolhimento()">
     <img src="assets/ministerios/acolhimento.jpg" />
     <div class="card-title">ACOLHIMENTO</div>
   </ion-card>
@@ -130,5 +136,5 @@
   <ion-card (click)="openRecepcao()">
     <img src="assets/ministerios/recepcao.jpg" />
     <div class="card-title">RECEPÇÃO</div>
-  </ion-card>
+  </ion-card> -->
 </ion-content>

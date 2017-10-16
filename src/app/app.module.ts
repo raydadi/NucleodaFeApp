@@ -42,7 +42,7 @@ import { MinisterioTeatroPage } from '../pages/ministerios/ministerio-teatro/min
 import { MinisterioMultimidiaPage } from '../pages/ministerios/ministerio-multimidia/ministerio-multimidia';
 import { MinisterioLouvorPage } from '../pages/ministerios/ministerio-louvor/ministerio-louvor';
 import { MinisterioIntercessaoPage } from '../pages/ministerios/ministerio-intercessao/ministerio-intercessao';
-import { MiniesterioDancaPage } from '../pages/ministerios/miniesterio-danca/miniesterio-danca';
+import { MinisterioDancaPage } from '../pages/ministerios/ministerio-danca/ministerio-danca';
 import { MinisterioComunicacaoPage } from '../pages/ministerios/ministerio-comunicacao/ministerio-comunicacao';
 import { MinisterioArtesanatoPage } from '../pages/ministerios/ministerio-artesanato/ministerio-artesanato';
 import { MinisterioCoralPage } from '../pages/ministerios/ministerio-coral/ministerio-coral';
@@ -117,7 +117,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MinisterioMultimidiaPage,
     MinisterioLouvorPage,
     MinisterioIntercessaoPage,
-    MiniesterioDancaPage,
+    MinisterioDancaPage,
     MinisterioComunicacaoPage,
     MinisterioArtesanatoPage,
     MinisterioCoralPage,
@@ -181,7 +181,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MinisterioMultimidiaPage,
     MinisterioLouvorPage,
     MinisterioIntercessaoPage,
-    MiniesterioDancaPage,
+    MinisterioDancaPage,
     MinisterioComunicacaoPage,
     MinisterioArtesanatoPage,
     MinisterioCoralPage,

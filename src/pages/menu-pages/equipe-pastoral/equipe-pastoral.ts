@@ -21,7 +21,13 @@ export class EquipePastoralPage {
   imgsource: Array<any> = [];
   showSpinner: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase, public modalCtrl: ModalController, public zone: NgZone) {
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public db: AngularFireDatabase,
+      public modalCtrl: ModalController,
+      public zone: NgZone
+  ) {
     this.equipePastoral = db.list("/equipe-pastoral");
   }
 
