@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Como Chegar</ion-title>
+    <ion-title>COMO CHEGAR</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -18,16 +18,16 @@
 
 <ion-content padding>
 
-  <!-- <ion-item-group>
-    <ion-item (click)="navToSede()">Igreja Sede</ion-item>
-    <ion-item (click)="navToArniqueiras()">Igreja Arniqueiras</ion-item>
-    <ion-item (click)="navToArniqueiras()">Chácara da Igreja</ion-item>
-  </ion-item-group> -->
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-  <ion-card class="adv-map">
+    <ion-card *ngFor="let local of comoChegar | async" (click)="open(local.$key)">
+        <img src="{{imgsource[local.$key]}}" />
+        <div class="card-title"><span>{{local.nome}}</span></div>
+    </ion-card>
+
+  <!-- <ion-card class="adv-map">
   <div style="position: relative">
     <div #map id="map"></div>
-    <!--<img src="assets/ministerios/acolhimento.jpg">-->
     <ion-fab right top>
       <button ion-fab class="fab-map">
         <ion-icon name='pin'></ion-icon>
@@ -104,5 +104,5 @@
     </button>
   </ion-item>
 
-</ion-card>
+</ion-card> -->
 </ion-content>

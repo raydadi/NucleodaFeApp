@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 
 import { MapaArniqueirasPage } from './mapa-arniqueiras/mapa-arniqueiras';
 import { MapaSedePage } from './mapa-sede/mapa-sede';
+import { MapaChacaraPage } from './mapa-chacara/mapa-chacara';
+
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 declare var google;
 
-/**
- * Generated class for the ComoChegarPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-como-chegar',
@@ -29,14 +28,54 @@ export class ComoChegarPage {
   @ViewChild('map3') map3Element;
   map3: any;
 
-  constructor(public navCtrl: NavController) {
+  comoChegar: FirebaseListObservable<any>;
+  imgsource: Array<any> = [];
+  showSpinner: boolean = true;
+
+  constructor(
+      public navCtrl: NavController,
+      public db: AngularFireDatabase,
+      public zone: NgZone
+  ) {
+      this.comoChegar = db.list("/como-chegar");
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ComoChegarPage');
-    this.initMapBandeirante();
-    this.initMapArniqueira();
-    this.initMapChacara();
+    // this.initMapBandeirante();
+    // this.initMapArniqueira();
+    // this.initMapChacara();
+
+    this.comoChegar.subscribe(data => {
+
+      data.forEach((local, index) => {
+
+        firebase.storage().ref().child(local.fotoRef).getDownloadURL().then((url) => {
+          this.zone.run(() => {
+            this.imgsource[local.$key] = url;
+          })
+        })
+
+        if(index == data.length-1) {
+            this.showSpinner = false;
+        }
+      });
+    });
+
+  }
+
+  open(key) {
+
+    switch (key) {
+      case "0":
+        this.navCtrl.push(MapaSedePage);
+        break;
+      case "1":
+        this.navCtrl.push(MapaArniqueirasPage);
+        break;
+      case "2":
+        this.navCtrl.push(MapaChacaraPage);
+        break;
+    }
   }
 
   initMapBandeirante(){
