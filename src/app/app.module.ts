@@ -21,6 +21,7 @@ import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-con
 import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { MapaArniqueirasPage } from '../pages/menu-pages/como-chegar/mapa-arniqueiras/mapa-arniqueiras';
 import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede';
+import { MapaChacaraPage} from '../pages/menu-pages/como-chegar/mapa-chacara/mapa-chacara';
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
@@ -130,7 +131,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HiltonHandreaPage,
     PauloCinaraPage,
     DarciSarahPage,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    MapaChacaraPage
   ],
   imports: [
     BrowserModule,
@@ -194,7 +196,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HiltonHandreaPage,
     PauloCinaraPage,
     DarciSarahPage,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    MapaChacaraPage
   ],
   providers: [
     StatusBar,

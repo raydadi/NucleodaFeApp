@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the MapaArniqueirasPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-mapa-arniqueiras',
@@ -14,11 +8,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MapaArniqueirasPage {
 
+  @ViewChild('map') mapElement;
+  map: any;
+
+  local: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.local = this.navParams.get('data');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapaArniqueirasPage');
+    this.initMap();
+  }
+
+  initMap() {
+      let latitude = this.local.geolocalizacao.latitude;
+      let longitude = this.local.geolocalizacao.longitude;
+      let zoom = this.local.geolocalizacao.zoom;
+
+    let latLng = new google.maps.LatLng(latitude, longitude);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: zoom,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
   }
 
 }

@@ -18,19 +18,10 @@ declare var google;
   templateUrl: 'como-chegar.html',
 })
 export class ComoChegarPage {
-
-  @ViewChild('map') mapElement;
-  map: any;
-
-  @ViewChild('map2') map2Element;
-  map2: any;
-
-  @ViewChild('map3') map3Element;
-  map3: any;
-
   comoChegar: FirebaseListObservable<any>;
   imgsource: Array<any> = [];
   showSpinner: boolean = true;
+  comoChegarArray: Array<any> = [];
 
   constructor(
       public navCtrl: NavController,
@@ -41,12 +32,8 @@ export class ComoChegarPage {
   }
 
   ionViewDidLoad() {
-    // this.initMapBandeirante();
-    // this.initMapArniqueira();
-    // this.initMapChacara();
-
     this.comoChegar.subscribe(data => {
-
+      this.comoChegarArray = data;
       data.forEach((local, index) => {
 
         firebase.storage().ref().child(local.fotoRef).getDownloadURL().then((url) => {
@@ -67,58 +54,20 @@ export class ComoChegarPage {
 
     switch (key) {
       case "0":
-        this.navCtrl.push(MapaSedePage);
+        this.navCtrl.push(MapaSedePage,{
+            data: this.comoChegarArray[0]
+        });
         break;
       case "1":
-        this.navCtrl.push(MapaArniqueirasPage);
+        this.navCtrl.push(MapaArniqueirasPage,{
+            data: this.comoChegarArray[1]
+        });
         break;
       case "2":
-        this.navCtrl.push(MapaChacaraPage);
+        this.navCtrl.push(MapaChacaraPage,{
+            data: this.comoChegarArray[2]
+        });
         break;
     }
-  }
-
-  initMapBandeirante(){
-    let latLng = new google.maps.LatLng(-15.868119, -47.970526);
-
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-  }
-
-  initMapArniqueira(){
-    let latLng = new google.maps.LatLng(-15.856191, -47.996769);
-
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    this.map = new google.maps.Map(this.map2Element.nativeElement, mapOptions);
-  }
-
-  initMapChacara(){
-    let latLng = new google.maps.LatLng(-16.182161, -47.962878);
-
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    this.map = new google.maps.Map(this.map3Element.nativeElement, mapOptions);
-  }
-
-  navToSede() {
-      this.navCtrl.push(MapaSedePage);
-  }
-
-  navToArniqueiras() {
-      this.navCtrl.push(MapaArniqueirasPage);
   }
 }
