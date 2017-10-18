@@ -6,13 +6,8 @@ import { HomePage } from '../../home/home';
 
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController } from 'ionic-angular';
 
+import * as firebase from 'firebase/app';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -98,7 +93,15 @@ export class LoginPage {
       'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true
     }).then(function(user) {
+      const firecreds = firebase.auth.GoogleAuthProvider.credential(user.idToken);
+      this.fireauth.signInWithCredential(firecreds).then((res) => {
+
       loading.dismiss();
+
+      }).catch((err) => {
+        alert('Firebase auth failed' + err);
+      })
+
       nativeStorage.setItem('user', {
         name: user.displayName,
         email: user.email,
@@ -110,8 +113,10 @@ export class LoginPage {
       })
     }, function(error) {
       console.log(error);
+      alert('Error' + error);
       loading.dismiss();
     });
+
   }
 
   doGoogleLogout() {
