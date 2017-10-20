@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
@@ -6,7 +6,9 @@ import { HomePage } from '../../home/home';
 
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController } from 'ionic-angular';
 
-import * as firebase from 'firebase/app';
+import { FirebaseApp } from 'angularfire2';
+
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -25,7 +27,8 @@ export class LoginPage {
     public loadingCtrl: LoadingController,
     public googlePlus: GooglePlus,
     public facebook: Facebook,
-    public nativeStorage: NativeStorage
+    public nativeStorage: NativeStorage,
+    @Inject(FirebaseApp) firebaseApp: any
   ) {
     //this.facebook.browserInit(this.FB_APP_ID, "v2.8");
     this.nativeStorage.getItem('user')
@@ -36,48 +39,44 @@ export class LoginPage {
       });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Ações',
-      cssClass: 'action-sheets-basic-page',
-      buttons: [
-        {
-          text: 'ACESSAR COM GOOGLE',
-          icon: !this.platform.is('ios') ? 'logo-googleplus' : null,
-          handler: () => {
-            this.doGoogleLogin(this.nativeStorage);
-          }
-        },
-        {
-          text: 'ACESSAR COM FACEBOOK',
-          icon: !this.platform.is('ios') ? 'logo-facebook' : null,
-          handler: () => {
-            this.doFacebookLogin(this.nativeStorage);
-          }
-        },
-        {
-          text: 'CRIAR CONTA',
-          icon: !this.platform.is('ios') ? 'md-create' : null,
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        },
-        {
-          text: 'CANCEL',
-          role: 'cancel', // will always sort to be on the bottom
-          icon: !this.platform.is('ios') ? 'close' : null,
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
+  // presentActionSheet() {
+  //   let actionSheet = this.actionSheetCtrl.create({
+  //     title: 'Ações',
+  //     cssClass: 'action-sheets-basic-page',
+  //     buttons: [
+  //       {
+  //         text: 'ACESSAR COM GOOGLE',
+  //         icon: !this.platform.is('ios') ? 'logo-googleplus' : null,
+  //         handler: () => {
+  //           this.doGoogleLogin(this.nativeStorage);
+  //         }
+  //       },
+  //       {
+  //         text: 'ACESSAR COM FACEBOOK',
+  //         icon: !this.platform.is('ios') ? 'logo-facebook' : null,
+  //         handler: () => {
+  //           this.doFacebookLogin(this.nativeStorage);
+  //         }
+  //       },
+  //       {
+  //         text: 'CRIAR CONTA',
+  //         icon: !this.platform.is('ios') ? 'md-create' : null,
+  //         handler: () => {
+  //           console.log('Favorite clicked');
+  //         }
+  //       },
+  //       {
+  //         text: 'CANCEL',
+  //         role: 'cancel', // will always sort to be on the bottom
+  //         icon: !this.platform.is('ios') ? 'close' : null,
+  //         handler: () => {
+  //           console.log('Cancel clicked');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   actionSheet.present();
+  // }
 
   doGoogleLogin(nativeStorage: NativeStorage) {
 
@@ -93,13 +92,15 @@ export class LoginPage {
       'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true
     }).then(function(user) {
-      const firecreds = firebase.auth.GoogleAuthProvider.credential(user.idToken);
-      this.fireauth.signInWithCredential(firecreds).then((res) => {
+      const firecreds = this.firebaseApp.auth.GoogleAuthProvider.credential(user.idToken);
+      this.firebaseApp.auth().signInWithCredential(firecreds)
+      .then((res) => {
 
-      loading.dismiss();
+          loading.dismiss();
 
       }).catch((err) => {
         alert('Firebase auth failed' + err);
+        console.log(err);
       })
 
       nativeStorage.setItem('user', {
