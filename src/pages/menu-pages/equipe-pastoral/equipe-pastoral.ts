@@ -1,12 +1,13 @@
 import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 import { IbiAlicePage } from './ibi-alice/ibi-alice'
 import { AlexAnnePage } from './alex-anne/alex-anne'
 import { EduardoClaudiaPage } from './eduardo-claudia/eduardo-claudia'
 import { HiltonHandreaPage } from './hilton-handrea/hilton-handrea'
 import { PauloCinaraPage } from './paulo-cinara/paulo-cinara'
 import { DarciSarahPage } from './darci-sarah/darci-sarah'
+
+import { AngularFireOfflineDatabase, AfoListObservable } from 'angularfire2-offline/database';
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -17,14 +18,15 @@ import 'firebase/storage';
   templateUrl: 'equipe-pastoral.html',
 })
 export class EquipePastoralPage {
-  equipePastoral: FirebaseListObservable<any>;
+  equipePastoral: AfoListObservable<any>;
   imgsource: Array<any> = [];
   showSpinner: boolean = true;
+  equipePastoralArray: Array<any> = [];
 
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      public db: AngularFireDatabase,
+      public db: AngularFireOfflineDatabase,
       public modalCtrl: ModalController,
       public zone: NgZone
   ) {
@@ -33,6 +35,8 @@ export class EquipePastoralPage {
 
   ionViewDidLoad() {
       this.equipePastoral.subscribe(data => {
+
+        this.equipePastoralArray = data;
 
         data.forEach((pastor, index) => {
 
@@ -54,22 +58,34 @@ export class EquipePastoralPage {
 
     switch (key) {
       case "0":
-        this.navCtrl.push(IbiAlicePage);
+        this.navCtrl.push(IbiAlicePage,{
+            data: this.equipePastoralArray[0]
+        });
         break;
       case "1":
-        this.navCtrl.push(AlexAnnePage);
+        this.navCtrl.push(AlexAnnePage,{
+            data: this.equipePastoralArray[1]
+        });
         break;
       case "2":
-        this.navCtrl.push(EduardoClaudiaPage);
+        this.navCtrl.push(EduardoClaudiaPage,{
+            data: this.equipePastoralArray[2]
+        });
         break;
       case "3":
-        this.navCtrl.push(HiltonHandreaPage);
+        this.navCtrl.push(HiltonHandreaPage,{
+            data: this.equipePastoralArray[3]
+        });
         break;
       case "4":
-        this.navCtrl.push(PauloCinaraPage);
+        this.navCtrl.push(PauloCinaraPage,{
+            data: this.equipePastoralArray[4]
+        });
         break;
       case "5":
-        this.navCtrl.push(DarciSarahPage);
+        this.navCtrl.push(DarciSarahPage,{
+            data: this.equipePastoralArray[5]
+        });
         break;
     }
   }

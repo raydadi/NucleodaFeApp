@@ -71,6 +71,7 @@ import { DarciSarahPage } from '../pages/menu-pages/equipe-pastoral/darci-sarah/
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
 
 import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -138,7 +139,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(CONST.FIREBASE_CONFIG),
-    TextMaskModule
+    TextMaskModule,
+    AngularFireOfflineModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
