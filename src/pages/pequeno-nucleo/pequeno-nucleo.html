@@ -1,13 +1,7 @@
-<!--
-  Generated template for the PequenoNucleoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>PEQUENO NÚCLEO</ion-title>
+    <ion-title>PEQUENOS NÚCLEOS</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -16,6 +10,14 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-background-page">
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
+    <ion-card *ngFor="let pn of pequenosNucleos | async" (click)="open(pn.$key)">
+        <img src="{{imgsource[pn.$key]}}" />
+        <div class="card-title">
+            <span>{{pn.nome}}</span>
+            <p>{{pn.tipo}}</p>
+        </div>
+    </ion-card>
 </ion-content>

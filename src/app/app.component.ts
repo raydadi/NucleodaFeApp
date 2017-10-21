@@ -57,6 +57,15 @@ export class MyApp {
       });
   }
 
+  ionViewDidEnter() {
+      this.nativeStorage.getItem('user')
+        .then((data) => {
+          this.user = data;
+        }, (error) => {
+
+        });
+  }
+
   initializeApp() {
     let env = this;
 

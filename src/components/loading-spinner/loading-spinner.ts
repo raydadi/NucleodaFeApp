@@ -16,8 +16,4 @@ export class LoadingSpinnerComponent {
 
   }
 
-  ngAfterViewInit() {
-    console.log(this.align);
-  }
-
 }

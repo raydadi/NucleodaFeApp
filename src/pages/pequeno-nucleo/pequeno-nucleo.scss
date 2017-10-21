@@ -1,3 +1,17 @@
 page-pequeno-nucleo ion-content {
     background-color: #D4ECFC !important;
 }
+
+page-pequeno-nucleo .card-title {
+    background-color: rgb(230, 242, 255);
+    opacity: 0.50;
+}
+
+page-pequeno-nucleo .card-title span {
+    opacity: 1;
+    color: black;
+}
+
+page-pequeno-nucleo .card-background-page .card-title {
+    top: 70%;
+}

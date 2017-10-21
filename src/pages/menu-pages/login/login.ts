@@ -3,8 +3,10 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../../home/home';
+import { Toast } from '@ionic-native/toast';
 
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { FirebaseApp } from 'angularfire2';
 
@@ -28,7 +30,10 @@ export class LoginPage {
     public googlePlus: GooglePlus,
     public facebook: Facebook,
     public nativeStorage: NativeStorage,
-    @Inject(FirebaseApp) firebaseApp: any
+    @Inject(FirebaseApp) firebaseApp: any,
+    private toast: Toast,
+    private storage: Storage
+
   ) {
     //this.facebook.browserInit(this.FB_APP_ID, "v2.8");
     this.nativeStorage.getItem('user')
@@ -37,6 +42,10 @@ export class LoginPage {
       }, (error) => {
 
       });
+
+    //   this.storage.get('user').then((val) => {
+    //       this.user = val;
+    //   });
   }
 
   // presentActionSheet() {
@@ -81,6 +90,7 @@ export class LoginPage {
   doGoogleLogin(nativeStorage: NativeStorage) {
 
     let nav = this.navCtrl;
+
     let loading = this.loadingCtrl.create({
       content: 'Aguarde...'
     });
@@ -91,44 +101,73 @@ export class LoginPage {
       'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
       'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true
-    }).then(function(user) {
-      const firecreds = this.firebaseApp.auth.GoogleAuthProvider.credential(user.idToken);
-      this.firebaseApp.auth().signInWithCredential(firecreds)
-      .then((res) => {
+  }).then((user) => {
 
-          loading.dismiss();
+        loading.dismiss();
+    //   const firecreds = this.firebaseApp.auth.GoogleAuthProvider.credential(user.idToken);
+    //   this.firebaseApp.auth().signInWithCredential(firecreds)
+    //   .then((res) => {
+      //
+    //
+      //
+    //   }).catch((err) => {
+    //     alert('Firebase auth failed' + err);
+    //     console.log(err);
+    //   })
 
-      }).catch((err) => {
-        alert('Firebase auth failed' + err);
-        console.log(err);
-      })
-
-      nativeStorage.setItem('user', {
-        name: user.displayName,
-        email: user.email,
-        picture: user.imageUrl
-      }).then(function() {
-        nav.setRoot(HomePage);
-      }, function(error) {
-        console.log(error);
-      })
+    this.nativeStorage.setItem('user', {
+      name: user.displayName,
+      email: user.email,
+      picture: user.imageUrl
+    }).then(function() {
+      nav.setRoot(HomePage);
     }, function(error) {
+      console.log(error);
+    })
+
+
+
+    // this.storage.get('user',{
+    //     name: user.displayName,
+    //     email: user.email,
+    //     picture: user.imageUrl
+    // }).then(function() {
+    //     nav.setRoot(HomePage);
+    //   }, function(error) {
+    //     console.log(error);
+    // });
+
+      this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => {
+
+      });
+
+    }, function(error) {
+        this.toast.show(`Error ao logar!`, 'short', 'bottom').subscribe(toast => {
+
+        });
       console.log(error);
       alert('Error' + error);
       loading.dismiss();
     });
 
+
+
   }
 
   doGoogleLogout() {
-    let nav = this.navCtrl;
+
     this.googlePlus.logout()
       .then((response) => {
         this.nativeStorage.remove('user');
         this.user = null;
-        //nav.push(LoginPage);
+        this.toast.show(`Usuário desconectado!`, 'short', 'bottom').subscribe(toast => {
+
+        });
       }, function(error) {
         console.log(error);
+        this.toast.show(`Erro ao logout!`, 'short', 'bottom').subscribe(toast => {
+
+        });
       })
   }
 

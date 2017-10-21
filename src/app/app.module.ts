@@ -12,6 +12,8 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 import { Toast } from '@ionic-native/toast';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/menu-pages/login/login';
 import { SobrePage } from '../pages/menu-pages/sobre/sobre';
@@ -67,6 +69,8 @@ import { EduardoClaudiaPage } from '../pages/menu-pages/equipe-pastoral/eduardo-
 import { HiltonHandreaPage } from '../pages/menu-pages/equipe-pastoral/hilton-handrea/hilton-handrea'
 import { PauloCinaraPage } from '../pages/menu-pages/equipe-pastoral/paulo-cinara/paulo-cinara'
 import { DarciSarahPage } from '../pages/menu-pages/equipe-pastoral/darci-sarah/darci-sarah'
+
+import { PequenoNucleoDetailPage } from '../pages/pequeno-nucleo/pequeno-nucleo-detail/pequeno-nucleo-detail';
 
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner';
 
@@ -133,14 +137,16 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PauloCinaraPage,
     DarciSarahPage,
     LoadingSpinnerComponent,
-    MapaChacaraPage
+    MapaChacaraPage,
+    PequenoNucleoDetailPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(CONST.FIREBASE_CONFIG),
     TextMaskModule,
-    AngularFireOfflineModule
+    AngularFireOfflineModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -199,7 +205,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PauloCinaraPage,
     DarciSarahPage,
     LoadingSpinnerComponent,
-    MapaChacaraPage
+    MapaChacaraPage,
+    PequenoNucleoDetailPage
   ],
   providers: [
     StatusBar,
