@@ -1,0 +1,590 @@
+[
+  {
+    "nome": "Abigail C.",
+    "email": "acassianodefaria@gmail.com",
+    "fones": "3552-2046/9.81328900",
+    "diaSemana": "Terça",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 30,
+        "max": 80
+    },
+    "tipo": "Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Amir e Josy",
+    "email": "almirjacinto@gmail.com/josy.jacinto@gmail.com",
+    "fones": "9.9159-1016/9.8349-3607",
+    "diaSemana": "Sexta",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 40,
+        "max": -1
+    },
+    "tipo": "Família",
+    "cidade": "Park Way -DF",
+    "maturidade": "Connect"
+  },
+  {
+    "nome": "Andre e Emanuelle",
+    "email": "andrefranciscoalves@gmail.com/emanuelleucb@yahoo.com.br",
+    "fones": "9.9641-9709/99348-5828",
+    "diaSemana": "Sexta",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 25,
+        "max": 48
+    },
+    "tipo": "Casais",
+    "cidade": "Samambaia Sul",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Arissa P.",
+    "email": "lissa_2310@hotmail.com",
+    "fones": "9.8228-1760",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 18,
+        "max": 25
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Aurison",
+    "email": "altitudevertical@gmail.com",
+    "fones": "9.8121-2909",
+    "diaSemana": "Terça",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 10,
+        "max": 16
+    },
+    "tipo": "Adolescentes- Meninos",
+    "cidade": "Riacho Fundo I - DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Aurison e Michelle",
+    "email": "dra.michelleamorim@doctor.com",
+    "fones": "9.8199-7349",
+    "diaSemana": "Sábado",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 17,
+        "max": -1
+    },
+    "tipo": "Casais",
+    "cidade": "Riacho Fundo I - DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Bárbara e Bianca",
+    "email": "barbarachrisbs@gmail.com",
+    "fones": "9.9154-5165/9.8206-4401",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 12,
+        "max": 15
+    },
+    "tipo": "Adolescentes- Meninas",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Babi Fernandes",
+    "email": "babissfernandes@gmail.com",
+    "fones": "9.8569-9488",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 24,
+        "max": 30
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Sala 308, igreja, Núcleo Bandeirante -DF",
+    "maturidade": "Connect"
+  },
+  {
+    "nome": "Beth, Marco, Ana , Wellington , Samuel e Francisca",
+    "email": "negraoelizabeth8@gmail.com",
+    "fones": "9.8274-3054",
+    "diaSemana": "Sábado",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 30,
+        "max": 80
+    },
+    "tipo": "Casais",
+    "cidade": "Vicentes Pires ou Guará",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Camila Taveira",
+    "email": "camila.rudy@hotmail.com",
+    "fones": "9.8216-1706",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 14,
+        "max": 15
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Carol M.",
+    "email": "carolinamm.miranda@gmail.com",
+    "fones": "9.9995-1077",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 13,
+        "max": 15
+    },
+    "tipo": "Adolescentes - Meninas",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Daiana e Moisés",
+    "email": "cardoso.daiana@gmail.com",
+    "fones": "9.9217-8947/9.9124-0719",
+    "diaSemana": "Sábado",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 25,
+        "max": 48
+    },
+    "tipo": "Casais",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Dâmaris Braz",
+    "email": "damaris.ribas@gmail.com",
+    "fones": "9.8155-6272",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": -1
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Danielle e Maurício",
+    "email": "daniellesslouvor@gmail.com",
+    "fones": "9.8452-9114",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": 40
+    },
+    "tipo": "Casais",
+    "cidade": "Riacho Fundo I - DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Debora",
+    "email": "debora.b.morais@hotmail.com",
+    "fones": "9.8370-0102",
+    "diaSemana": "Segunda",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": -1
+    },
+    "tipo": "Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Deusa e Yasmin Costa",
+    "email": "deusenir.soares@gmail.com",
+    "fones": "9.8148-4127/9.9863-368",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": 20
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Connect"
+  },
+  {
+    "nome": "Eber e Gisa",
+    "email": "eberdoria@hotmail.com/gisa.ramos@hotmail.com",
+    "fones": "9.9292-3535/9.9188-2535",
+    "diaSemana": "Segunda",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 25,
+        "max": -1
+    },
+    "tipo": "Casais",
+    "cidade": "Arniqueiras - DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Fernanda do N. Marques",
+    "email": "fernandadnmarques@gmail.com",
+    "fones": "9.8260-5814",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 14,
+        "max": -1
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Francisco e Vânia",
+    "email": "vaniacsv@hotmail.com",
+    "fones": "9.9358-6363",
+    "diaSemana": "Terça",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 30,
+        "max": 50
+    },
+    "tipo": "Casais",
+    "cidade": "Arniqueiras - DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Gabriela Gaze",
+    "email": "gabygaze@hotmail.com",
+    "fones": "9.811-4138",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": 18
+    },
+    "tipo": "Adolescentes - Meninas",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Geovanna",
+    "email": "geovannabf123@gmail.com",
+    "fones": "9.8172-6121",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 12,
+        "max": 18
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Gregore Marinho",
+    "email": "gregoresa@gmail.com",
+    "fones": "9.9242-8834",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 24,
+        "max": 40
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Guilherme V.",
+    "email": "viniciustesla@gmail.com",
+    "fones": "9.8122-6245",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 23,
+        "max": 30
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Iris",
+    "email": "iris_nf@hotmail.com",
+    "fones": "9.9166-0152",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 18,
+        "max": 28
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Connect"
+  },
+  {
+    "nome": "Isabela e Marina",
+    "email": "isabelacostasant@gmail.com/marinaetiel@gmail.com",
+    "fones": "9.8145-5432/9.9673-9875",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 10,
+        "max": 12
+    },
+    "tipo": "Adolescentes - Meninas",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Isabella Caroline",
+    "email": "isabella.csc@hotmail.com",
+    "fones": "9.8305-7762",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": 18
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Jane Cleide",
+    "email": "jcleide2003@gmail.com",
+    "fones": "9.8138-9041",
+    "diaSemana": "Sábado",
+    "hora": "16h",
+    "faixaEtaria": {
+        "min": 21,
+        "max": -1
+    },
+    "tipo": "Mulheres",
+    "cidade": "CandangolândiaSemana -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Joel G.",
+    "email": "joelgomes25@gmail.com",
+    "fones": "9.9867-8195/3399-4467",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 12,
+        "max": 26
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Laiany C.",
+    "email": "laianycalixto@gmail.com",
+    "fones": "9.8262-1205",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 19,
+        "max": 25
+    },
+    "tipo": "Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Laryssa R.",
+    "email": "laryssa.ribeiiroo@gmail.com/lary_yssinha@hotmail.com",
+    "fones": "9.8567-1021",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 17,
+        "max": 22
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Leandro e Lívia",
+    "email": "leandrormello@gmail.com",
+    "fones": "3536-2209/9.8174-9786",
+    "diaSemana": "Sexta",
+    "hora": "21h",
+    "faixaEtaria": {
+        "min": 25,
+        "max": 40
+    },
+    "tipo": "Casais",
+    "cidade": "Guará II -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Luis e Shirley",
+    "email": "shirleynbrandao@hotmail.com/grafid@gmail.com",
+    "fones": "9.9349-2020/9.9228-0344",
+    "diaSemana": "Sábado",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": -1
+    },
+    "tipo": "Casais",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Luiz Henrique",
+    "email": "luizcbs.08@hotmail.com",
+    "fones": "9.9988-8882/3536-2209",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": -1
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Lula e Angela",
+    "email": "angelacristinaac@hotmail.com",
+    "fones": "9.9157-2526",
+    "diaSemana": "Sexta",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 9,
+        "max": 46
+    },
+    "tipo": "Família",
+    "cidade": "Jardins Mangueiral - DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Luma",
+    "email": "lumaps16@gmail.com",
+    "fones": "9.8167-3071",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": 20
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Maira-Ane",
+    "email": "maira.ane@gmail.com",
+    "fones": "9.9297-5520",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 15,
+        "max": 20
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Marcus Cândido",
+    "email": "marcus_gn@hotmail.com",
+    "fones": "9.8506-1818",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": 25
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Exit"
+  },
+  {
+    "nome": "Mariana Lewinter",
+    "email": "marianalewinter@gmail.com",
+    "fones": "9.8281-5459",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": -1
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Matheus diaSemanas",
+    "email": "mtdiaSemanas.adv@hotmail.com",
+    "fones": "9.8124-4096",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 16,
+        "max": 23
+    },
+    "tipo": "Jovens Homens",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Nathany",
+    "email": "nathany.clemente.nr@gmail.com",
+    "fones": "98459-4952",
+    "diaSemana": "Sábado",
+    "hora": "19h",
+    "faixaEtaria": {
+        "min": 20,
+        "max": 25
+    },
+    "tipo": "Jovens Mulheres",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Over 30 (Sheyla)",
+    "email": "sheylaorientadora@hotmail.com",
+    "fones": "98426-5853",
+    "diaSemana": "Sábado",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 25,
+        "max": 50
+    },
+    "tipo": "Solteiros, divorciados, viúvos",
+    "cidade": "Núcleo Bandeirante -DF",
+    "maturidade": "Yong"
+  },
+  {
+    "nome": "Pim e Sandra",
+    "email": "euripedes0606@gmail.com/sandraperestrellog@gmail.com",
+    "fones": "9.8412-1543",
+    "diaSemana": "Quarta",
+    "hora": "20h",
+    "faixaEtaria": {
+        "min": 30,
+        "max": -1
+    },
+    "tipo": "Casais",
+    "cidade": "EPTG Águas Claras - DF",
+    "maturidade": "Exit"
+  }
+]
