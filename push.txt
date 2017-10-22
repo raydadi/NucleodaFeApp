@@ -1,0 +1,9 @@
+Alterado na pasta platform/android/project.properties
+
+de:
+cordova.system.library.2=com.google.android.gms:play-services-auth:+
+cordova.system.library.3=com.google.android.gms:play-services-identity:+
+
+para:
+cordova.system.library.2=com.google.android.gms:play-services-auth:11.0.1
+cordova.system.library.3=com.google.android.gms:play-services-identity:11.0.1

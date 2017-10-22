@@ -2,10 +2,14 @@
 
   <ion-header id="menu-header">
       <div>
-          <img *ngIf="user == null" src="assets/home/menu/login.png" />
+          <div class="imagemLogin">
+              <img *ngIf="user == null" src="assets/home/menu/login.png" />
+          </div>
           <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
 
-          <img *ngIf="user != null" [src]="user.imageUrl" />
+          <div class="imagemLogado">
+              <img *ngIf="user != null" [src]="user.imageUrl" />
+          </div>
           <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.displayName}}</h6>
           <p *ngIf="user != null">{{user.email}}</p>
       </div>

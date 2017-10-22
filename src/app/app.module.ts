@@ -77,6 +77,8 @@ import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-s
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireOfflineModule } from 'angularfire2-offline';
 
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
@@ -218,7 +220,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    Push
   ]
 })
 export class AppModule {}

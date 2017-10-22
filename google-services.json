@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "747227455200",
+    "firebase_url": "https://nfmobile-f334b.firebaseio.com",
+    "project_id": "nfmobile-f334b",
+    "storage_bucket": "nfmobile-f334b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747227455200:android:7e9ea4392a8b280e",
+        "android_client_info": {
+          "package_name": "br.com.nucleodafe.nucleodafemobile523292"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747227455200-4m5blubhhdo80mdfjit6ef3apofdqf6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy7ZbRQTqNBfgNb7rsOXVtRt1FaCG7B08"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

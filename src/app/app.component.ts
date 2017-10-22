@@ -18,6 +18,8 @@ import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-con
 import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +38,8 @@ export class MyApp {
     public splashScreen: SplashScreen,
     private nativeStorage: NativeStorage,
     public app: App,
-    public googlePlus: GooglePlus
+    public googlePlus: GooglePlus,
+    private push: Push
   ) {
     this.initializeApp();
     // set our app's pages
@@ -55,15 +58,6 @@ export class MyApp {
       }, (error) => {
 
       });
-  }
-
-  ionViewDidEnter() {
-      this.nativeStorage.getItem('user')
-        .then((data) => {
-          this.user = data;
-        }, (error) => {
-
-        });
   }
 
   initializeApp() {
@@ -98,8 +92,47 @@ export class MyApp {
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.pushsetup();
     });
   }
+
+  pushsetup() {
+    const options: PushOptions = {
+     android: {},
+     ios: {
+         alert: 'true',
+         badge: true,
+         sound: 'false'
+     },
+     windows: {},
+     browser: {
+       pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+     }
+    }
+
+    const pushObject: PushObject = this.push.init(options);
+
+    pushObject.on('notification').subscribe((notification: any) => {
+      if (notification.additionalData.foreground) {
+          alert("Recebi push notification")
+        // let youralert = this.alertCtrl.create({
+        //   title: 'New Push notification',
+        //   message: notification.message
+        // });
+        // youralert.present();
+      }
+    });
+
+    pushObject.on('registration').subscribe((registration: any) => {
+       //do whatever you want with the registration ID
+    });
+
+    pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+    
+    }
+
+
+
 
   changeRootPage(nativeStorage: NativeStorage, app: App) {
     nativeStorage.getItem('welcome')
