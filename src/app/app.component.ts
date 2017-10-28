@@ -68,24 +68,24 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
 
       if (env.platform.is('cordova')) {
-        env.googlePlus.trySilentLogin({
-          'scopes': '',
-          'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
-          'offline': true
-        }).then((user) => {
-          this.user = user;
-          env.nativeStorage.setItem('user', {
-            name: user.displayName,
-            email: user.email,
-            picture: user.imageUrl
-          }).then(() => {
-            console.log("sucesso");
-          }, (error) => {
-            console.log(error);
-          })
-        }, (error) => {
-          console.log(error);
-        });
+        // env.googlePlus.trySilentLogin({
+        //   'scopes': '',
+        //   'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
+        //   'offline': true
+        // }).then((user) => {
+        //   this.user = user;
+        //   env.nativeStorage.setItem('user', {
+        //     name: user.displayName,
+        //     email: user.email,
+        //     picture: user.imageUrl
+        //   }).then(() => {
+        //     console.log("sucesso");
+        //   }, (error) => {
+        //     console.log(error);
+        //   })
+        // }, (error) => {
+        //   console.log(error);
+        // });
       }
 
       env.changeRootPage(env.nativeStorage, env.app);
@@ -98,23 +98,23 @@ export class MyApp {
 
   pushsetup() {
     const options: PushOptions = {
-     android: {},
-     ios: {
-         alert: 'true',
-         badge: true,
-         sound: 'false'
-     },
-     windows: {},
-     browser: {
-       pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-     }
+      android: {},
+      ios: {
+        alert: 'true',
+        badge: true,
+        sound: 'false'
+      },
+      windows: {},
+      browser: {
+        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+      }
     }
 
     const pushObject: PushObject = this.push.init(options);
 
     pushObject.on('notification').subscribe((notification: any) => {
       if (notification.additionalData.foreground) {
-          alert("Recebi push notification")
+        alert("Recebi push notification")
         // let youralert = this.alertCtrl.create({
         //   title: 'New Push notification',
         //   message: notification.message
@@ -124,12 +124,12 @@ export class MyApp {
     });
 
     pushObject.on('registration').subscribe((registration: any) => {
-       //do whatever you want with the registration ID
+      //do whatever you want with the registration ID
     });
 
     pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
-    
-    }
+
+  }
 
 
 
@@ -182,7 +182,7 @@ export class MyApp {
         this.nativeStorage.remove('user');
         this.user = null;
         //nav.push(LoginPage);
-      }, function(error) {
+      }, function (error) {
         console.log(error);
       })
   }
