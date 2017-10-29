@@ -1,18 +1,50 @@
-<!--
-  Generated template for the MenuPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>menu</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<ion-menu>
+  
+    <ion-header id="menu-header">
+        <div>
+            <div class="imagemLogin">
+                <img *ngIf="user == null" src="assets/home/menu/login.png" />
+            </div>
+            <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
+  
+            <div class="imagemLogado">
+                <img *ngIf="user != null" [src]="user.imageUrl" />
+            </div>
+            <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.displayName}}</h6>
+            <p *ngIf="user != null">{{user.email}}</p>
+        </div>
+        <!-- <hr style="margin-top: 80%; background-color: white; height: 4px; width: 90%;" /> -->
+    </ion-header>
+  
+    <ion-content id="menu-content">
+        <ion-list>
+              <button class="menu-button" (click)="openEquipePastoral()" ion-item>
+                  <img src="assets/home/menu/equipe-pastoral.png" item-start />
+                  Equipe Pastoral
+              </button>
+              <button class="menu-button" (click)="openComoChegar()" ion-item>
+                  <img src="assets/home/menu/como-chegar.png" item-start />
+                  Como Chegar
+              </button>
+              <button class="menu-button" (click)="openComoContribuir()" ion-item>
+                  <img src="assets/home/menu/como-contribuir.png" item-start />
+                  Como Contribuir
+              </button>
+              <button class="menu-button" (click)="openSobre()" ion-item>
+                  <img src="assets/home/menu/sobre-isso.png" item-start />
+                  Sobre este App
+              </button>
+              <button *ngIf="user != null" class="menu-button" (click)="logout()" ion-item>
+                  <img src="assets/home/menu/sair.png" item-start />
+                  Sair
+              </button>
+        </ion-list>
+  
+      <!-- <ion-list>
+        <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list> -->
+    </ion-content>
+  
+  </ion-menu>

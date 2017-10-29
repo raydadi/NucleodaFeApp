@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ENVIAR MSG</ion-title>
+    <ion-buttons end>
+      <sino></sino>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="enviarPushForm" (ngSubmit)="enviar()">
+      <ion-item>
+        <ion-label floating>TITULO</ion-label>
+        <ion-input [(ngModel)]="push.titulo" formControlName="titulo" name="titulo" type="text"></ion-input>
+      </ion-item>
+      <div *ngIf="enviarPushForm.controls['titulo'].hasError('required') && enviarPushForm.controls['titulo'].touched">
+        Nome precisa ser preenchido!
+      </div>
+      <div *ngIf="enviarPushForm.controls['titulo'].hasError('minlength') && enviarPushForm.controls['titulo'].touched">
+        Nome precisa ter ao menos 3 caracteres!
+      </div>
+      <div *ngIf="enviarPushForm.controls['titulo'].hasError('maxlength') && enviarPushForm.controls['titulo'].touched">
+        Nome precisa pode ter no máximo 30 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>RESUMO</ion-label>
+        <ion-input [(ngModel)]="push.resumo" formControlName="resumo" name="resumo" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enviarPushForm.controls['resumo'].hasError('required') && enviarPushForm.controls['resumo'].touched">
+        Telefone precisa ser preenchido!
+      </div>
+      <div *ngIf="enviarPushForm.controls['resumo'].hasError('minlength') && enviarPushForm.controls['resumo'].touched">
+        Telefone precisa ter ao menos 8 caracteres!
+      </div>
+      <div *ngIf="enviarPushForm.controls['resumo'].hasError('maxlength') && enviarPushForm.controls['resumo'].touched">
+        Telefone precisa pode ter no máximo 15 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>IMAGEM</ion-label>
+        <ion-input [(ngModel)]="push.img" formControlName="img" name="img" type="img"></ion-input>
+      </ion-item>
+      <div *ngIf="enviarPushForm.controls['img'].hasError('required') && enviarPushForm.controls['img'].touched">
+        Email precisa ser preenchido!
+      </div>
+      <div *ngIf="enviarPushForm.controls['img'].hasError('minlength') && enviarPushForm.controls['img'].touched">
+        Email precisa ter ao menos 10 caracteres!
+      </div>
+      <div *ngIf="enviarPushForm.controls['img'].hasError('maxlength') && enviarPushForm.controls['img'].touched">
+        Email precisa pode ter no máximo 40 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>MENSAGEM</ion-label>
+        <ion-textarea [(ngModel)]="push.msg" formControlName="msg" name="msg" rows="10"></ion-textarea>
+      </ion-item>
+      <div *ngIf="enviarPushForm.controls['msg'].hasError('required') && enviarPushForm.controls['msg'].touched">
+        Pedido precisa ser preenchido!
+      </div>
+      <div *ngIf="enviarPushForm.controls['msg'].hasError('minlength') && enviarPushForm.controls['msg'].touched">
+        Pedido precisa ter ao menos 20 caracteres!
+      </div>
+      <div *ngIf="enviarPushForm.controls['msg'].hasError('maxlength') && enviarPushForm.controls['msg'].touched">
+        Pedido precisa pode ter no máximo 400 caracteres!
+      </div>
+
+      <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button>
+    </form>
+</ion-content>

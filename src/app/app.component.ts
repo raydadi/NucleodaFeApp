@@ -17,6 +17,7 @@ import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
 import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
 import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
+import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
 
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
@@ -173,6 +174,11 @@ export class MyApp {
   openLogin() {
     this.menu.close();
     this.nav.push(LoginPage);
+  }
+
+  openMensagem() {
+      this.menu.close();
+      this.nav.push(EnviarPushPage);
   }
 
   logout() {

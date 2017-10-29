@@ -13,7 +13,7 @@
           <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.displayName}}</h6>
           <p *ngIf="user != null">{{user.email}}</p>
       </div>
-      <!-- <hr style="margin-top: 80%; background-color: white; height: 4px; width: 90%;" /> -->
+
   </ion-header>
 
   <ion-content id="menu-content">
@@ -30,6 +30,10 @@
                 <img src="assets/home/menu/como-contribuir.png" item-start />
                 Como Contribuir
             </button>
+            <button *ngIf="user != null" class="menu-button" (click)="openMensagem()" ion-item>
+                <img src="assets/home/menu/notificacao.png" item-start />
+                Enviar mensagem
+            </button>
             <button class="menu-button" (click)="openSobre()" ion-item>
                 <img src="assets/home/menu/sobre-isso.png" item-start />
                 Sobre este App
@@ -39,12 +43,6 @@
                 Sair
             </button>
       </ion-list>
-
-    <!-- <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list> -->
   </ion-content>
 
 </ion-menu>

@@ -15,6 +15,7 @@ import { Toast } from '@ionic-native/toast';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
+
 import { LoginPage } from '../pages/menu-pages/login/login';
 import { SobrePage } from '../pages/menu-pages/sobre/sobre';
 import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral';
@@ -24,6 +25,8 @@ import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { MapaArniqueirasPage } from '../pages/menu-pages/como-chegar/mapa-arniqueiras/mapa-arniqueiras';
 import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede';
 import { MapaChacaraPage} from '../pages/menu-pages/como-chegar/mapa-chacara/mapa-chacara';
+import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
+
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
 import { MinisteriosPage } from '../pages/ministerios/ministerios';
@@ -140,7 +143,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     DarciSarahPage,
     LoadingSpinnerComponent,
     MapaChacaraPage,
-    PequenoNucleoDetailPage
+    PequenoNucleoDetailPage,
+    EnviarPushPage
   ],
   imports: [
     BrowserModule,
@@ -208,7 +212,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     DarciSarahPage,
     LoadingSpinnerComponent,
     MapaChacaraPage,
-    PequenoNucleoDetailPage
+    PequenoNucleoDetailPage,
+    EnviarPushPage
   ],
   providers: [
     StatusBar,
