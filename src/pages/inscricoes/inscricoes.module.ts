@@ -9,8 +9,5 @@ import { InscricoesPage } from './inscricoes';
   imports: [
     IonicPageModule.forChild(InscricoesPage),
   ],
-  exports: [
-    InscricoesPage
-  ]
 })
 export class InscricoesPageModule {}

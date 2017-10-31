@@ -40,6 +40,7 @@ export class MyApp {
     private nativeStorage: NativeStorage,
     public app: App,
     public googlePlus: GooglePlus,
+    public facebook: Facebook,
     private push: Push
   ) {
     this.initializeApp();
@@ -69,24 +70,24 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
 
       if (env.platform.is('cordova')) {
-        // env.googlePlus.trySilentLogin({
-        //   'scopes': '',
-        //   'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
-        //   'offline': true
-        // }).then((user) => {
-        //   this.user = user;
-        //   env.nativeStorage.setItem('user', {
-        //     name: user.displayName,
-        //     email: user.email,
-        //     picture: user.imageUrl
-        //   }).then(() => {
-        //     console.log("sucesso");
-        //   }, (error) => {
-        //     console.log(error);
-        //   })
-        // }, (error) => {
-        //   console.log(error);
-        // });
+        env.googlePlus.trySilentLogin({
+          'scopes': '',
+          'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
+          'offline': true
+        }).then((user) => {
+          this.user = user;
+          env.nativeStorage.setItem('user', {
+            name: user.displayName,
+            email: user.email,
+            picture: user.imageUrl
+          }).then(() => {
+            console.log("sucesso");
+          }, (error) => {
+            console.log(error);
+          })
+        }, (error) => {
+          console.log(error);
+        });
       }
 
       env.changeRootPage(env.nativeStorage, env.app);
@@ -191,6 +192,14 @@ export class MyApp {
       }, function (error) {
         console.log(error);
       })
+
+      this.facebook.logout().then((response) => {
+          
+      }, (error) => {
+        console.log(error);
+      })
+
+
   }
   // navigatePageSobre() {
   //     this.menu.close();

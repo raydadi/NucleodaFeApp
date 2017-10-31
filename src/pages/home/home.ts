@@ -11,13 +11,8 @@ import { AwardsJovensPage } from '../awards/awards-jovens/awards-jovens';
 import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampamento-jovens';
 import { CultoOnlinePage } from '../culto-online/culto-online';
 import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
+import { InscricoesPage } from '../inscricoes/inscricoes';
 
-/**
- * Generated class for the HomePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -64,6 +59,10 @@ export class HomePage {
 
   navToPequenoNucleo() {
       this.navCtrl.push(PequenoNucleoPage);
+  }
+
+  navToInscricoes() {
+      this.navCtrl.push(InscricoesPage);
   }
 
   popOver(ev) {

@@ -65,6 +65,7 @@ import { SinoPage } from '../pages/menu-pages/sino/sino';
 import { ModalPedidosOracaoPage } from '../pages/pedido-oracao/modal-pedidos-oracao/modal-pedidos-oracao';
 import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
 import { MenuPage } from '../pages/menu-pages/menu/menu';
+import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 
 import { IbiAlicePage } from '../pages/menu-pages/equipe-pastoral/ibi-alice/ibi-alice'
 import { AlexAnnePage } from '../pages/menu-pages/equipe-pastoral/alex-anne/alex-anne'
@@ -144,7 +145,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     LoadingSpinnerComponent,
     MapaChacaraPage,
     PequenoNucleoDetailPage,
-    EnviarPushPage
+    EnviarPushPage,
+    InscricoesPage
   ],
   imports: [
     BrowserModule,
@@ -213,7 +215,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     LoadingSpinnerComponent,
     MapaChacaraPage,
     PequenoNucleoDetailPage,
-    EnviarPushPage
+    EnviarPushPage,
+    InscricoesPage
   ],
   providers: [
     StatusBar,

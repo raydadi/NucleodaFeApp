@@ -7,7 +7,8 @@ import { HiltonHandreaPage } from './hilton-handrea/hilton-handrea'
 import { PauloCinaraPage } from './paulo-cinara/paulo-cinara'
 import { DarciSarahPage } from './darci-sarah/darci-sarah'
 
-import { AngularFireOfflineDatabase, AfoListObservable } from 'angularfire2-offline/database';
+import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -18,7 +19,7 @@ import 'firebase/storage';
   templateUrl: 'equipe-pastoral.html',
 })
 export class EquipePastoralPage {
-  equipePastoral: AfoListObservable<any>;
+  equipePastoral: FirebaseListObservable<any>;
   imgsource: Array<any> = [];
   showSpinner: boolean = true;
   equipePastoralArray: Array<any> = [];
@@ -26,7 +27,7 @@ export class EquipePastoralPage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      public db: AngularFireOfflineDatabase,
+      public db: AngularFireDatabase,
       public modalCtrl: ModalController,
       public zone: NgZone
   ) {

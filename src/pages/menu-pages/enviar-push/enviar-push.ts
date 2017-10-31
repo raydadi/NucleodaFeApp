@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+// https://devdactic.com/ionic-2-images/
+
 @IonicPage()
 @Component({
   selector: 'page-enviar-push',
