@@ -1,3 +1,26 @@
-page-pequeno-nucleo-detail {
+page-pequeno-nucleo-detail h2 {
+    font-weight: bold !important;
+}
 
+page-pequeno-nucleo-detail {
+    background-color: #D4ECFC !important;
+}
+
+page-pequeno-nucleo-detail .card-background-page .card-title {
+    position: absolute;
+    top: 40%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+page-pequeno-nucleo-detail .card-title {
+    background-color: rgb(230, 242, 255);
+    opacity: 0.5;
+}
+
+page-pequeno-nucleo-detail ion-content {
+    background-color: #D4ECFC !important;
 }

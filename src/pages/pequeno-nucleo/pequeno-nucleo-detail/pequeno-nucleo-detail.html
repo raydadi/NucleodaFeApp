@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{pequenoNucleo.nome}}</ion-title>
+    <ion-title>PEQUENO NÚCLEO</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -9,30 +9,34 @@
 </ion-header>
 
 
-<ion-content class="card-background-page" padding>
+<ion-content class="card-background-page">
     <ion-card style="text-align: justify;">
-      <img src="assets/ministerios/teatro.jpg" />
-      <div class="card-title">{{pequenoNucleo.nome}}</div>
-      <p>{{pequenoNucleo.tipo}}</p>
-      <h2>DESCRIÇÃO:</h2>
+        <loading-spinner margin="10px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+      <!-- <img src="assets/ministerios/teatro.jpg" /> -->
+      <img (load)="showSpinnerMeth()" src="{{imgsource}}" />
+      <div padding>
+      <div *ngIf="showTitle" class="card-title">{{pequenoNucleo.nome}}</div>
+      <h2>TIPO:</h2>
+      <p>
+          {{pequenoNucleo.tipo}}
+      </p>
+      <h2>LOCAL, DIA E HORÁRIO:</h2>
+      <p>
+          {{pequenoNucleo.cidade}} - {{pequenoNucleo.diaSemana}} às {{pequenoNucleo.hora}}
+      </p>
+      <h2>EMAIL:</h2>
       <p>
           {{pequenoNucleo.email}}
       </p>
-      <h2>ATIVIDADE:</h2>
+      <h2>FAIXA ETÁRIA</h2>
       <p>
-          {{pequenoNucleo.fones}}
+          <span *ngIf="pequenoNucleo.max == -1">A partir de {{pequenoNucleo.faixaEtaria.min}} anos</span>
+          <span *ngIf="pequenoNucleo.max != -1">De {{pequenoNucleo.faixaEtaria.min}} até {{pequenoNucleo.faixaEtaria.max}} anos de idade</span>
       </p>
-      <h2>COMO AJUDAR:</h2>
-      <p>
-          {{pequenoNucleo.diaSemana}}
-      </p>
-      <h2>REQUISITOS:</h2>
-      <p>
-          {{pequenoNucleo.cidade}}
-      </p>
-      <h2>CONTATO:</h2>
+      <h2>MATURIDADE:</h2>
       <p>
           {{pequenoNucleo.maturidade}}
       </p>
+      </div>
     </ion-card>
 </ion-content>
