@@ -5,7 +5,7 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../../home/home';
 import { Toast } from '@ionic-native/toast';
 
-import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController, Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { FirebaseApp } from 'angularfire2';
@@ -32,7 +32,8 @@ export class LoginPage {
     public nativeStorage: NativeStorage,
     @Inject(FirebaseApp) firebaseApp: any,
     private toast: Toast,
-    private storage: Storage
+    private storage: Storage,
+    public events: Events
 
   ) {
     //this.facebook.browserInit(this.FB_APP_ID, "v2.8");
@@ -116,11 +117,14 @@ export class LoginPage {
   })
 
       this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+      this.events.publish('login:changed', user);
 
   }, (error) => {
         this.toast.show(`Error ao logar!`, 'short', 'bottom').subscribe(toast => { });
       loading.dismiss();
     });
+
+
 
   }
 

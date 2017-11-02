@@ -2,7 +2,7 @@ import { AngularFireModule } from 'angularfire2';
 import { Component, ViewChild } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { Platform, MenuController, Nav, App } from 'ionic-angular';
+import { Platform, MenuController, Nav, App, Events } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,7 +41,8 @@ export class MyApp {
     public app: App,
     public googlePlus: GooglePlus,
     public facebook: Facebook,
-    private push: Push
+    private push: Push,
+    public events: Events
   ) {
     this.initializeApp();
     // set our app's pages
@@ -60,6 +61,12 @@ export class MyApp {
       }, (error) => {
 
       });
+
+      events.subscribe('login:changed', user => {
+        if(user !== undefined && user !== ""){
+          this.user = user;
+        }
+      })
   }
 
   initializeApp() {
@@ -194,7 +201,7 @@ export class MyApp {
       })
 
       this.facebook.logout().then((response) => {
-          
+
       }, (error) => {
         console.log(error);
       })

@@ -77,11 +77,14 @@
     height: auto;
 }
 
-.imagemLogado {
+.divLogado {
     width: 85%;
     height: auto;
-    border-radius: 80%;
     overflow: hidden;
+}
+
+.imagemLogado {
+    border-radius: 50%;
 }
 
 .toolbar-background-md {
