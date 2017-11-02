@@ -8,9 +8,9 @@
           <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
 
           <div class="divLogado">
-              <img class="imagemLogado" *ngIf="user != null" [src]="user.imageUrl" />
+              <img class="imagemLogado" *ngIf="user != null" [src]="user.fotoUrl" />
           </div>
-          <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.displayName}}</h6>
+          <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.nome}}</h6>
           <p *ngIf="user != null">{{user.email}}</p>
       </div>
 

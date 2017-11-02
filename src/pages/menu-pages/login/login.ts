@@ -93,21 +93,28 @@ export class LoginPage {
 			'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
 			'offline': true
 		}).then((user) => {
+			const firecreds = firebase.auth.GoogleAuthProvider.credential(user.idToken);
+			
+			firebase.auth().signInWithCredential(firecreds).then((res) => {
+				this.user.nome = user.displayName;
+				this.user.email = user.email;
+				this.user.fotoUrl = user.imageUrl;
+				this.user.id = user.idToken;
+	
+				this.nativeStorage.setItem('user', this.user).then(() => {
+					nav.setRoot(HomePage);
+				}, (error) => {
+					this.toast.show(`Ocorreu um erro ao persistir os dados!`, 'short', 'bottom').subscribe(toast => { });
+				})
 
-			loading.dismiss();
-
-			this.user.nome = user.displayName;
-			this.user.email = user.email;
-			this.user.fotoUrl = user.imageUrl;
-
-			this.nativeStorage.setItem('user', this.user).then(() => {
-				nav.setRoot(HomePage);
-			}, (error) => {
-				this.toast.show(`Ocorreu um erro ao persistir os dados!`, 'short', 'bottom').subscribe(toast => { });
+				this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+				this.events.publish('login:changed', this.user);
+			}).catch((err) => {
+				alert('Firebase auth failed' + err);
+				this.toast.show(`Error ao logar!`, 'short', 'bottom').subscribe(toast => { });
 			})
 
-			this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
-			this.events.publish('login:changed', this.user);
+			loading.dismiss();
 
 		}, (error) => {
 			this.toast.show(`Error ao logar!`, 'short', 'bottom').subscribe(toast => { });
@@ -116,17 +123,16 @@ export class LoginPage {
 
 	}
 
-	doGoogleLogout() {
-
-		this.googlePlus.logout().then((response) => {
-			this.nativeStorage.remove('user');
-			this.user = null;
-			this.toast.show(`Usuário desconectado!`, 'short', 'bottom').subscribe(toast => { });
-		}, (error) => {
-			console.log(error);
-			this.toast.show(`Erro ao desconectar!`, 'short', 'bottom').subscribe(toast => { });
-		})
-	}
+	// doGoogleLogout() {
+	// 	this.googlePlus.logout().then((response) => {
+	// 		this.nativeStorage.remove('user');
+	// 		this.user = null;
+	// 		this.toast.show(`Usuário desconectado!`, 'short', 'bottom').subscribe(toast => { });
+	// 	}, (error) => {
+	// 		console.log(error);
+	// 		this.toast.show(`Erro ao desconectar!`, 'short', 'bottom').subscribe(toast => { });
+	// 	})
+	// }
 
 	doFacebookLogin() {
 
@@ -142,51 +148,64 @@ export class LoginPage {
 		permissions = ['public_profile', 'user_friends', 'email'];
 
 		this.facebook.login(permissions).then((response) => {
-			console.log("sucesso no login");
+
 			let userId = response.authResponse.userID;
 			let params = new Array<string>();
+			let accessToken = response.authResponse.accessToken;
 
 			//Getting name and gender properties
 			this.facebook.api("/me?fields=name,gender,email", params).then((user) => {
-				loading.dismiss();
+				
+				const firecreds = firebase.auth.FacebookAuthProvider.credential(accessToken);
+				
+				firebase.auth().signInWithCredential(firecreds).then((res) => {
+					
+					this.user.nome = user.name;
+					this.user.email = user.email;
+					this.user.fotoUrl = "https://graph.facebook.com/" + userId + "/picture?type=large";
+					
+					this.events.publish('login:changed', this.user);
+					
+					this.nativeStorage.setItem('user', this.user).then(() => {
+						nav.setRoot(HomePage);
+					}, (error) => {
+						this.toast.show(`Ocorreu um erro ao persistir os dados!`, 'short', 'bottom').subscribe(toast => { });
+					})
 
-				this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
-
-				this.user.nome = user.name;
-				this.user.email = user.email;
-				this.user.fotoUrl = "https://graph.facebook.com/" + userId + "/picture?type=large";
-
-				this.events.publish('login:changed', this.user);
-
-				this.nativeStorage.setItem('user', this.user).then(() => {
-					nav.setRoot(HomePage);
-				}, (error) => {
-					this.toast.show(`Ocorreu um erro ao persistir os dados!`, 'short', 'bottom').subscribe(toast => { });
+					this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+					
+				}).catch((err) => {
+					alert('Firebase auth failed' + err);
+					this.toast.show(`Erro ao conectar com facebook!`, 'short', 'bottom').subscribe(toast => { });
 				})
 			})
+
+			loading.dismiss();
+
 		}, (error) => {
 			loading.dismiss();
 			this.toast.show(`Erro ao conectar com facebook!`, 'short', 'bottom').subscribe(toast => { });
 		});
 	}
 
-	doFacebookLogout() {
-		var nav = this.navCtrl;
-		this.facebook.logout()
-			.then((response) => {
-				//user logged out so we will remove him from the NativeStorage
-				this.nativeStorage.remove('user');
-				this.user = null;
-				this.toast.show(`Usuário desconectado!`, 'short', 'bottom').subscribe(toast => { });
-				// nav.push(LoginPage);
-			}, (error) => {
-				console.log(error);
-				this.toast.show(`Erro ao desconectar!`, 'short', 'bottom').subscribe(toast => { });
-			});
-	}
+	// doFacebookLogout() {
+	// 	var nav = this.navCtrl;
+	// 	this.facebook.logout()
+	// 		.then((response) => {
+	// 			//user logged out so we will remove him from the NativeStorage
+	// 			this.nativeStorage.remove('user');
+	// 			this.user = null;
+	// 			this.toast.show(`Usuário desconectado!`, 'short', 'bottom').subscribe(toast => { });
+	// 			// nav.push(LoginPage);
+	// 		}, (error) => {
+	// 			console.log(error);
+	// 			this.toast.show(`Erro ao desconectar!`, 'short', 'bottom').subscribe(toast => { });
+	// 		});
+	// }
 }
 
 export class User {
+	id: string;
 	nome: string;
 	email: string;
 	fotoUrl: string;

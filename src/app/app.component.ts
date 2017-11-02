@@ -133,6 +133,11 @@ export class MyApp {
 
 		pushObject.on('registration').subscribe((registration: any) => {
 			//do whatever you want with the registration ID
+			this.nativeStorage.setItem('device_token', registration.registrationId).then(() => {
+				console.log("Token salvo com sucesso!");
+			}, (error) => {
+				console.log(error);
+			})
 		});
 
 		pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
@@ -189,19 +194,19 @@ export class MyApp {
 
 	logout() {
 		this.menu.close();
-		this.googlePlus.logout()
-			.then((response) => {
-				this.nativeStorage.remove('user');
-				this.user = null;
-				//nav.push(LoginPage);
-			}, function (error) {
-				console.log(error);
-			})
+		this.googlePlus.logout().then((response) => {
+			
+		}, function (error) {
+			console.log(error);
+		})
 
 		this.facebook.logout().then((response) => {
 
 		}, (error) => {
 			console.log(error);
 		})
+
+		this.nativeStorage.remove('user');
+		this.user = null;
 	}
 }

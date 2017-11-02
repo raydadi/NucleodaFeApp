@@ -1,8 +1,9 @@
 page-login .logo {
     max-width: 45%;
     margin: auto;
-    display:flex;
-    padding-top: 65px;
+    display: flex;
+    //padding-top: 65px;
+    position: relative;
 }
 
 page-login .logo2 {
@@ -16,7 +17,7 @@ page-login .logo2 {
 page-login .google {
     margin: auto;
     display:flex;
-    padding-top: 90px;
+    padding-top: 20px;
     max-width: 70%;
 
     // display: block;
@@ -32,8 +33,9 @@ page-login .google {
 page-login .facebook {
     margin: auto;
     display:flex;
-    padding-top: 60px;
+    padding-top: 20px;
     max-width: 70%;
+    position: relative;
     // display: block;
     // position: absolute;
     // top: 55%;
