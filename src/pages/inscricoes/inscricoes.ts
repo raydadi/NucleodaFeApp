@@ -1,7 +1,8 @@
 import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -12,7 +13,7 @@ import 'firebase/storage';
   templateUrl: 'inscricoes.html',
 })
 export class InscricoesPage {
-    inscricoes: FirebaseListObservable<any>;
+    inscricoes: Observable<any[]>;
     imgsource: Array<any> = [];
     showSpinner: boolean = true;
     inscricoesArray: Array<any> = [];
@@ -43,6 +44,7 @@ export class InscricoesPage {
               this.showSpinner = false;
           }
         });
+
       });
   }
 
@@ -53,7 +55,7 @@ export class InscricoesPage {
         // this.navCtrl.push(IbiAlicePage,{
         //     data: this.inscricoesArray[0]
         // });
-        window.open("http://www.nucleodafe.com/connect", '_blank', 'location=no');
+        window.open(this.inscricoesArray[0].url, '_blank', 'location=no');
         break;
     }
   }

@@ -19,10 +19,18 @@
 <ion-content padding class="action-sheets-basic-page">
   <ion-list *ngIf="user == null">
 
-      <img class="logo" src="assets/menu/sobre/logo.png" />
+      <img class="logo" src="assets/home/menu/login.png" />
 
       <img (click)="doGoogleLogin()" class="google" src="assets/menu/login/logo-google.png" />
       <img (click)="doFacebookLogin()" class="facebook" src="assets/menu/login/logo-face.png" />
+
+      <ion-footer padding>
+          <img class="logo2" src="assets/home/Logo-Nucleo.png" />
+        <!-- <ion-toolbar>
+
+        </ion-toolbar> -->
+      </ion-footer>
+
     <!-- <ion-item>
       <ion-label floating>Usuário</ion-label>
       <ion-input type="text" value=""></ion-input>

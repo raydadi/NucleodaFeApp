@@ -1,3 +1,17 @@
 page-inscricoes {
 
 }
+
+page-inscricoes .card-title {
+    background-color: rgb(230, 242, 255);
+    opacity: 0.50;
+}
+
+page-inscricoes .card-title span {
+    opacity: 1;
+    color: black;
+}
+
+page-inscricoes ion-content {
+    background-color: #D4ECFC !important;
+}
