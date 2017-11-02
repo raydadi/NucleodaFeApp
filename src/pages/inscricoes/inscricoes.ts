@@ -50,14 +50,7 @@ export class InscricoesPage {
 
   open(key) {
 
-    switch (key) {
-      case "0":
-        // this.navCtrl.push(IbiAlicePage,{
-        //     data: this.inscricoesArray[0]
-        // });
-        window.open(this.inscricoesArray[0].url, '_blank', 'location=no');
-        break;
-    }
+      window.open(this.inscricoesArray[key].url, '_blank', 'location=yes');
   }
 
 
