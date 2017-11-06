@@ -52,4 +52,8 @@ export class PequenoNucleoPage {
           data: this.pequenosNucleosArray[key]
       });
   }
+
+  openFiltros() {
+    
+  }
 }
