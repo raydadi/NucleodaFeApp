@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 import { TestemunhosPage } from '../testemunhos/testemunhos';
@@ -12,69 +12,146 @@ import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampa
 import { CultoOnlinePage } from '../culto-online/culto-online';
 import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
 import { InscricoesPage } from '../inscricoes/inscricoes';
+import introJs from 'intro.js/intro.js';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+    selector: 'page-home',
+    templateUrl: 'home.html',
 })
 export class HomePage {
-// @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
-// @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
+    // @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+    // @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
-  }
+    acampamento: Icone;
+    awards: Icone;
 
-  navToTestemunhos() {
-      this.navCtrl.push(TestemunhosPage);
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
+        this.acampamento = new Icone();
+        this.awards = new Icone();
+    }
 
-  navToPedido() {
-      this.navCtrl.push(PedidoOracaoPage);
-  }
+    intro() {
+        let intro = introJs.introJs();
+        // Initialize steps
 
-  navToMinisterio() {
-      this.navCtrl.push(MinisteriosPage);
-  }
+        intro.setOptions({
+            'showBullets': false,
+            'skipLabel': 'Pular',
+            'nextLabel': 'Ok',
+            'doneLabel': 'Fechar',
+            'hidePrev': true,
+            'hideNext': true,
+            'showStepNumbers': false,
+            steps: [
+                {
+                    intro: "<h2>BEM-VINDO</h2><p style=\"color: rgba(0,0,0,.5);\">Iremos te guiar pelas principais funcionalidades dessa nova versão, ok?</p>"
+                },
+                {
+                    element: document.querySelector('#step1'),
+                    intro: "<h2>PEQUENOS NÚCLEOS</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: "right"
+                },
+                {
+                    element: document.querySelector('#step2'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: 'left'
+                },
+                {
+                    element: document.querySelector('#step3'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: "right"
+                },
+                {
+                    element: document.querySelector('#step4'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: "left"
+                },
+                {
+                    element: document.querySelector('#step5'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: "right"
+                },
+                {
+                    element: document.querySelector('#step6'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+                    position: "left"
+                },
+                {
+                    element: document.querySelector('#step7'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
+                },
+                {
+                    element: document.querySelector('#step8'),
+                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
+                }
+            ]
+        });
+        intro.start();
+    }
 
-  navToLogin() {
-      this.navCtrl.push(LoginPage);
-  }
+    ionViewDidLoad() {
+        this.intro();
 
-  navToAvisos() {
-      this.navCtrl.push(AvisosPage);
-  }
 
-  navToAwards() {
-      this.navCtrl.push(AwardsJovensPage);
-  }
+    }
 
-  navToAcampamento() {
-      this.navCtrl.push(AcampamentoJovensPage);
-  }
+    navToTestemunhos() {
+        this.navCtrl.push(TestemunhosPage);
+    }
 
-  navToCultoOnline() {
-      this.navCtrl.push(CultoOnlinePage);
-  }
+    navToPedido() {
+        this.navCtrl.push(PedidoOracaoPage);
+    }
 
-  navToPequenoNucleo() {
-      this.navCtrl.push(PequenoNucleoPage);
-  }
+    navToMinisterio() {
+        this.navCtrl.push(MinisteriosPage);
+    }
 
-  navToInscricoes() {
-      this.navCtrl.push(InscricoesPage);
-  }
+    navToLogin() {
+        this.navCtrl.push(LoginPage);
+    }
 
-  popOver(ev) {
-      let popover = this.popoverCtrl.create(PopoverNotificationPage, {
-    //  contentEle: this.content.nativeElement,
-    //  textEle: this.text.nativeElement
-   });
+    navToAvisos() {
+        this.navCtrl.push(AvisosPage);
+    }
 
-   popover.present({
-     ev: ev
-   });
-    // let popover = this.popoverCtrl.create(PopoverPage);
-    // popover.present();
-  }
+    navToAwards() {
+        this.navCtrl.push(AwardsJovensPage);
+    }
+
+    navToAcampamento() {
+        this.navCtrl.push(AcampamentoJovensPage);
+    }
+
+    navToCultoOnline() {
+        this.navCtrl.push(CultoOnlinePage);
+    }
+
+    navToPequenoNucleo() {
+        this.navCtrl.push(PequenoNucleoPage);
+    }
+
+    navToInscricoes() {
+        this.navCtrl.push(InscricoesPage);
+    }
+
+    popOver(ev) {
+        let popover = this.popoverCtrl.create(PopoverNotificationPage, {
+            //  contentEle: this.content.nativeElement,
+            //  textEle: this.text.nativeElement
+        });
+
+        popover.present({
+            ev: ev
+        });
+        // let popover = this.popoverCtrl.create(PopoverPage);
+        // popover.present();
+    }
+}
+
+export class Icone {
+    nome: string;
+    imgUrl: string;
+    visivel: boolean;
 }

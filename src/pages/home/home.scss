@@ -1,3 +1,72 @@
 page-home ion-content {
     background-color: #D4ECFC !important;
+    box-sizing: content-box !important;
+}
+
+
+// page-home #step1 {
+//     box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.8);
+//     opacity: 0.5;
+//     z-index: 99999;
+// }
+
+page-home .introjs-fixParent {
+    //z-index: 99999 !important;
+    
+}
+
+
+.introjs-helperNumberLayer {
+    top: -16px !important;
+    left: -16px !important;
+}
+
+.introjs-prevbutton {
+    display: none !important;
+}
+
+.introjs-tooltip {
+    font-size: 17px !important;
+    min-width: 200px !important;
+    max-width: 350px !important;
+    max-height: 350px !important;
+    text-align: center !important;
+}
+
+.introjs-button {
+    font-size: 17px !important;
+    text-align: end !important;
+    border-radius: 2px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    color: #488aff !important;
+    background-color: transparent !important;
+    margin: 0 10px 0 10px !important;
+    padding: 10px !important;
+    border: 0 !important;
+    background-image: none !important;
+}
+
+.introjs-tooltipbuttons {
+    text-align: center !important;
+}
+
+.introjs-tooltipReferenceLayer {
+    //box-sizing: content-box !important;
+    //-webkit-box-sizing: border-box !important;
+}
+
+.introjs-helperLayer {
+    //opacity: 0.5 !important;
+    //z-index: 0 !important;
+}
+
+.introjs-overlay {
+    //position: absolute !important;
+}
+
+.introjs-showElement {
+    //z-index: 9999999 !important;
 }
