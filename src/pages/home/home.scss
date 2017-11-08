@@ -12,7 +12,7 @@ page-home ion-content {
 
 page-home .introjs-fixParent {
     //z-index: 99999 !important;
-    
+
 }
 
 
@@ -60,7 +60,14 @@ page-home .introjs-fixParent {
 
 .introjs-helperLayer {
     //opacity: 0.5 !important;
-    //z-index: 0 !important;
+    background-image: url("../assets/home/Pedido-de-oracao.png");
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+
 }
 
 .introjs-overlay {
