@@ -4,6 +4,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../../home/home';
 import { Toast } from '@ionic-native/toast';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, LoadingController, Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -20,6 +21,7 @@ import * as firebase from 'firebase';
 export class LoginPage {
 	user: User = null;
 	FB_APP_ID: number = 1091217954342738;
+	users: FirebaseListObservable<any>;
 
 	constructor(
 		public navCtrl: NavController,
@@ -33,10 +35,12 @@ export class LoginPage {
 		@Inject(FirebaseApp) firebaseApp: any,
 		private toast: Toast,
 		private storage: Storage,
-		public events: Events
+		public events: Events,
+		public db: AngularFireDatabase
 
 	) {
 		this.user = new User();
+		this.users = db.list("/usuarios");
 	}
 
 	doGoogleLogin() {
@@ -62,11 +66,19 @@ export class LoginPage {
 				this.user.fotoUrl = user.imageUrl;
 				this.user.id = user.idToken;
 
+				this.nativeStorage.getItem('device_token').then((data) => {
+					this.user.deviceToken = data;
+				}, (error) => {
+					alert('Erro ao conseguir device token' + error);
+				});
+
 				this.nativeStorage.setItem('user', this.user).then(() => {
 					nav.setRoot(HomePage);
 				}, (error) => {
 					this.toast.show(`Ocorreu um erro ao persistir os dados!`, 'short', 'bottom').subscribe(toast => { });
 				})
+
+				this.users.push(this.user);
 
 				this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
 				this.events.publish('login:changed', this.user);
@@ -124,6 +136,15 @@ export class LoginPage {
 					this.user.nome = user.name;
 					this.user.email = user.email;
 					this.user.fotoUrl = "https://graph.facebook.com/" + userId + "/picture?type=large";
+					this.user.id = userId;
+
+					this.nativeStorage.getItem('device_token').then((data) => {
+						this.user.deviceToken = data;
+					}, (error) => {
+						alert('Erro ao conseguir device token' + error);
+					});
+
+					this.users.push(this.user);
 
 					this.events.publish('login:changed', this.user);
 
@@ -170,4 +191,5 @@ export class User {
 	nome: string;
 	email: string;
 	fotoUrl: string;
+	deviceToken: string;
 }
