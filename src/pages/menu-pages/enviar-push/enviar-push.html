@@ -16,13 +16,13 @@
         <ion-input [(ngModel)]="push.titulo" formControlName="titulo" name="titulo" type="text"></ion-input>
       </ion-item>
       <div *ngIf="enviarPushForm.controls['titulo'].hasError('required') && enviarPushForm.controls['titulo'].touched">
-        Nome precisa ser preenchido!
+        Título precisa ser preenchido!
       </div>
       <div *ngIf="enviarPushForm.controls['titulo'].hasError('minlength') && enviarPushForm.controls['titulo'].touched">
-        Nome precisa ter ao menos 3 caracteres!
+        Título precisa ter ao menos 5 caracteres!
       </div>
       <div *ngIf="enviarPushForm.controls['titulo'].hasError('maxlength') && enviarPushForm.controls['titulo'].touched">
-        Nome precisa pode ter no máximo 30 caracteres!
+        Título pode ter no máximo 30 caracteres!
       </div>
 
       <ion-item>
@@ -30,43 +30,51 @@
         <ion-input [(ngModel)]="push.resumo" formControlName="resumo" name="resumo" type="tel"></ion-input>
       </ion-item>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('required') && enviarPushForm.controls['resumo'].touched">
-        Telefone precisa ser preenchido!
+        Resumo precisa ser preenchido!
       </div>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('minlength') && enviarPushForm.controls['resumo'].touched">
-        Telefone precisa ter ao menos 8 caracteres!
+        Resumo precisa ter ao menos 10 caracteres!
       </div>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('maxlength') && enviarPushForm.controls['resumo'].touched">
-        Telefone precisa pode ter no máximo 15 caracteres!
+        Resumo pode ter no máximo 500 caracteres!
       </div>
 
       <ion-item>
         <ion-label floating>IMAGEM</ion-label>
-        <ion-input [(ngModel)]="push.img" formControlName="img" name="img" type="img"></ion-input>
+        <!--<img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">-->
+        <img src="{{pathForImage(push.img)}}" style="width: 100%" [hidden]="push.img === null">
+        <!--<h3 [hidden]="lastImage !== null">Please Select Image!</h3>-->
+        <h3 [hidden]="push.img !== null">Porfavor selecione uma imagem!</h3>
       </ion-item>
-      <div *ngIf="enviarPushForm.controls['img'].hasError('required') && enviarPushForm.controls['img'].touched">
-        Email precisa ser preenchido!
-      </div>
-      <div *ngIf="enviarPushForm.controls['img'].hasError('minlength') && enviarPushForm.controls['img'].touched">
-        Email precisa ter ao menos 10 caracteres!
-      </div>
-      <div *ngIf="enviarPushForm.controls['img'].hasError('maxlength') && enviarPushForm.controls['img'].touched">
-        Email precisa pode ter no máximo 40 caracteres!
-      </div>
 
       <ion-item>
         <ion-label floating>MENSAGEM</ion-label>
         <ion-textarea [(ngModel)]="push.msg" formControlName="msg" name="msg" rows="10"></ion-textarea>
       </ion-item>
       <div *ngIf="enviarPushForm.controls['msg'].hasError('required') && enviarPushForm.controls['msg'].touched">
-        Pedido precisa ser preenchido!
+        Mensagem precisa ser preenchida!
       </div>
       <div *ngIf="enviarPushForm.controls['msg'].hasError('minlength') && enviarPushForm.controls['msg'].touched">
-        Pedido precisa ter ao menos 20 caracteres!
+        Mensagem precisa ter ao menos 20 caracteres!
       </div>
       <div *ngIf="enviarPushForm.controls['msg'].hasError('maxlength') && enviarPushForm.controls['msg'].touched">
-        Pedido precisa pode ter no máximo 400 caracteres!
+        Mensagem pode ter no máximo 500 caracteres!
       </div>
 
       <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button>
     </form>
+
+    <ion-footer>
+      <ion-toolbar color="primary">
+        <ion-buttons>
+          <button ion-button icon-left (click)="presentActionSheet()">
+            <ion-icon name="camera"></ion-icon>Selecione uma imagem
+          </button>
+          <!--<button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">-->
+          <button ion-button icon-left (click)="uploadImage()" [disabled]="push.img === null">
+            <ion-icon name="cloud-upload"></ion-icon>Upload
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
 </ion-content>
