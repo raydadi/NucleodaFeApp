@@ -1,14 +1,9 @@
 import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { IbiAlicePage } from './ibi-alice/ibi-alice'
-import { AlexAnnePage } from './alex-anne/alex-anne'
-import { EduardoClaudiaPage } from './eduardo-claudia/eduardo-claudia'
-import { HiltonHandreaPage } from './hilton-handrea/hilton-handrea'
-import { PauloCinaraPage } from './paulo-cinara/paulo-cinara'
-import { DarciSarahPage } from './darci-sarah/darci-sarah'
+
+import { EquipePastoralDetailPage } from './equipe-pastoral-detail/equipe-pastoral-detail'
 
 import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
-
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -57,37 +52,40 @@ export class EquipePastoralPage {
 
   open(key) {
 
-    switch (key) {
-      case "0":
-        this.navCtrl.push(IbiAlicePage,{
-            data: this.equipePastoralArray[0]
-        });
-        break;
-      case "1":
-        this.navCtrl.push(AlexAnnePage,{
-            data: this.equipePastoralArray[1]
-        });
-        break;
-      case "2":
-        this.navCtrl.push(EduardoClaudiaPage,{
-            data: this.equipePastoralArray[2]
-        });
-        break;
-      case "3":
-        this.navCtrl.push(HiltonHandreaPage,{
-            data: this.equipePastoralArray[3]
-        });
-        break;
-      case "4":
-        this.navCtrl.push(PauloCinaraPage,{
-            data: this.equipePastoralArray[4]
-        });
-        break;
-      case "5":
-        this.navCtrl.push(DarciSarahPage,{
-            data: this.equipePastoralArray[5]
-        });
-        break;
-    }
+      this.navCtrl.push(EquipePastoralPage,{
+          data: this.equipePastoralArray[key]
+      });
+    // switch (key) {
+    //   case "0":
+    //     this.navCtrl.push(IbiAlicePage,{
+    //         data: this.equipePastoralArray[0]
+    //     });
+    //     break;
+    //   case "1":
+    //     this.navCtrl.push(AlexAnnePage,{
+    //         data: this.equipePastoralArray[1]
+    //     });
+    //     break;
+    //   case "2":
+    //     this.navCtrl.push(EduardoClaudiaPage,{
+    //         data: this.equipePastoralArray[2]
+    //     });
+    //     break;
+    //   case "3":
+    //     this.navCtrl.push(HiltonHandreaPage,{
+    //         data: this.equipePastoralArray[3]
+    //     });
+    //     break;
+    //   case "4":
+    //     this.navCtrl.push(PauloCinaraPage,{
+    //         data: this.equipePastoralArray[4]
+    //     });
+    //     break;
+    //   case "5":
+    //     this.navCtrl.push(DarciSarahPage,{
+    //         data: this.equipePastoralArray[5]
+    //     });
+    //     break;
+    // }
   }
 }

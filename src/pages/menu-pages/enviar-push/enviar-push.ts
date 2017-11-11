@@ -21,8 +21,9 @@ export class EnviarPushPage {
         'img': [null, Validators.compose([Validators.required, Validators.minLength(20), Validators.maxLength(400)])]
       })
       this.push = new Push();
-  }
 
+      
+  }
 }
 
 export class Push {

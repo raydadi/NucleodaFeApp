@@ -1,12 +1,12 @@
 <ion-menu>
-  
+
     <ion-header id="menu-header">
         <div>
             <div class="imagemLogin">
                 <img *ngIf="user == null" src="assets/home/menu/login.png" />
             </div>
             <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
-  
+
             <div class="imagemLogado">
                 <img *ngIf="user != null" [src]="user.imageUrl" />
             </div>
@@ -15,7 +15,7 @@
         </div>
         <!-- <hr style="margin-top: 80%; background-color: white; height: 4px; width: 90%;" /> -->
     </ion-header>
-  
+
     <ion-content id="menu-content">
         <ion-list>
               <button class="menu-button" (click)="openEquipePastoral()" ion-item>
@@ -30,6 +30,10 @@
                   <img src="assets/home/menu/como-contribuir.png" item-start />
                   Como Contribuir
               </button>
+              <button *ngIf="user != null" class="menu-button" (click)="openEnviarMsg()" ion-item>
+                  <img src="assets/home/menu/sair.png" item-start />
+                  Enviar Mensagem
+              </button>
               <button class="menu-button" (click)="openSobre()" ion-item>
                   <img src="assets/home/menu/sobre-isso.png" item-start />
                   Sobre este App
@@ -39,12 +43,12 @@
                   Sair
               </button>
         </ion-list>
-  
+
       <!-- <ion-list>
         <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
         </button>
       </ion-list> -->
     </ion-content>
-  
+
   </ion-menu>

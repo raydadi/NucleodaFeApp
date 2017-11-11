@@ -3,9 +3,7 @@ import { ViewChild } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 
-import { MapaArniqueirasPage } from './mapa-arniqueiras/mapa-arniqueiras';
-import { MapaSedePage } from './mapa-sede/mapa-sede';
-import { MapaChacaraPage } from './mapa-chacara/mapa-chacara';
+import { ComoChegarDetailPage } from './como-chegar-detail/como-chegar-detail'
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -33,7 +31,9 @@ export class ComoChegarPage {
 
   ionViewDidLoad() {
     this.comoChegar.subscribe(data => {
+
       this.comoChegarArray = data;
+
       data.forEach((local, index) => {
 
         firebase.storage().ref().child(local.fotoRef).getDownloadURL().then((url) => {
@@ -52,22 +52,26 @@ export class ComoChegarPage {
 
   open(key) {
 
-    switch (key) {
-      case "0":
-        this.navCtrl.push(MapaSedePage,{
-            data: this.comoChegarArray[0]
-        });
-        break;
-      case "1":
-        this.navCtrl.push(MapaArniqueirasPage,{
-            data: this.comoChegarArray[1]
-        });
-        break;
-      case "2":
-        this.navCtrl.push(MapaChacaraPage,{
-            data: this.comoChegarArray[2]
-        });
-        break;
-    }
+      this.navCtrl.push(ComoChegarDetailPage,{
+          data: this.comoChegarArray[key]
+      });
+
+    // switch (key) {
+    //   case "0":
+    //     this.navCtrl.push(MapaSedePage,{
+    //         data: this.comoChegarArray[0]
+    //     });
+    //     break;
+    //   case "1":
+    //     this.navCtrl.push(MapaArniqueirasPage,{
+    //         data: this.comoChegarArray[1]
+    //     });
+    //     break;
+    //   case "2":
+    //     this.navCtrl.push(MapaChacaraPage,{
+    //         data: this.comoChegarArray[2]
+    //     });
+    //     break;
+    // }
   }
 }

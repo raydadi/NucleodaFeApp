@@ -22,9 +22,7 @@ import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-p
 import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
 import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
 import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
-import { MapaArniqueirasPage } from '../pages/menu-pages/como-chegar/mapa-arniqueiras/mapa-arniqueiras';
-import { MapaSedePage} from '../pages/menu-pages/como-chegar/mapa-sede/mapa-sede';
-import { MapaChacaraPage} from '../pages/menu-pages/como-chegar/mapa-chacara/mapa-chacara';
+import { ComoChegarDetailPage } from '../pages/menu-pages/como-chegar/como-chegar-detail/como-chegar-detail';
 import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
 
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
@@ -67,12 +65,7 @@ import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
 import { MenuPage } from '../pages/menu-pages/menu/menu';
 import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 
-import { IbiAlicePage } from '../pages/menu-pages/equipe-pastoral/ibi-alice/ibi-alice'
-import { AlexAnnePage } from '../pages/menu-pages/equipe-pastoral/alex-anne/alex-anne'
-import { EduardoClaudiaPage } from '../pages/menu-pages/equipe-pastoral/eduardo-claudia/eduardo-claudia'
-import { HiltonHandreaPage } from '../pages/menu-pages/equipe-pastoral/hilton-handrea/hilton-handrea'
-import { PauloCinaraPage } from '../pages/menu-pages/equipe-pastoral/paulo-cinara/paulo-cinara'
-import { DarciSarahPage } from '../pages/menu-pages/equipe-pastoral/darci-sarah/darci-sarah'
+import { EquipePastoralDetailPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral-detail/equipe-pastoral-detail';
 
 import { PequenoNucleoDetailPage } from '../pages/pequeno-nucleo/pequeno-nucleo-detail/pequeno-nucleo-detail';
 
@@ -96,8 +89,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ComoChegarPage,
     ComoContribuirPage,
     FaleConoscoPage,
-    MapaSedePage,
-    MapaArniqueirasPage,
+    ComoChegarDetailPage,
     TestemunhosPage,
     PedidoOracaoPage,
     MinisteriosPage,
@@ -136,14 +128,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MinisterioAcolhimentoPage,
     MinisterioApoioPalcoPage,
     ContatoModalPage,
-    IbiAlicePage,
-    AlexAnnePage,
-    EduardoClaudiaPage,
-    HiltonHandreaPage,
-    PauloCinaraPage,
-    DarciSarahPage,
+    EquipePastoralDetailPage,
     LoadingSpinnerComponent,
-    MapaChacaraPage,
     PequenoNucleoDetailPage,
     EnviarPushPage,
     InscricoesPage
@@ -166,8 +152,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ComoChegarPage,
     ComoContribuirPage,
     FaleConoscoPage,
-    MapaSedePage,
-    MapaArniqueirasPage,
+    ComoChegarDetailPage,
     TestemunhosPage,
     PedidoOracaoPage,
     MinisteriosPage,
@@ -206,14 +191,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MinisterioAcolhimentoPage,
     MinisterioApoioPalcoPage,
     ContatoModalPage,
-    IbiAlicePage,
-    AlexAnnePage,
-    EduardoClaudiaPage,
-    HiltonHandreaPage,
-    PauloCinaraPage,
-    DarciSarahPage,
+    EquipePastoralDetailPage,
     LoadingSpinnerComponent,
-    MapaChacaraPage,
     PequenoNucleoDetailPage,
     EnviarPushPage,
     InscricoesPage

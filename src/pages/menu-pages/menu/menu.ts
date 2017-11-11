@@ -6,6 +6,7 @@ import { ComoChegarPage } from '../como-chegar/como-chegar';
 import { ComoContribuirPage } from '../como-contribuir/como-contribuir';
 import { SobrePage } from "../sobre/sobre";
 import { LoginPage } from "../login/login";
+import { EnviarPushPage } from "../enviar-push/enviar-push";
 
 @IonicPage()
 @Component({
@@ -46,6 +47,11 @@ export class MenuPage {
   openLogin() {
     this.menu.close();
     this.navCtrl.push(LoginPage);
+  }
+
+  openEnviarMsg() {
+      this.menu.close();
+      this.navCtrl.push(EnviarPushPage);
   }
 
 

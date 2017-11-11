@@ -1,20 +1,24 @@
 <ion-header>
+
   <ion-navbar>
-    <ion-title>ARNIQUEIRAS</ion-title>
+    <ion-title>{{ local.nome }}</ion-title>
     <ion-buttons end>
-        <sino></sino>
+      <sino></sino>
     </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content>
+
     <ion-card class="adv-map">
       <div style="position: relative">
         <div #map id="map"></div>
         <ion-fab right top>
           <button (click)="openLocal()" ion-fab class="fab-map">
-              <ion-icon name='md-navigate'></ion-icon>
-            </button>
+            <ion-icon name='md-navigate'></ion-icon>
+          </button>
         </ion-fab>
       </div>
       <ion-item>
@@ -27,9 +31,10 @@
         <span ion-text item-start color="secondary" class="item-bold">18 min</span>
         <span ion-text item-start color="subtle">(2.6 mi)</span>
         <button ion-button color="primary" clear item-end icon-start>
-            <ion-icon name='navigate'></ion-icon>
-            Start
-          </button>
+          <ion-icon name='navigate'></ion-icon>
+          Start
+        </button>
       </ion-item> -->
-      </ion-card>
+    </ion-card>
+
 </ion-content>

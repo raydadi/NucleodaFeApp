@@ -39,45 +39,6 @@ export class LoginPage {
 		this.user = new User();
 	}
 
-	// presentActionSheet() {
-	//   let actionSheet = this.actionSheetCtrl.create({
-	//     title: 'Ações',
-	//     cssClass: 'action-sheets-basic-page',
-	//     buttons: [
-	//       {
-	//         text: 'ACESSAR COM GOOGLE',
-	//         icon: !this.platform.is('ios') ? 'logo-googleplus' : null,
-	//         handler: () => {
-	//           this.doGoogleLogin(this.nativeStorage);
-	//         }
-	//       },
-	//       {
-	//         text: 'ACESSAR COM FACEBOOK',
-	//         icon: !this.platform.is('ios') ? 'logo-facebook' : null,
-	//         handler: () => {
-	//           this.doFacebookLogin(this.nativeStorage);
-	//         }
-	//       },
-	//       {
-	//         text: 'CRIAR CONTA',
-	//         icon: !this.platform.is('ios') ? 'md-create' : null,
-	//         handler: () => {
-	//           console.log('Favorite clicked');
-	//         }
-	//       },
-	//       {
-	//         text: 'CANCEL',
-	//         role: 'cancel', // will always sort to be on the bottom
-	//         icon: !this.platform.is('ios') ? 'close' : null,
-	//         handler: () => {
-	//           console.log('Cancel clicked');
-	//         }
-	//       }
-	//     ]
-	//   });
-	//   actionSheet.present();
-	// }
-
 	doGoogleLogin() {
 
 		let nav = this.navCtrl;
@@ -94,13 +55,13 @@ export class LoginPage {
 			'offline': true
 		}).then((user) => {
 			const firecreds = firebase.auth.GoogleAuthProvider.credential(user.idToken);
-			
+
 			firebase.auth().signInWithCredential(firecreds).then((res) => {
 				this.user.nome = user.displayName;
 				this.user.email = user.email;
 				this.user.fotoUrl = user.imageUrl;
 				this.user.id = user.idToken;
-	
+
 				this.nativeStorage.setItem('user', this.user).then(() => {
 					nav.setRoot(HomePage);
 				}, (error) => {
@@ -155,17 +116,17 @@ export class LoginPage {
 
 			//Getting name and gender properties
 			this.facebook.api("/me?fields=name,gender,email", params).then((user) => {
-				
+
 				const firecreds = firebase.auth.FacebookAuthProvider.credential(accessToken);
-				
+
 				firebase.auth().signInWithCredential(firecreds).then((res) => {
-					
+
 					this.user.nome = user.name;
 					this.user.email = user.email;
 					this.user.fotoUrl = "https://graph.facebook.com/" + userId + "/picture?type=large";
-					
+
 					this.events.publish('login:changed', this.user);
-					
+
 					this.nativeStorage.setItem('user', this.user).then(() => {
 						nav.setRoot(HomePage);
 					}, (error) => {
@@ -173,7 +134,7 @@ export class LoginPage {
 					})
 
 					this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
-					
+
 				}).catch((err) => {
 					alert('Firebase auth failed' + err);
 					this.toast.show(`Erro ao conectar com facebook!`, 'short', 'bottom').subscribe(toast => { });
