@@ -60,6 +60,9 @@
     <div *ngIf="pedidoOracaoForm.controls['email'].hasError('maxlength') && pedidoOracaoForm.controls['email'].touched">
       Email precisa pode ter no máximo 40 caracteres!
     </div>
+    <div class="error-box" *ngIf="pedidoOracaoForm.controls['email'].hasError('ValidateEmailOutput') && pedidoOracaoForm.controls['email'].touched">
+      Preencha um email valido!
+    </div>
 
     <ion-item>
       <ion-label floating>PEDIDO</ion-label>

@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from 'ionic-angular';
 import { ModalPedidosOracaoPage } from './modal-pedidos-oracao/modal-pedidos-oracao';
 import { Toast } from '@ionic-native/toast';
+import { ValidateEmail } from '../../validations/email-validation';
 
 @IonicPage()
 @Component({
@@ -31,7 +32,7 @@ export class PedidoOracaoPage{
     this.pedidoOracaoForm = formBuilder.group({
       'nome': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
       'telefone': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
-      'email': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(40)])],
+      'email': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(40), ValidateEmail()])],
       'pedido': [null, Validators.compose([Validators.required, Validators.minLength(20), Validators.maxLength(400)])]
     })
   }
