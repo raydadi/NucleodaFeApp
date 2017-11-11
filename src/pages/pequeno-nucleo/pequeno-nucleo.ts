@@ -1,11 +1,10 @@
 import { Component,NgZone } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { AngularFireOfflineDatabase, AfoListObservable } from 'angularfire2-offline/database';
-
 import { PequenoNucleoDetailPage } from './pequeno-nucleo-detail/pequeno-nucleo-detail';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
+import { PequenoNucleoPopoverPage } from './pequeno-nucleo-popover/pequeno-nucleo-popover';
 
 @IonicPage()
 @Component({
@@ -22,7 +21,8 @@ export class PequenoNucleoPage {
       public navCtrl: NavController,
       public navParams: NavParams,
       public db: AngularFireOfflineDatabase,
-      public zone: NgZone
+      public zone: NgZone,
+      public popoverCtrl: PopoverController
   ) {
       this.pequenosNucleos = db.list("/pequenos-nucleos");
   }
@@ -54,6 +54,11 @@ export class PequenoNucleoPage {
   }
 
   openFiltros() {
-    
+
+  }
+
+  presentPopover(){
+    let popover = this.popoverCtrl.create(PequenoNucleoPopoverPage);
+    popover.present();
   }
 }

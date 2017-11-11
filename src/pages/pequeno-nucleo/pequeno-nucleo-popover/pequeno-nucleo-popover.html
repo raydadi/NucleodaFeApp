@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-list>
+
+    <ion-item-divider color="light">Hora</ion-item-divider>
+    <ion-item>
+      <ion-label>Escolher Hora</ion-label>
+      <ion-datetime displayFormat="h: A" pickerFormat="h A"></ion-datetime>
+    </ion-item>
+
+    <ion-item-divider color="light">Dia da Semana</ion-item-divider>
+    <ion-item>
+      <button (click)="showDias()" ion-button full>Escolher Dia</button>
+    </ion-item>
+
+    <ion-item-divider color="light">Tipo</ion-item-divider>
+    <ion-item>
+      <button (click)="showTipos()" ion-button full>Escolher Tipo</button>
+    </ion-item>
+
+  </ion-list>
+
+
+  <button style="float: left;" ion-button outline color="danger">Cancelar</button>
+  <button style="float: right;" ion-button outline>Filtrar</button>
+
+</ion-content>
