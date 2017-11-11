@@ -24,6 +24,7 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="ParseMultiNotifications" value="true" />
     <preference name="ParseNotificationIcon" value="notification_icon" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -86,7 +87,6 @@
         <variable name="APP_ID" value="1091217954342738" />
         <variable name="APP_NAME" value="NFApp" />
     </plugin>
-    <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
     <plugin name="cordova-plugin-googleplus" spec="^5.1.1">
         <variable name="REVERSED_CLIENT_ID" value="1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com" />
     </plugin>
@@ -100,9 +100,11 @@
     <plugin name="phonegap-plugin-push" spec="^2.0.0">
         <variable name="SENDER_ID" value="747227455200" />
     </plugin>
-    <plugin name="cordova-plugin-filepath" spec="^1.1.0" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
     <plugin name="cordova-plugin-file" spec="^5.0.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
+    <plugin name="cordova-plugin-filepath" spec="^1.1.0" />
     <plugin name="cordova-plugin-camera" spec="^3.0.0" />
-    <engine name="android" spec="~6.4.0" />
+    <engine name="android" spec="~6.3.0" />
+    <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
+    <plugin name="cordova-plugin-compat" spec="^1.2.0" />
 </widget>
