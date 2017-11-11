@@ -71,6 +71,7 @@ import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 
 import { EquipePastoralDetailPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral-detail/equipe-pastoral-detail';
 
+import { PequenoNucleoPopoverPage } from '../pages/pequeno-nucleo/pequeno-nucleo-popover/pequeno-nucleo-popover';
 import { PequenoNucleoDetailPage } from '../pages/pequeno-nucleo/pequeno-nucleo-detail/pequeno-nucleo-detail';
 
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner';
@@ -135,6 +136,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EquipePastoralDetailPage,
     LoadingSpinnerComponent,
     PequenoNucleoDetailPage,
+    PequenoNucleoPopoverPage,
     EnviarPushPage,
     InscricoesPage
   ],
@@ -198,6 +200,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EquipePastoralDetailPage,
     LoadingSpinnerComponent,
     PequenoNucleoDetailPage,
+    PequenoNucleoPopoverPage,
     EnviarPushPage,
     InscricoesPage
   ],
