@@ -11,6 +11,10 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 import { Toast } from '@ionic-native/toast';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -208,7 +212,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     LoadingSpinnerComponent,
-    Push
+    Push,
+    File,
+    Transfer,
+    Camera,
+    FilePath
   ]
 })
 export class AppModule {}

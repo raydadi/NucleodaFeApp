@@ -30,7 +30,7 @@
                 <img src="assets/home/menu/como-contribuir.png" item-start />
                 Como Contribuir
             </button>
-            <button *ngIf="user != null" class="menu-button" (click)="openMensagem()" ion-item>
+            <button *ngIf="user == null" class="menu-button" (click)="openMensagem()" ion-item>
                 <img src="assets/home/menu/notificacao.png" item-start />
                 Enviar mensagem
             </button>
