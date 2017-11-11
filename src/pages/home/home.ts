@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 import { TestemunhosPage } from '../testemunhos/testemunhos';
@@ -13,6 +13,10 @@ import { CultoOnlinePage } from '../culto-online/culto-online';
 import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
 import { InscricoesPage } from '../inscricoes/inscricoes';
 import introJs from 'intro.js/intro.js';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 @IonicPage()
 @Component({
@@ -23,12 +27,47 @@ export class HomePage {
     // @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
     // @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
-    acampamento: Icone;
-    awards: Icone;
+    icones: FirebaseListObservable<any[]>;
+    imgsource: Array<any> = [];
+    showSpinner: boolean = true;
+    iconesArray: Array<any> = [];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
-        this.acampamento = new Icone();
-        this.awards = new Icone();
+    showIconAcamp = false;
+    showIconAwards = false;
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public db: AngularFireDatabase, public zone: NgZone) {
+
+        this.icones = db.list("/home");
+    }
+
+    ionViewDidLoad() {
+        //this.intro();
+
+        this.icones.subscribe(data => {
+
+            this.iconesArray = data;
+
+            if(data[0].visivel == true)
+                this.showIconAcamp = true;
+            else
+                this.showIconAcamp = false;
+
+            if(data[1].visivel == true)
+                this.showIconAwards = true;
+            else
+                this.showIconAwards = false;
+
+          data.forEach((icone, index) => {
+
+            firebase.storage().ref().child(icone.fotoRef).getDownloadURL().then((url) => {
+              this.zone.run(() => {
+                this.imgsource[icone.$key] = url;
+
+              })
+            })
+          });
+
+        });
     }
 
     intro() {
@@ -90,11 +129,7 @@ export class HomePage {
         intro.start();
     }
 
-    ionViewDidLoad() {
-        this.intro();
 
-
-    }
 
     navToTestemunhos() {
         this.navCtrl.push(TestemunhosPage);

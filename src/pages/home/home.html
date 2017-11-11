@@ -49,25 +49,22 @@
         <img id="step5" src="assets/home/Ministerios.png" width="95" height="auto" />
         <p>MINISTÉRIOS</p>
       </ion-col>
-      <!-- <ion-col (click)="navToAvisos()" style="text-align: center">
-        <img src="assets/home/Avisos.png" width="95" height="auto" />
-        <p>AVISOS</p>
-      </ion-col> -->
       <ion-col (click)="navToInscricoes()" style="text-align: center">
         <img id="step6" src="assets/home/inscricoes.png" width="95" height="auto" />
         <p>INSCRICOES</p>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col id="stepAcamp" (click)="navToAcampamento()" style="text-align: center">
-          <img src="assets/home/Acampamento.png" width="95" height="auto" />
+      <ion-col *ngIf="showIconAcamp" (click)="navToAcampamento()" style="text-align: center">
+          <img src="{{imgsource[0]}}" width="95" height="auto" />
           <p>ACAMPAMENTO</p>
       </ion-col>
-      <ion-col id="stepAwards" (click)="navToAwards()" style="text-align: center">
-          <img src="assets/home/Nucleo-Awards.png" width="95" height="auto" />
+      <ion-col *ngIf="showIconAwards" (click)="navToAwards()" style="text-align: center">
+          <img src="{{imgsource[1]}}" width="95" height="auto" />
           <p>AWARDS</p>
       </ion-col>
     </ion-row>
+
   </ion-grid>
 
 </ion-content>
