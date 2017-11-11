@@ -139,9 +139,15 @@ export class MyApp {
 			}, (error) => {
 				console.log(error);
 			})
+
+			pushObject.subscribe("All").then((res:any) => {
+                console.log("subscribed to topic: ", res);
+            });
 		});
 
 		pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+
+
 
 	}
 
@@ -196,7 +202,7 @@ export class MyApp {
 	logout() {
 		this.menu.close();
 		this.googlePlus.logout().then((response) => {
-			
+
 		}, function (error) {
 			console.log(error);
 		})
