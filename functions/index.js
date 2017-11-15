@@ -12,6 +12,13 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
+const nodemailer = require('nodemailer');
+// Configure the email transport using the default SMTP transport and a GMail account.
+// For other types of transports such as Sendgrid see https://nodemailer.com/transports/
+// TODO: Configure the `gmail.email` and `gmail.password` Google Cloud environment variables.
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
+
 exports.sendPush = functions.database.ref('/push').onWrite(event => {
 
   // let projectStateChanged = false;
@@ -38,58 +45,48 @@ exports.sendPush = functions.database.ref('/push').onWrite(event => {
   }).catch(function(error) {
     console.log("Error sending message:", error);
   });
-  //admin.messaging().sendToDevice(tokens, payload);
-  // if (!event.data.previous.exists()) {
-  //     projectCreated = true;
-  // }
-
-  // if (!projectCreated && event.data.changed()) {
-  //     projectStateChanged = true;
-  // }
-
-  //let msg = 'A project state was changed';
-
-  // if (projectCreated) {
-  // 	msg = `The following new project was added to the project: ${value.title}`;
-  // }
-
-  // return loadUsers().then(users => {
-  //
-  //     let tokens = [];
-  //
-  //     for (let user of users) {
-  //         tokens.push(user.pushToken);
-  //     }
-  //
-  //     let payload = {
-  //         notification: {
-  //             title: 'teste',
-  //             body: 'teste',
-  //             sound: 'default',
-  //             badge: '1'
-  //         }
-  //     };
-  //
-  //     return admin.messaging().sendToDevice(tokens, payload);
-  //
-  // });
 });
 
-// function loadUsers() {
-//
-//     let dbRef = admin.database().ref('/users');
-//
-//     let defer = new Promise((resolve, reject) => {
-//         dbRef.once('value', (snap) => {
-//             let data = snap.val();
-//             let users = [];
-//             for (var property in data) {
-//                 users.push(data[property]);
-//             }
-//             resolve(users);
-//         }, (err) => {
-//             reject(err);
-//         });
-//     });
-//     return defer;
-// }
+
+const mailTransport = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: gmailEmail,
+    pass: gmailPassword
+  }
+});
+
+// Sends an email confirmation when a user changes his mailing list subscription.
+exports.sendEmail = functions.database.ref('/users/{uid}').onWrite(event => {
+  const snapshot = event.data;
+  const val = snapshot.val();
+
+  if (!snapshot.changed('subscribedToMailingList')) {
+    return;
+  }
+
+  const mailOptions = {
+    from: '"Spammy Corp." <noreply@firebase.com>',
+    to: val.email
+  };
+
+  // The user just subscribed to our newsletter.
+  if (val.subscribedToMailingList) {
+    mailOptions.subject = 'Thanks and Welcome!';
+    mailOptions.text = 'Thanks you for subscribing to our newsletter. You will receive our next weekly newsletter.';
+    return mailTransport.sendMail(mailOptions).then(() => {
+      console.log('New subscription confirmation email sent to:', val.email);
+    }).catch(error => {
+      console.error('There was an error while sending the email:', error);
+    });
+  }
+
+  // The user unsubscribed to the newsletter.
+  mailOptions.subject = 'Sad to see you go :`(';
+  mailOptions.text = 'I hereby confirm that I will stop sending you the newsletter.';
+  return mailTransport.sendMail(mailOptions).then(() => {
+    console.log('New unsubscription confirmation email sent to:', val.email);
+  }).catch(error => {
+    console.error('There was an error while sending the email:', error);
+  });
+});
