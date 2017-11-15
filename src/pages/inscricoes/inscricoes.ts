@@ -24,7 +24,11 @@ export class InscricoesPage {
       public db: AngularFireDatabase,
       public zone: NgZone
   ) {
-      this.inscricoes = db.list("/inscricoes");
+      this.inscricoes = db.list("/inscricoes", {
+        query: {
+          orderByChild: 'ordem'
+        }
+      });
   }
 
   ionViewDidLoad() {

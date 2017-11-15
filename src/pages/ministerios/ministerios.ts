@@ -44,7 +44,11 @@ export class MinisteriosPage {
     public db: AngularFireDatabase,
     public zone: NgZone
   ) {
-    this.ministerios = db.list("/ministerios");
+    this.ministerios = db.list("/ministerios", {
+      query: {
+        orderByChild: 'ordem'
+      }
+    });
   }
 
   ionViewDidLoad() {

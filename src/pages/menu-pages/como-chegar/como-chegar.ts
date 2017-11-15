@@ -26,7 +26,11 @@ export class ComoChegarPage {
       public db: AngularFireDatabase,
       public zone: NgZone
   ) {
-      this.comoChegar = db.list("/como-chegar");
+      this.comoChegar = db.list("/como-chegar",{
+        query: {
+          orderByChild: 'ordem'
+        }
+      });
   }
 
   ionViewDidLoad() {

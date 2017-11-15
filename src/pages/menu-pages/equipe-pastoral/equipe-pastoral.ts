@@ -26,7 +26,11 @@ export class EquipePastoralPage {
       public modalCtrl: ModalController,
       public zone: NgZone
   ) {
-    this.equipePastoral = db.list("/equipe-pastoral");
+    this.equipePastoral = db.list("/equipe-pastoral", {
+      query: {
+        orderByChild: 'ordem'
+      }
+    });
   }
 
   ionViewDidLoad() {
