@@ -24,7 +24,11 @@ export class PequenoNucleoPage {
       public zone: NgZone,
       public popoverCtrl: PopoverController
   ) {
-      this.pequenosNucleos = db.list("/pequenos-nucleos");
+      this.pequenosNucleos = db.list("/pequenos-nucleos", {
+        query: {
+          orderByChild: 'ordem'
+        }
+      });
   }
 
   ionViewDidLoad() {

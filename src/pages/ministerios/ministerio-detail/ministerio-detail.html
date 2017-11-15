@@ -1,7 +1,6 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>AÇÃO SOCIAL</ion-title>
+    <ion-title>{{ministerio.nome}}</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -9,30 +8,32 @@
 </ion-header>
 
 
-<ion-content class="card-background-page" padding>
+<ion-content class="card-background-page">
     <ion-card style="text-align: justify;">
-      <img src="assets/ministerios/teatro.jpg" />
-      <!-- <div class="card-title">{{(ministerio | async)?.nome}}</div> -->
+      <loading-spinner margin="10px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+      <img (load)="showSpinnerMeth()" src="{{imgsource}}" />
+      <div padding>
       <h2>DESCRIÇÃO:</h2>
       <p>
-          {{(ministerio | async)?.descricao}}
+          {{ministerio.descricao}}
       </p>
       <h2>ATIVIDADE:</h2>
       <p>
-          {{(ministerio | async)?.atividades}}
+          {{ministerio.atividades}}
       </p>
       <h2>COMO AJUDAR:</h2>
       <p>
-          {{(ministerio | async)?.comoAjudar}}
+          {{ministerio.comoAjudar}}
       </p>
       <h2>REQUISITOS:</h2>
       <p>
-          {{(ministerio | async)?.requisitos}}
+          {{ministerio.requisitos}}
       </p>
       <h2>CONTATO:</h2>
       <p>
-          {{(ministerio | async)?.contato}}
+          {{ministerio.contato}}
       </p>
+      </div>
     </ion-card>
      <button (click)="openContato()" full ion-button color="secondary" style="color: white">QUERO PARTICIPAR</button>
 </ion-content>

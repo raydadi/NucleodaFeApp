@@ -21,8 +21,10 @@ export class ContatoModalPage {
       public formBuilder: FormBuilder,
       public alertCtrl: AlertController
   ) {
-    console.log(navParams.get('ministerio'));
-    this.ministerio = db.object("/ministerios/" + navParams.get('ministerio'));
+
+    // let min = navParams.get('data');
+    // console.log(min.$key);
+    this.ministerio = db.object("/ministerios/" + navParams.get('data').$key);
     this.contato = new Contato();
     this.contatoForm = formBuilder.group({
       'nome': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(30)])],
