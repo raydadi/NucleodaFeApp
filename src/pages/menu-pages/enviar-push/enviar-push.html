@@ -10,8 +10,8 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="enviarPushForm" (ngSubmit)="enviar()">
-      <ion-item>
+    <!-- <form [formGroup]="enviarPushForm" (ngSubmit)="enviar()"> -->
+      <!-- <ion-item>
         <ion-label floating>TITULO</ion-label>
         <ion-input [(ngModel)]="push.titulo" formControlName="titulo" name="titulo" type="text"></ion-input>
       </ion-item>
@@ -37,17 +37,19 @@
       </div>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('maxlength') && enviarPushForm.controls['resumo'].touched">
         Resumo pode ter no máximo 500 caracteres!
-      </div>
+      </div> -->
 
-      <ion-item>
-        <ion-label floating>IMAGEM</ion-label>
+      <!-- <ion-item>
+        <ion-label floating>IMAGEM</ion-label> -->
         <!--<img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">-->
-        <img src="{{pathForImage(push.img)}}" style="width: 100%" [hidden]="push.img === null">
+        <!-- <img src="{{pathForImage(push.img)}}" style="width: 100%" [hidden]="push.img === null"> -->
         <!--<h3 [hidden]="lastImage !== null">Please Select Image!</h3>-->
-        <h3 [hidden]="push.img !== null">Porfavor selecione uma imagem!</h3>
-      </ion-item>
+        <!-- <h3 [hidden]="push.img !== null">Porfavor selecione uma imagem!</h3>
+      </ion-item> -->
 
-      <ion-item>
+      <button (click)="escolherImagem()" ion-button color="primary">ESCOLHER IMAGEM</button>
+
+      <!-- <ion-item>
         <ion-label floating>MENSAGEM</ion-label>
         <ion-textarea [(ngModel)]="push.msg" formControlName="msg" name="msg" rows="10"></ion-textarea>
       </ion-item>
@@ -61,20 +63,19 @@
         Mensagem pode ter no máximo 500 caracteres!
       </div>
 
-      <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button>
-    </form>
+      <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button> -->
+    <!-- </form> -->
 
-    <ion-footer>
+    <!-- <ion-footer>
       <ion-toolbar color="primary">
         <ion-buttons>
           <button ion-button icon-left (click)="presentActionSheet()">
             <ion-icon name="camera"></ion-icon>Selecione uma imagem
           </button>
-          <!--<button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">-->
           <button ion-button icon-left (click)="uploadImage()" [disabled]="push.img === null">
             <ion-icon name="cloud-upload"></ion-icon>Upload
           </button>
         </ion-buttons>
       </ion-toolbar>
-    </ion-footer>
+    </ion-footer> -->
 </ion-content>
