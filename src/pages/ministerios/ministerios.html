@@ -13,7 +13,7 @@
 
     <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-    <ion-card *ngFor="let ministerio of ministerios | async" (click)="open(ministerio.$key)">
+    <ion-card *ngFor="let ministerio of ministerios | async" (click)="open(ministerio.ordem)">
         <img src="{{imgsource[ministerio.$key]}}" />
         <div class="card-title"><span>{{ministerio.nome}}</span></div>
     </ion-card>

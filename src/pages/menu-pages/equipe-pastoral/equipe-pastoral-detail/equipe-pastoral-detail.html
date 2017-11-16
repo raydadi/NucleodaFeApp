@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{(equipePastoral | async)?.nome}}</ion-title>
+    <ion-title>{{equipePastoral.nome}}</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -14,17 +14,17 @@
     <ion-card style="text-align: justify;">
       <loading-spinner margin="10px auto" color="black" *ngIf="showSpinner"></loading-spinner>
       <img (load)="showSpinnerMeth()" src="{{imgsource}}" />
-      <h1>{{(equipePastoral | async)?.nome}}</h1>
+      <h1>{{equipePastoral.nome}}</h1>
       <p *ngIf="equipePastoral.funcao">
-          {{(equipePastoral | async)?.funcao}}
+          {{equipePastoral.funcao}}
       </p>
       <h2>DESCRIÇÃO:</h2>
       <p>
-          {{(equipePastoral | async)?.descricao}}
+          {{equipePastoral.descricao}}
       </p>
       <h2>CONTATO</h2>
       <p>
-          {{(equipePastoral | async)?.contato}}
+          {{equipePastoral.contato}}
       </p>
     </ion-card>
 

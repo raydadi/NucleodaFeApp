@@ -55,8 +55,7 @@ export class EquipePastoralPage {
   }
 
   open(key) {
-
-      this.navCtrl.push(EquipePastoralPage,{
+      this.navCtrl.push(EquipePastoralDetailPage,{
           data: this.equipePastoralArray[key]
       });
     // switch (key) {

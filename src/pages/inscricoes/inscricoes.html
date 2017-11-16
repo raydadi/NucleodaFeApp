@@ -14,9 +14,9 @@
 
   <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-  <ion-card *ngFor="let inscricao of inscricoes | async" (click)="open(inscricao.$key)">
+  <ion-card *ngFor="let inscricao of inscricoes | async" (click)="open(inscricao.ordem)">
       <img src="{{imgsource[inscricao.$key]}}" />
       <div class="card-title"><span>{{inscricao.nome}}</span></div>
   </ion-card>
-  
+
 </ion-content>

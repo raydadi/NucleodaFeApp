@@ -13,7 +13,7 @@
 
   <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-  <ion-card *ngFor="let pastor of equipePastoral | async" (click)="open(pastor.$key)">
+  <ion-card *ngFor="let pastor of equipePastoral | async" (click)="open(pastor.ordem)">
       <img src="{{imgsource[pastor.$key]}}" />
       <div class="card-title"><span>{{pastor.nome}}</span></div>
   </ion-card>

@@ -13,7 +13,7 @@
 
     <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-    <ion-card *ngFor="let local of comoChegar | async" (click)="open(local.$key)">
+    <ion-card *ngFor="let local of comoChegar | async" (click)="open(local.ordem)">
         <img src="{{imgsource[local.$key]}}" />
         <div class="card-title"><span>{{local.nome}}</span></div>
     </ion-card>

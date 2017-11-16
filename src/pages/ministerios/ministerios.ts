@@ -4,31 +4,6 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 
 import { MinisterioDetailPage } from './ministerio-detail/ministerio-detail';
 
-// import { MinisterioAcolhimentoPage } from './ministerio-acolhimento/ministerio-acolhimento';
-// import { MinisterioApoioPalcoPage } from './ministerio-apoio-palco/ministerio-apoio-palco';
-// import { MinisterioCoralPage } from './ministerio-coral/ministerio-coral';
-// import { MinisterioArtesanatoPage } from './ministerio-artesanato/ministerio-artesanato';
-// import { MinisterioComunicacaoPage } from './ministerio-comunicacao/ministerio-comunicacao';
-// import { MinisterioDancaPage } from './ministerio-danca/ministerio-danca';
-// import { MinisterioIntercessaoPage } from './ministerio-intercessao/ministerio-intercessao';
-// import { MinisterioLouvorPage } from './ministerio-louvor/ministerio-louvor';
-// import { MinisterioMultimidiaPage } from './ministerio-multimidia/ministerio-multimidia';
-// import { MinisterioTeatroPage } from './ministerio-teatro/ministerio-teatro';
-// import { MinisterioAcaoSocialPage } from './ministerio-acao-social/ministerio-acao-social';
-// import { MinisterioCozinhaPage } from './ministerio-cozinha/ministerio-cozinha';
-// import { MinisterioNucleoKidsPage } from './ministerio-nucleo-kids/ministerio-nucleo-kids';
-// import { MinisterioEstruturaPage } from './ministerio-estrutura/ministerio-estrutura';
-// import { MinisterioEvangelismoPage } from './ministerio-evangelismo/ministerio-evangelismo';
-// import { MinisterioFamiliaPage } from './ministerio-familia/ministerio-familia';
-// import { MinisterioLibertacaoPage } from './ministerio-libertacao/ministerio-libertacao';
-// import { MinisterioNucleoEnsinoPage } from './ministerio-nucleo-ensino/ministerio-nucleo-ensino';
-// import { MinisterioNucleoJovemPage } from './ministerio-nucleo-jovem/ministerio-nucleo-jovem';
-// import { MinisterioPequenosNucleosPage } from './ministerio-pequenos-nucleos/ministerio-pequenos-nucleos';
-// import { MinisterioSentinelasPage } from './ministerio-sentinelas/ministerio-sentinelas';
-// import { MinisterioOver30Page } from './ministerio-over30/ministerio-over30';
-// import { MinisterioPalavraPage } from './ministerio-palavra/ministerio-palavra';
-// import { MinisterioRecepcaoPage } from './ministerio-recepcao/ministerio-recepcao';
-
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
