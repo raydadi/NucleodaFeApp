@@ -1,6 +1,6 @@
 page-home ion-content {
     background-color: #D4ECFC !important;
-    box-sizing: content-box !important;
+    // box-sizing: content-box !important;
 }
 
 
@@ -10,70 +10,70 @@ page-home ion-content {
 //     z-index: 99999;
 // }
 
-page-home .introjs-fixParent {
-    //z-index: 99999 !important;
-
-}
-
-
-.introjs-helperNumberLayer {
-    top: -16px !important;
-    left: -16px !important;
-}
-
-.introjs-prevbutton {
-    display: none !important;
-}
-
-.introjs-tooltip {
-    font-size: 17px !important;
-    min-width: 200px !important;
-    max-width: 350px !important;
-    max-height: 350px !important;
-    text-align: center !important;
-}
-
-.introjs-button {
-    font-size: 17px !important;
-    text-align: end !important;
-    border-radius: 2px !important;
-    position: relative !important;
-    overflow: hidden !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-    color: #488aff !important;
-    background-color: transparent !important;
-    margin: 0 10px 0 10px !important;
-    padding: 10px !important;
-    border: 0 !important;
-    background-image: none !important;
-}
-
-.introjs-tooltipbuttons {
-    text-align: center !important;
-}
-
-.introjs-tooltipReferenceLayer {
-    //box-sizing: content-box !important;
-    //-webkit-box-sizing: border-box !important;
-}
-
-.introjs-helperLayer {
-    //opacity: 0.5 !important;
-    background-image: url("../assets/home/Pedido-de-oracao.png");
-    background-size: contain;
-    position: absolute;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-
-}
-
-.introjs-overlay {
-    //position: absolute !important;
-}
-
-.introjs-showElement {
-    //z-index: 9999999 !important;
-}
+// page-home .introjs-fixParent {
+//     //z-index: 99999 !important;
+//
+// }
+//
+//
+// .introjs-helperNumberLayer {
+//     top: -16px !important;
+//     left: -16px !important;
+// }
+//
+// .introjs-prevbutton {
+//     display: none !important;
+// }
+//
+// .introjs-tooltip {
+//     font-size: 17px !important;
+//     min-width: 200px !important;
+//     max-width: 350px !important;
+//     max-height: 350px !important;
+//     text-align: center !important;
+// }
+//
+// .introjs-button {
+//     font-size: 17px !important;
+//     text-align: end !important;
+//     border-radius: 2px !important;
+//     position: relative !important;
+//     overflow: hidden !important;
+//     font-weight: 500 !important;
+//     text-transform: uppercase !important;
+//     color: #488aff !important;
+//     background-color: transparent !important;
+//     margin: 0 10px 0 10px !important;
+//     padding: 10px !important;
+//     border: 0 !important;
+//     background-image: none !important;
+// }
+//
+// .introjs-tooltipbuttons {
+//     text-align: center !important;
+// }
+//
+// .introjs-tooltipReferenceLayer {
+//     //box-sizing: content-box !important;
+//     //-webkit-box-sizing: border-box !important;
+// }
+//
+// .introjs-helperLayer {
+//     //opacity: 0.5 !important;
+//     background-image: url("../assets/home/Pedido-de-oracao.png");
+//     background-size: contain;
+//     position: absolute;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     height: 100%;
+//     width: 100%;
+//
+// }
+//
+// .introjs-overlay {
+//     //position: absolute !important;
+// }
+//
+// .introjs-showElement {
+//     //z-index: 9999999 !important;
+// }
