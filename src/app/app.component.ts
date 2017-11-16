@@ -15,7 +15,6 @@ import { SobrePage } from '../pages/menu-pages/sobre/sobre';
 import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral';
 import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
 import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
-import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
 import { User } from "../pages/menu-pages/login/login";
@@ -51,8 +50,7 @@ export class MyApp {
 			{ title: 'Sobre', component: SobrePage },
 			{ title: 'Equipe Pastoral', component: EquipePastoralPage },
 			{ title: 'Como Chegar', component: ComoChegarPage },
-			{ title: 'Como Contribuir', component: ComoContribuirPage },
-			{ title: 'Fale Conosco', component: FaleConoscoPage }
+			{ title: 'Como Contribuir', component: ComoContribuirPage }
 		];
 
 		this.nativeStorage.getItem('user').then((data) => {

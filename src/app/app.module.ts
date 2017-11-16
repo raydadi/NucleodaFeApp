@@ -25,9 +25,9 @@ import { SobrePage } from '../pages/menu-pages/sobre/sobre';
 import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral';
 import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
 import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
-import { FaleConoscoPage } from '../pages/menu-pages/fale-conosco/fale-conosco';
 import { ComoChegarDetailPage } from '../pages/menu-pages/como-chegar/como-chegar-detail/como-chegar-detail';
 import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
+import { PushGalleryPage } from "../pages/menu-pages/enviar-push/push-gallery/push-gallery";
 
 import { TestemunhosPage } from '../pages/testemunhos/testemunhos';
 import { PedidoOracaoPage } from '../pages/pedido-oracao/pedido-oracao';
@@ -70,7 +70,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EquipePastoralPage,
     ComoChegarPage,
     ComoContribuirPage,
-    FaleConoscoPage,
     ComoChegarDetailPage,
     TestemunhosPage,
     PedidoOracaoPage,
@@ -92,7 +91,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoDetailPage,
     PequenoNucleoPopoverPage,
     EnviarPushPage,
-    InscricoesPage
+    InscricoesPage,
+    PushGalleryPage
   ],
   imports: [
     BrowserModule,
@@ -111,7 +111,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EquipePastoralPage,
     ComoChegarPage,
     ComoContribuirPage,
-    FaleConoscoPage,
     ComoChegarDetailPage,
     TestemunhosPage,
     PedidoOracaoPage,
@@ -133,7 +132,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoDetailPage,
     PequenoNucleoPopoverPage,
     EnviarPushPage,
-    InscricoesPage
+    InscricoesPage,
+    PushGalleryPage
   ],
   providers: [
     StatusBar,
