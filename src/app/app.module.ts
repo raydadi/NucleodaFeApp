@@ -43,6 +43,7 @@ import { CultoOnlinePage } from '../pages/culto-online/culto-online';
 import { SinoPage } from '../pages/menu-pages/sino/sino';
 import { ModalPedidosOracaoPage } from '../pages/pedido-oracao/modal-pedidos-oracao/modal-pedidos-oracao';
 import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
+import { PnContatoPage } from "../pages/pequeno-nucleo/pn-contato/pn-contato";
 import { MenuPage } from '../pages/menu-pages/menu/menu';
 import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 
@@ -92,7 +93,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPopoverPage,
     EnviarPushPage,
     InscricoesPage,
-    PushGalleryPage
+    PushGalleryPage,
+    PnContatoPage
   ],
   imports: [
     BrowserModule,
@@ -133,7 +135,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     PequenoNucleoPopoverPage,
     EnviarPushPage,
     InscricoesPage,
-    PushGalleryPage
+    PushGalleryPage,
+    PnContatoPage
   ],
   providers: [
     StatusBar,

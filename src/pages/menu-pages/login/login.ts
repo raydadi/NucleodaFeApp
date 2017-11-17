@@ -24,7 +24,6 @@ export class LoginPage {
   usersFire: FirebaseListObservable<any>;
   userFire: FirebaseListObservable<any>;
 
-  // TODO: Remover os construtores desnecessarios
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
