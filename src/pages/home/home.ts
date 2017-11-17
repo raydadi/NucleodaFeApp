@@ -12,7 +12,6 @@ import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampa
 import { CultoOnlinePage } from '../culto-online/culto-online';
 import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
 import { InscricoesPage } from '../inscricoes/inscricoes';
-import introJs from 'intro.js/intro.js';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import * as firebase from 'firebase/app';
@@ -70,64 +69,64 @@ export class HomePage {
         });
     }
 
-    intro() {
-        let intro = introJs.introJs();
-        // Initialize steps
-
-        intro.setOptions({
-            'showBullets': false,
-            'skipLabel': 'Pular',
-            'nextLabel': 'Ok',
-            'doneLabel': 'Fechar',
-            'hidePrev': true,
-            'hideNext': true,
-            'showStepNumbers': false,
-            steps: [
-                {
-                    intro: "<h2>BEM-VINDO</h2><p style=\"color: rgba(0,0,0,.5);\">Iremos te guiar pelas principais funcionalidades dessa nova versão, ok?</p>"
-                },
-                {
-                    element: document.querySelector('#step1'),
-                    intro: "<h2>PEQUENOS NÚCLEOS</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: "right"
-                },
-                {
-                    element: document.querySelector('#step2'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: 'left'
-                },
-                {
-                    element: document.querySelector('#step3'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: "right"
-                },
-                {
-                    element: document.querySelector('#step4'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: "left"
-                },
-                {
-                    element: document.querySelector('#step5'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: "right"
-                },
-                {
-                    element: document.querySelector('#step6'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
-                    position: "left"
-                },
-                {
-                    element: document.querySelector('#step7'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
-                },
-                {
-                    element: document.querySelector('#step8'),
-                    intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
-                }
-            ]
-        });
-        intro.start();
-    }
+    // intro() {
+    //     let intro = introJs.introJs();
+    //     // Initialize steps
+    //
+    //     intro.setOptions({
+    //         'showBullets': false,
+    //         'skipLabel': 'Pular',
+    //         'nextLabel': 'Ok',
+    //         'doneLabel': 'Fechar',
+    //         'hidePrev': true,
+    //         'hideNext': true,
+    //         'showStepNumbers': false,
+    //         steps: [
+    //             {
+    //                 intro: "<h2>BEM-VINDO</h2><p style=\"color: rgba(0,0,0,.5);\">Iremos te guiar pelas principais funcionalidades dessa nova versão, ok?</p>"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step1'),
+    //                 intro: "<h2>PEQUENOS NÚCLEOS</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: "right"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step2'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: 'left'
+    //             },
+    //             {
+    //                 element: document.querySelector('#step3'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: "right"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step4'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: "left"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step5'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: "right"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step6'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>",
+    //                 position: "left"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step7'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
+    //             },
+    //             {
+    //                 element: document.querySelector('#step8'),
+    //                 intro: "<h2>BEM-VINDO</h2><p>Aqui você encontra todo os pequenos núcleos da igreja!</p>"
+    //             }
+    //         ]
+    //     });
+    //     intro.start();
+    // }
 
 
 
