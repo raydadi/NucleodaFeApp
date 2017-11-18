@@ -94,7 +94,7 @@ export class MyApp {
 			// 	});
 			// }
 
-			//env.changeRootPage(env.nativeStorage, env.app);
+			env.changeRootPage(env.nativeStorage, env.app);
 			env.app.getRootNav().setRoot(HomePage);
 
 			this.statusBar.styleDefault();
@@ -152,13 +152,13 @@ export class MyApp {
 
 
 
-	// changeRootPage(nativeStorage: NativeStorage, app: App) {
-	// 	nativeStorage.getItem('welcome').then((data) => {
-	// 		app.getRootNav().setRoot(HomePage);
-	// 	}, (error) => {
-	// 		app.getRootNav().setRoot(WelcomeTutorialPage);
-	// 	});
-	// }
+	changeRootPage(nativeStorage: NativeStorage, app: App) {
+		nativeStorage.getItem('welcome').then((data) => {
+			app.getRootNav().setRoot(HomePage);
+		}, (error) => {
+			app.getRootNav().setRoot(WelcomeTutorialPage);
+		});
+	}
 
 	openPage(page) {
 		// close the menu when clicking a link from the menu

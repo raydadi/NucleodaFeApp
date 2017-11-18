@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { NativeStorage } from '@ionic-native/native-storage';
-/**
- * Generated class for the WelcomeTutorialPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-welcome-tutorial',
@@ -18,17 +12,27 @@ export class WelcomeTutorialPage {
   slides = [
     {
       title: "Pequeno Núcleo!",
-      description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
+      description: "Nessa versão do aplicativo você pode consultar todas os pequenos núcleos ativos na igreja e filtrá-los por idade, nome e região.",
       image: "assets/ministerios/acolhimento.jpg",
     },
     {
-      title: "What is Ionic?",
-      description: "<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.",
+      title: "Testemunhos",
+      description: "Agora todos os testemunhos que são enviados para o aplicativo passam por um filtro e depois são publicados em nosso site.",
       image: "assets/ministerios/acolhimento.jpg",
     },
     {
-      title: "What is Ionic Cloud?",
-      description: "The <b>Ionic Cloud</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.",
+      title: "Pedido de Oração",
+      description: "Os pedidos de oração que são enviados pelo aplicativo agora são automaticamente direcionados para a liderança da intercessão que além de orar por você, poderá entrar em contato caso você deseje.",
+      image: "assets/ministerios/acolhimento.jpg",
+    },
+    {
+      title: "Como Chegar",
+      description: "Pelo menu lateral é possível acessar ao mapa e telefone de todas as igrejas do Núcleo da Fé além da chácara da igreja",
+      image: "assets/ministerios/acolhimento.jpg",
+    },
+    {
+      title: "Avisos",
+      description: "Todos os avisos da igreja agora serão notificados no sino superior.",
       image: "assets/ministerios/acolhimento.jpg",
     }
   ];
@@ -36,15 +40,11 @@ export class WelcomeTutorialPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomeTutorialPage');
-  }
-
   skip() {
-    this.nativeStorage.setItem('welcome', {}).then(
-      () => console.log('Stored item!'),
-      error => console.error('Error storing item', error)
-    );
+    this.nativeStorage.setItem('welcome', {})
+      .then(() => console.log('Stored item!'),
+      error => console.error('Error storing item', error
+      ));
     this.navCtrl.setRoot(HomePage);
   }
 }
