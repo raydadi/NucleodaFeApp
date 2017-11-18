@@ -152,7 +152,7 @@ exports.sendEmailParticiparPequenoNucleo = functions.database.ref('/pequenos-nuc
       return;
     }
 
-    return event.data.adminRef.parent.child('emailsLideres').once('value').then((snapshot) => {
+    return event.data.adminRef.parent.child('email').once('value').then((snapshot) => {
         var emails = snapshot.val();
 
         const mailOptions = {
