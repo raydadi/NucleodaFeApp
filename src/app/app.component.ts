@@ -95,7 +95,7 @@ export class MyApp {
 			// }
 
 			env.changeRootPage(env.nativeStorage, env.app);
-			env.app.getRootNav().setRoot(HomePage);
+			//env.app.getRootNav().setRoot(HomePage);
 
 			this.statusBar.styleDefault();
 			this.splashScreen.hide();
