@@ -34,7 +34,7 @@ export class WelcomeTutorialPage {
       title: "Avisos",
       description: "Todos os avisos da igreja agora serão notificados no sino superior.",
       image: "assets/ministerios/acolhimento.jpg",
-    }
+  }
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public nativeStorage: NativeStorage) {

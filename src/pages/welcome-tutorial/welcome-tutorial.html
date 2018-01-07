@@ -1,28 +1,20 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>BEM-VINDO</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content class="tutorial-page">
+    <video autoplay loop src="assets/landing-page/abertura.mp4"></video>
     <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
-            <ion-toolbar>
+            <ion-toolbar class="welcome-toolbar">
               <ion-buttons end>
                 <button (click)="skip()" ion-button color="primary">Pular</button>
               </ion-buttons>
             </ion-toolbar>
-          <img [src]="slide.image" class="slide-image"/>
-          <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-          <p [innerHTML]="slide.description"></p>
+          <!-- <img [src]="slide.image" class="slide-image"/> -->
+          <h2><span class="slide-title black" [innerHTML]="slide.title"></span></h2>
+          <p><span class="black" [innerHTML]="slide.description"></span></p>
         </ion-slide>
         <ion-slide>
-          <ion-toolbar>
+          <ion-toolbar class="welcome-toolbar">
           </ion-toolbar>
-          <img src="assets/ministerios/acolhimento.jpg" class="slide-image"/>
+          <!-- <img src="assets/ministerios/acolhimento.jpg" class="slide-image"/> -->
           <p>
               Fiquem ligados! Em breve teremos mais novidades no aplicativo!
           </p>
