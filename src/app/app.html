@@ -3,15 +3,15 @@
   <ion-header id="menu-header">
       <div>
           <div class="imagemLogin">
-              <img *ngIf="user == null" src="assets/home/menu/login.png" />
+              <img *ngIf="!auth.isUserLoggedIn()" src="assets/home/menu/login.png" />
           </div>
-          <h2 *ngIf="user == null" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
+          <h2 *ngIf="!auth.isUserLoggedIn()" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
 
           <div class="divLogado">
-              <img class="imagemLogado" *ngIf="user != null" [src]="user.fotoUrl" />
+              <img class="imagemLogado" *ngIf="auth.isUserLoggedIn()" [src]="auth.getCurrentUser().fotoUrl" />
           </div>
-          <h6 *ngIf="user != null" style="text-align: center; color: #113274;">{{user.nome}}</h6>
-          <p *ngIf="user != null">{{user.email}}</p>
+          <h6 *ngIf="auth.isUserLoggedIn()" style="text-align: center; color: #113274;">{{auth.getCurrentUser().nome}}</h6>
+          <p *ngIf="auth.isUserLoggedIn()">{{auth.getCurrentUser().email}}</p>
       </div>
 
   </ion-header>
@@ -30,15 +30,15 @@
                 <img src="assets/home/menu/como-contribuir.png" item-start />
                 Como Contribuir
             </button>
-            <button *ngIf="user == null" class="menu-button" (click)="openMensagem()" ion-item>
+            <button *ngIf="auth.userHasRole('push_write')" class="menu-button" (click)="openMensagem()" ion-item>
                 <img src="assets/home/menu/notificacao.png" item-start />
-                Enviar mensagem
+                Enviar aviso
             </button>
             <button class="menu-button" (click)="openSobre()" ion-item>
                 <img src="assets/home/menu/sobre-isso.png" item-start />
                 Sobre este App
             </button>
-            <button *ngIf="user != null" class="menu-button" (click)="logout()" ion-item>
+            <button *ngIf="auth.isUserLoggedIn()" class="menu-button" (click)="logout()" ion-item>
                 <img src="assets/home/menu/sair.png" item-start />
                 Sair
             </button>

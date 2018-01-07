@@ -17,17 +17,18 @@ import { ComoChegarPage } from '../pages/menu-pages/como-chegar/como-chegar';
 import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-contribuir';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
-import { User } from "../pages/menu-pages/login/login";
-
-import { Push, PushObject, PushOptions } from '@ionic-native/push';
-
+import { EnquetePage } from "../pages/enquete/enquete";
+// import { User } from "../pages/menu-pages/login/login";
+import { Toast } from '@ionic-native/toast';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { PushServiceProvider } from '../providers/push-service/push-service';
 
 @Component({
 	templateUrl: 'app.html'
 })
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
-	user: User = null;
+	// user: User = null;
 
 	pages: Array<{ title: string, component: any }>;
 
@@ -40,8 +41,10 @@ export class MyApp {
 		public app: App,
 		public googlePlus: GooglePlus,
 		public facebook: Facebook,
-		private push: Push,
-		public events: Events
+		public events: Events,
+		private toast: Toast,
+		private auth: AuthServiceProvider,
+		private push: PushServiceProvider
 	) {
 		this.initializeApp();
 		// set our app's pages
@@ -53,17 +56,19 @@ export class MyApp {
 			{ title: 'Como Contribuir', component: ComoContribuirPage }
 		];
 
-		this.nativeStorage.getItem('user').then((data) => {
-			this.user = data;
-		}, (error) => {
+		// this.nativeStorage.getItem('user').then((data) => {
+		// 	this.user = data;
+		// 	console.log("User: ",this.user);
+		// }, (error) => {
+		// 	console.log(error);
+		// });
 
-		});
-
-		events.subscribe('login:changed', user => {
-			if (user !== undefined && user !== "") {
-				this.user = user;
-			}
-		})
+		// events.subscribe('login:changed', user => {
+		// 	if (user !== undefined && user !== "") {
+		// 		this.user = user;
+		// 		console.log("User: ",this.user);
+		// 	}
+		// })
 	}
 
 	initializeApp() {
@@ -86,7 +91,12 @@ export class MyApp {
 			// 			picture: user.imageUrl
 			// 		}).then(() => {
 			// 			console.log("sucesso");
-			// 		}, (error) => {
+			// 		// events.subscribe('login:changed', user => {
+		// 	if (user !== undefined && user !== "") {
+		// 		this.user = user;
+		// 		console.log("User: ",this.user);
+		// 	}
+		// })}, (error) => {
 			// 			console.log(error);
 			// 		})
 			// 	}, (error) => {
@@ -99,58 +109,9 @@ export class MyApp {
 
 			this.statusBar.styleDefault();
 			this.splashScreen.hide();
-			this.pushsetup();
+			this.push.pushsetup();
 		});
 	}
-
-	pushsetup() {
-		const options: PushOptions = {
-			android: {},
-			ios: {
-				alert: 'true',
-				badge: true,
-				sound: 'false'
-			},
-			windows: {},
-			browser: {
-				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-			}
-		}
-
-		const pushObject: PushObject = this.push.init(options);
-
-		pushObject.on('notification').subscribe((notification: any) => {
-			if (notification.additionalData.foreground) {
-				alert("Recebi push notification")
-				// let youralert = this.alertCtrl.create({
-				//   title: 'New Push notification',
-				//   message: notification.message
-				// });
-				// youralert.present();
-			}
-		});
-
-		pushObject.on('registration').subscribe((registration: any) => {
-			//do whatever you want with the registration ID
-			this.nativeStorage.setItem('device_token', registration.registrationId).then(() => {
-				console.log("Token salvo com sucesso!");
-			}, (error) => {
-				console.log(error);
-			})
-
-			pushObject.subscribe("All").then((res:any) => {
-                console.log("subscribed to topic: ", res);
-            });
-		});
-
-		pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
-
-
-
-	}
-
-
-
 
 	changeRootPage(nativeStorage: NativeStorage, app: App) {
 		nativeStorage.getItem('welcome').then((data) => {
@@ -197,21 +158,30 @@ export class MyApp {
 		this.nav.push(EnviarPushPage);
 	}
 
-	logout() {
+	openEnquete() {
 		this.menu.close();
-		this.googlePlus.logout().then((response) => {
+		this.nav.push(EnquetePage);
+	}
 
-		}, function (error) {
-			console.log(error);
-		})
+	logout() {
 
-		this.facebook.logout().then((response) => {
+		this.menu.close();
+		this.auth.logout();
 
-		}, (error) => {
-			console.log(error);
-		})
 
-		this.nativeStorage.remove('user');
-		this.user = null;
+		// this.googlePlus.logout().then((response) => {
+		// 	this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+		// }, function (error) {
+		// 	console.log(error);
+		// })
+        //
+		// this.facebook.logout().then((response) => {
+		// 	this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+		// }, (error) => {
+		// 	console.log(error);
+		// })
+
+		// this.nativeStorage.remove('user');
+		// this.user = null;
 	}
 }
