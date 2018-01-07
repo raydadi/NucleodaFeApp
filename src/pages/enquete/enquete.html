@@ -1,9 +1,101 @@
 <ion-header>
   <ion-navbar>
     <ion-title>ENQUETE</ion-title>
+    <ion-buttons end>
+      <sino></sino>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <h4 style="text-align: center">ID: {{ enquete.id }}</h4>
+    <form [formGroup]="enqueteForm" (ngSubmit)="enviar()">
+      <ion-item>
+        <ion-label floating>PERGUNTA</ion-label>
+        <!-- <ion-input [formControl]="enqueteForm.controls['pergunta']" name="pergunta" type="text"></ion-input> -->
+        <ion-textarea [(ngModel)]="enquete.pergunta" formControlName="pergunta" name="pergunta" rows="10"></ion-textarea>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['pergunta'].hasError('required') && enqueteForm.controls['pergunta'].touched">
+        Pergunta precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['pergunta'].hasError('minlength') && enqueteForm.controls['pergunta'].touched">
+        Pergunta precisa ter ao menos 3 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['pergunta'].hasError('maxlength') && enqueteForm.controls['pergunta'].touched">
+        Pergunta precisa pode ter no máximo 100 caracteres!
+      </div>
 
+      <ion-item>
+        <ion-label floating>OPÇÃO 1</ion-label>
+        <ion-input [(ngModel)]="enquete.opcao1" formControlName="opcao1" name="opcao1" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['opcao1'].hasError('required') && enqueteForm.controls['opcao1'].touched">
+        Opção precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao1'].hasError('minlength') && enqueteForm.controls['opcao1'].touched">
+        Opção precisa ter ao menos 1 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao1'].hasError('maxlength') && enqueteForm.controls['opcao1'].touched">
+        Opção precisa pode ter no máximo 20 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>OPÇÃO 2</ion-label>
+        <ion-input [(ngModel)]="enquete.opcao2" formControlName="opcao2" name="opcao2" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['opcao2'].hasError('required') && enqueteForm.controls['opcao2'].touched">
+        Opção precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao2'].hasError('minlength') && enqueteForm.controls['opcao2'].touched">
+        Opção precisa ter ao menos 2 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao2'].hasError('maxlength') && enqueteForm.controls['opcao2'].touched">
+        Opção precisa pode ter no máximo 20 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>OPÇÃO 3</ion-label>
+        <ion-input [(ngModel)]="enquete.opcao3" formControlName="opcao3" name="opcao3" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['opcao3'].hasError('required') && enqueteForm.controls['opcao3'].touched">
+        Opção precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao3'].hasError('minlength') && enqueteForm.controls['opcao3'].touched">
+        Opção precisa ter ao menos 2 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao3'].hasError('maxlength') && enqueteForm.controls['opcao3'].touched">
+        Opção precisa pode ter no máximo 20 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>OPÇÃO 4</ion-label>
+        <ion-input [(ngModel)]="enquete.opcao4" formControlName="opcao4" name="opcao4" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['opcao4'].hasError('required') && enqueteForm.controls['opcao4'].touched">
+        Opção precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao4'].hasError('minlength') && enqueteForm.controls['opcao4'].touched">
+        Opção precisa ter ao menos 2 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao4'].hasError('maxlength') && enqueteForm.controls['opcao4'].touched">
+        Opção precisa pode ter no máximo 20 caracteres!
+      </div>
+
+      <ion-item>
+        <ion-label floating>OPÇÃO 5</ion-label>
+        <ion-input [(ngModel)]="enquete.opcao5" formControlName="opcao5" name="opcao5" type="tel"></ion-input>
+      </ion-item>
+      <div *ngIf="enqueteForm.controls['opcao5'].hasError('required') && enqueteForm.controls['opcao5'].touched">
+        Opção precisa ser preenchido!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao5'].hasError('minlength') && enqueteForm.controls['opcao5'].touched">
+        Opção precisa ter ao menos 2 caracteres!
+      </div>
+      <div *ngIf="enqueteForm.controls['opcao5'].hasError('maxlength') && enqueteForm.controls['opcao5'].touched">
+        Opção precisa pode ter no máximo 20 caracteres!
+      </div>
+
+      <button type="submit" full ion-button color="secondary" [disabled]="!enqueteForm.valid">ENVIAR</button>
+    </form>
+     <button full ion-button color="primary" *ngIf="showViewButton" (click)="showEnqueteResults()">VER RESULTADO ENQUETE</button>
 </ion-content>

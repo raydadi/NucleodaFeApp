@@ -15,6 +15,7 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -46,6 +47,7 @@ import { PequenoNucleoPage } from '../pages/pequeno-nucleo/pequeno-nucleo';
 import { PnContatoPage } from "../pages/pequeno-nucleo/pn-contato/pn-contato";
 import { MenuPage } from '../pages/menu-pages/menu/menu';
 import { InscricoesPage } from '../pages/inscricoes/inscricoes';
+import { EnquetePage } from '../pages/enquete/enquete';
 
 import { EquipePastoralDetailPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral-detail/equipe-pastoral-detail';
 
@@ -61,6 +63,8 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { LoadingServiceProvider } from '../providers/loading-service/loading-service';
+import { PushServiceProvider } from '../providers/push-service/push-service';
 
 @NgModule({
   declarations: [
@@ -94,7 +98,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EnviarPushPage,
     InscricoesPage,
     PushGalleryPage,
-    PnContatoPage
+    PnContatoPage,
+    EnquetePage
   ],
   imports: [
     BrowserModule,
@@ -136,7 +141,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     EnviarPushPage,
     InscricoesPage,
     PushGalleryPage,
-    PnContatoPage
+    PnContatoPage,
+    EnquetePage
   ],
   providers: [
     StatusBar,
@@ -153,7 +159,10 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     File,
     Transfer,
     Camera,
-    FilePath
+    FilePath,
+    LoadingServiceProvider,
+    PushServiceProvider,
+    ScreenOrientation
   ]
 })
 export class AppModule {}
