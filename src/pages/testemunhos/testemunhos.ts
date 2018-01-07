@@ -58,9 +58,7 @@ export class TestemunhosPage {
           handler: () => {
             this.testemunhos.push(this.testemunho);
             this.clear();
-            this.toast.show(`Testemunho enviado com sucesso!`, 'short', 'bottom').subscribe(toast => {
-
-            });
+            this.toast.show(`Testemunho enviado com sucesso!`, 'short', 'bottom').subscribe(toast => {});
           }
         }
       ]
