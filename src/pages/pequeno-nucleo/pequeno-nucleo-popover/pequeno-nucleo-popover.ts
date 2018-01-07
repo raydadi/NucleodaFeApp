@@ -10,10 +10,31 @@ import 'firebase/storage';
 })
 export class PequenoNucleoPopoverPage {
 
+  contentEle: any;
+  textEle: any;
+  list: any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public zone: NgZone,
               public alertCtrl: AlertController) {
+
+  }
+
+  ngOnInit() {
+  if (this.navParams.data) {
+    this.contentEle = this.navParams.data.contentEle;
+    this.textEle = this.navParams.data.textEle;
+    this.list = this.navParams.data.list;
+
+    console.log(this.list);
+
+    // this.background = this.getColorName(this.contentEle.style.backgroundColor);
+    // this.setFontFamily();
+  }
+}
+
+  cancelar() {
 
   }
 
@@ -56,7 +77,12 @@ export class PequenoNucleoPopoverPage {
       checked: false
     });
 
-    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'CANCELAR',
+      handler: data => {
+
+      }
+    });
     alert.addButton({
       text: 'OK',
       handler: data => {

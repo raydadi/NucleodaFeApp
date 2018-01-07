@@ -10,8 +10,8 @@
 </ion-header>
 
 <ion-content padding>
-    <!-- <form [formGroup]="enviarPushForm" (ngSubmit)="enviar()"> -->
-      <!-- <ion-item>
+    <form [formGroup]="enviarPushForm" (ngSubmit)="enviar()">
+      <ion-item>
         <ion-label floating>TITULO</ion-label>
         <ion-input [(ngModel)]="push.titulo" formControlName="titulo" name="titulo" type="text"></ion-input>
       </ion-item>
@@ -37,7 +37,7 @@
       </div>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('maxlength') && enviarPushForm.controls['resumo'].touched">
         Resumo pode ter no máximo 500 caracteres!
-      </div> -->
+      </div>
 
       <!-- <ion-item>
         <ion-label floating>IMAGEM</ion-label> -->
@@ -47,9 +47,9 @@
         <!-- <h3 [hidden]="push.img !== null">Porfavor selecione uma imagem!</h3>
       </ion-item> -->
 
-      <button (click)="escolherImagem()" ion-button color="primary">ESCOLHER IMAGEM</button>
 
-      <!-- <ion-item>
+
+      <ion-item>
         <ion-label floating>MENSAGEM</ion-label>
         <ion-textarea [(ngModel)]="push.msg" formControlName="msg" name="msg" rows="10"></ion-textarea>
       </ion-item>
@@ -63,8 +63,10 @@
         Mensagem pode ter no máximo 500 caracteres!
       </div>
 
-      <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button> -->
-    <!-- </form> -->
+      <button (click)="escolherImagem()" full ion-button color="primary">ESCOLHER IMAGEM</button>
+
+      <button type="submit" full ion-button color="secondary" [disabled]="!enviarPushForm.valid">ENVIAR</button>
+    </form>
 
     <!-- <ion-footer>
       <ion-toolbar color="primary">
