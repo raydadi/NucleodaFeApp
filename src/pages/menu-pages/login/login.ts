@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 // import { GooglePlus } from '@ionic-native/google-plus';
 // import { NativeStorage } from '@ionic-native/native-storage';
 // import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-// import { HomePage } from '../../home/home';
+import { HomePage } from '../../home/home';
 // import { Toast } from '@ionic-native/toast';
 // import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 // import { Storage } from '@ionic/storage';
 
 import { AuthServiceProvider } from '../../../providers/auth-service/auth-service';
@@ -26,7 +26,7 @@ export class LoginPage {
   // userFire: FirebaseListObservable<any>;
 
   constructor(
-    // public navCtrl: NavController,
+    public navCtrl: NavController,
     // public navParams: NavParams,
     // public actionSheetCtrl: ActionSheetController,
     // public platform: Platform,
@@ -46,7 +46,17 @@ export class LoginPage {
   }
 
   doGoogleLogin() {
-      this.authProvider.doGoogleLogin();
+      this.authProvider.doGoogleLogin().then(result=>{
+          if(result)
+            this.navCtrl.setRoot(HomePage);
+      });
+  }
+
+  doFacebookLogin() {
+      this.authProvider.doFacebookLogin().then(result=>{
+          if(result)
+            this.navCtrl.setRoot(HomePage);
+      });
   }
 
   // doGoogleLogin() {
@@ -125,7 +135,7 @@ export class LoginPage {
   //
   // }
 
-  doFacebookLogin() {
+  // doFacebookLogin() {
 
   //   let permissions = new Array<string>();
   //   let nav = this.navCtrl;
@@ -207,7 +217,6 @@ export class LoginPage {
   //         if(err.message.indexOf('An account already exists') >= 0) {
   //             console.log(err);
   //             // firebase.auth()
-  //             //    .currentUser
   //             //    .link(credential)
   //             //    .then((user) => {
   //             //      console.log("Anonymous account successfully upgraded", user);
@@ -217,6 +226,7 @@ export class LoginPage {
   //             //    });
   //         }
   //         else {
+  //             //    .currentUser
   //             alert('Autenticação falhou:' + err);
   //             console.log(err);
   //         }
@@ -231,7 +241,7 @@ export class LoginPage {
   //     console.log(error);
   //     this.toast.show(`Erro ao conectar com facebook!`, 'short', 'bottom').subscribe(toast => { });
   //   });
-  }
+  // }
 }
 
 // export class User {
