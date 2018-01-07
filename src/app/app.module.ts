@@ -63,7 +63,6 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { LoadingServiceProvider } from '../providers/loading-service/loading-service';
 import { PushServiceProvider } from '../providers/push-service/push-service';
 
 @NgModule({
@@ -160,7 +159,6 @@ import { PushServiceProvider } from '../providers/push-service/push-service';
     Transfer,
     Camera,
     FilePath,
-    LoadingServiceProvider,
     PushServiceProvider,
     ScreenOrientation
   ]

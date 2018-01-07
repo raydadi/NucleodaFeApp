@@ -64,6 +64,12 @@
           <p>AWARDS</p>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col *ngIf="showIconEnquete && auth.userHasRole('enquete_write')" (click)="navToEnquete()" style="text-align: center">
+          <img src="{{imgsource[2]}}" width="95" height="auto" />
+          <p>ENQUETE</p>
+      </ion-col>
+    </ion-row>
 
   </ion-grid>
 

@@ -12,7 +12,9 @@ import { AcampamentoJovensPage } from '../acampamentos/acampamento-jovens/acampa
 import { CultoOnlinePage } from '../culto-online/culto-online';
 import { PequenoNucleoPage } from '../pequeno-nucleo/pequeno-nucleo';
 import { InscricoesPage } from '../inscricoes/inscricoes';
+import { EnquetePage } from "../enquete/enquete";
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
@@ -33,8 +35,16 @@ export class HomePage {
 
     showIconAcamp = false;
     showIconAwards = false;
+    showIconEnquete = false;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public db: AngularFireDatabase, public zone: NgZone) {
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public popoverCtrl: PopoverController,
+        public db: AngularFireDatabase,
+        public zone: NgZone,
+        private auth: AuthServiceProvider
+    ) {
 
         this.icones = db.list("/home");
     }
@@ -56,12 +66,16 @@ export class HomePage {
             else
                 this.showIconAwards = false;
 
+            if(data[2].visivel == true)
+                this.showIconEnquete = true;
+            else
+                this.showIconEnquete = false;
+
           data.forEach((icone, index) => {
 
             firebase.storage().ref().child(icone.fotoRef).getDownloadURL().then((url) => {
               this.zone.run(() => {
                 this.imgsource[icone.$key] = url;
-
               })
             })
           });
@@ -168,6 +182,10 @@ export class HomePage {
 
     navToInscricoes() {
         this.navCtrl.push(InscricoesPage);
+    }
+
+    navToEnquete() {
+        this.navCtrl.push(EnquetePage);
     }
 
     popOver(ev) {
