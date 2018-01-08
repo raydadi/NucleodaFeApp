@@ -11,10 +11,10 @@ export class PushServiceProvider {
       private push: Push,
       private nativeStorage: NativeStorage
   ) {
-      
+
   }
 
-  pushsetup() {
+  async pushsetup() {
       const options: PushOptions = {
           android: {},
           ios: {
@@ -32,7 +32,8 @@ export class PushServiceProvider {
 
       pushObject.on('notification').subscribe((notification: any) => {
           if (notification.additionalData.foreground) {
-              alert("Recebi push notification")
+              console.log('notification', notification);
+              alert(notification.title + " " + notification.message);
               // let youralert = this.alertCtrl.create({
               //   title: 'New Push notification',
               //   message: notification.message

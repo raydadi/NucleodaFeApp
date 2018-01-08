@@ -77,44 +77,19 @@ export class MyApp {
 		this.platform.ready().then(() => {
 			// Okay, so the platform is ready and our plugins are available.
 			// Here you can do any higher level native things you might need.
-
-			// if (env.platform.is('cordova')) {
-			// 	env.googlePlus.trySilentLogin({
-			// 		'scopes': '',
-			// 		'webClientId': '1086236008019-8orpu99bbsuti181ua0tq70tdl5c1879.apps.googleusercontent.com',
-			// 		'offline': true
-			// 	}).then((user) => {
-			// 		this.user = user;
-			// 		env.nativeStorage.setItem('user', {
-			// 			name: user.displayName,
-			// 			email: user.email,
-			// 			picture: user.imageUrl
-			// 		}).then(() => {
-			// 			console.log("sucesso");
-			// 		// events.subscribe('login:changed', user => {
-		// 	if (user !== undefined && user !== "") {
-		// 		this.user = user;
-		// 		console.log("User: ",this.user);
-		// 	}
-		// })}, (error) => {
-			// 			console.log(error);
-			// 		})
-			// 	}, (error) => {
-			// 		console.log(error);
-			// 	});
-			// }
-
-			env.changeRootPage(env.nativeStorage, env.app);
+			//
+			env.changeRootPage(env.nativeStorage, env.app).then(() => {});
 			//env.app.getRootNav().setRoot(HomePage);
 
 			this.statusBar.styleDefault();
 			this.splashScreen.hide();
-			this.push.pushsetup();
+			this.push.pushsetup().then(() => {});
+			this.auth.LoadUserStorage().then(() => {});
 		});
 	}
 
-	changeRootPage(nativeStorage: NativeStorage, app: App) {
-		nativeStorage.getItem('welcome').then((data) => {
+	async changeRootPage(nativeStorage: NativeStorage, app: App) {
+		await nativeStorage.getItem('welcome').then((data) => {
 			app.getRootNav().setRoot(HomePage);
 		}, (error) => {
 			app.getRootNav().setRoot(WelcomeTutorialPage);
@@ -164,24 +139,9 @@ export class MyApp {
 	}
 
 	logout() {
-
 		this.menu.close();
-		this.auth.logout();
-
-
-		// this.googlePlus.logout().then((response) => {
-		// 	this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
-		// }, function (error) {
-		// 	console.log(error);
-		// })
-        //
-		// this.facebook.logout().then((response) => {
-		// 	this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
-		// }, (error) => {
-		// 	console.log(error);
-		// })
-
-		// this.nativeStorage.remove('user');
-		// this.user = null;
+		this.auth.logout().then(() => {
+			this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+		});
 	}
 }

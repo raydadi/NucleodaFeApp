@@ -13,9 +13,6 @@ import { Toast } from '@ionic-native/toast';
 import { Storage } from '@ionic/storage';
 import { LoadingController, AlertController } from 'ionic-angular';
 
-
-// import { LoadingServiceProvider } from '../loading-service/loading-service';
-
 @Injectable()
 export class AuthServiceProvider {
   FB_APP_ID: number = 1091217954342738;
@@ -102,6 +99,8 @@ export class AuthServiceProvider {
           console.log("Usuario não existe. Criando novo", this.user);
           this.usersFirebase.push(this.user);
         }
+
+        this.saveUserStorage(this.user).then(() => {});
       });
 
     }).catch((err) => {
@@ -122,6 +121,7 @@ export class AuthServiceProvider {
         });
         alert.present();
 
+        return false;
         //firebase.auth().currentUser.linkWithCredential(firecreds);
         //this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
       }
@@ -212,6 +212,8 @@ export class AuthServiceProvider {
             console.log("Usuario não existe. Criando novo", this.user);
             this.usersFirebase.push(this.user);
           }
+
+          this.saveUserStorage(this.user).then(() => {});
         });
     }).catch((err) => {
       if (err.message.indexOf('An account already exists') >= 0) {
@@ -231,6 +233,8 @@ export class AuthServiceProvider {
         });
         alert.present();
 
+        return false;
+
         // firebase.auth().currentUser.linkWithCredential(firecreds);
         // this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
       }
@@ -244,29 +248,59 @@ export class AuthServiceProvider {
 
     this.toast.show(`Logado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
     loading.dismiss();
-    
+
     return true;
   }
 
   /*
   ** LOGOUT FROM GOOGLE AND FACEBOOK
    */
-  logout() {
+  async logout() {
 
     this.googlePlus.logout().then((response) => {
-      this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+      console.log("Desconectado com sucesso!")
     }, function(error) {
       console.log(error);
     })
 
     this.facebook.logout().then((response) => {
-      this.toast.show(`Desconectado com sucesso!`, 'short', 'bottom').subscribe(toast => { });
+      console.log("Desconectado com sucesso!")
     }, (error) => {
       console.log(error);
     })
 
+    this.deleteUserStorage().then(() => {});
+
     firebase.auth().signOut();
     this.user = null;
+  }
+
+  async saveUserStorage(user: User) {
+      await this.nativeStorage.setItem('user',user).then(() => {
+          console.log("Usuário salvo local com sucesso!")
+      },(error) => {
+          console.log("Error ao salvar o usuário local", error);
+      });
+  }
+
+  async LoadUserStorage() {
+      await this.nativeStorage.getItem('user').then((user) => {
+          console.log("Usuario carregado: ", user);
+          this.user = user;
+          return user;
+      },(error) => {
+          console.log("Error ao recuperar usuário local", error);
+      });
+
+      return null;
+  }
+
+  async deleteUserStorage() {
+      await this.nativeStorage.remove('user').then(() => {
+          console.log("Usuário removido com sucesso!")
+      },(error) => {
+          console.log("Error ao remover o usuário local", error);
+      });
   }
 
   getCurrentUser() {
