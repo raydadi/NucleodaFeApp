@@ -27,7 +27,7 @@
 
       <ion-item>
         <ion-label floating>RESUMO</ion-label>
-        <ion-input [(ngModel)]="push.resumo" formControlName="resumo" name="resumo" type="tel"></ion-input>
+        <ion-input [(ngModel)]="push.resumo" formControlName="resumo" name="resumo" type="text"></ion-input>
       </ion-item>
       <div *ngIf="enviarPushForm.controls['resumo'].hasError('required') && enviarPushForm.controls['resumo'].touched">
         Resumo precisa ser preenchido!
