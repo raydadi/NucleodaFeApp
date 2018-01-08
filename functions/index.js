@@ -13,32 +13,53 @@ var smtpTransport = require('nodemailer-smtp-transport');
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
 
-exports.sendPush = functions.database.ref('/push').onWrite(event => {
+exports.sendPush = functions.database.ref('/push/{id}').onWrite(event => {
+    //
+    // event.data.adminRef.parent.once('value').then((snapshot) => {
+    //     var valueObject = snapshot.val();
 
-  // let projectStateChanged = false;
-  // let projectCreated = false;
-  let value = event.data.val();
 
-  console.log(event.data);
+        // let projectStateChanged = false;
+        // let projectCreated = false;
+        let value = event.data.val();
 
-  var topic = "All";
+        console.log("Dados recebidos", event.data);
+        console.log("Valor recebido", value);
 
-  let payload = {
-    notification: {
-      title: 'teste',
-      body: 'teste',
-      sound: 'default',
-      badge: '1'
-    }
-  };
+        console.log("Titulo: ",value.titulo);
+        console.log("Msg", value.msg);
 
-  admin.messaging().sendToTopic(topic, payload).then(function(response) {
-    // See the MessagingTopicResponse reference documentation for the
-    // contents of response.
-    console.log("Successfully sent message:", response);
-  }).catch(function(error) {
-    console.log("Error sending message:", error);
-  });
+        var topic = "All";
+
+        const payload = {
+          notification: {
+            title: value.titulo,
+            body: value.msg,
+            sound: 'default',
+            badge: '1',
+            icon: 'ic_notification',
+            color: '#FFFFFF'
+          },
+          data: {
+              title: value.titulo,
+              message: value.msg,
+              link: "link"
+          }
+        };
+
+        const options = {
+          priority: "high",
+          timeToLive: 60 * 60 * 24 //24 hours
+        };
+
+        admin.messaging().sendToTopic(topic, payload,options).then(function(response) {
+          // See the MessagingTopicResponse reference documentation for the
+          // contents of response.
+          console.log("Successfully sent message:", response);
+        }).catch(function(error) {
+          console.log("Error sending message:", error);
+        });
+    // })
 });
 
 const mailTransport = nodemailer.createTransport({
