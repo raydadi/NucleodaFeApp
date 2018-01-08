@@ -18,6 +18,7 @@ import { ComoContribuirPage } from '../pages/menu-pages/como-contribuir/como-con
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 import { EnviarPushPage } from "../pages/menu-pages/enviar-push/enviar-push";
 import { EnquetePage } from "../pages/enquete/enquete";
+import { PerfilPage } from "../pages/menu-pages/perfil/perfil";
 // import { User } from "../pages/menu-pages/login/login";
 import { Toast } from '@ionic-native/toast';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -55,20 +56,6 @@ export class MyApp {
 			{ title: 'Como Chegar', component: ComoChegarPage },
 			{ title: 'Como Contribuir', component: ComoContribuirPage }
 		];
-
-		// this.nativeStorage.getItem('user').then((data) => {
-		// 	this.user = data;
-		// 	console.log("User: ",this.user);
-		// }, (error) => {
-		// 	console.log(error);
-		// });
-
-		// events.subscribe('login:changed', user => {
-		// 	if (user !== undefined && user !== "") {
-		// 		this.user = user;
-		// 		console.log("User: ",this.user);
-		// 	}
-		// })
 	}
 
 	initializeApp() {
@@ -136,6 +123,11 @@ export class MyApp {
 	openEnquete() {
 		this.menu.close();
 		this.nav.push(EnquetePage);
+	}
+
+	openPerfil() {
+		this.menu.close();
+		this.nav.push(PerfilPage);
 	}
 
 	logout() {

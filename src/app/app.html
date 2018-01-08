@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
 
   <ion-header id="menu-header">
-      <div>
+      <div (click)="openPerfil()">
           <div class="imagemLogin">
               <img *ngIf="!auth.isUserLoggedIn()" src="assets/home/menu/login.png" />
           </div>

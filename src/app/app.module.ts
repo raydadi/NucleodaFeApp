@@ -48,6 +48,7 @@ import { PnContatoPage } from "../pages/pequeno-nucleo/pn-contato/pn-contato";
 import { MenuPage } from '../pages/menu-pages/menu/menu';
 import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 import { EnquetePage } from '../pages/enquete/enquete';
+import { PerfilPage } from '../pages/menu-pages/perfil/perfil';
 
 import { EquipePastoralDetailPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral-detail/equipe-pastoral-detail';
 
@@ -98,7 +99,8 @@ import { PushServiceProvider } from '../providers/push-service/push-service';
     InscricoesPage,
     PushGalleryPage,
     PnContatoPage,
-    EnquetePage
+    EnquetePage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -141,7 +143,8 @@ import { PushServiceProvider } from '../providers/push-service/push-service';
     InscricoesPage,
     PushGalleryPage,
     PnContatoPage,
-    EnquetePage
+    EnquetePage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
