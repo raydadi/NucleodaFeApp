@@ -1,13 +1,13 @@
 <ion-menu [content]="content">
 
   <ion-header id="menu-header">
-      <div (click)="openPerfil()">
+      <div>
           <div class="imagemLogin">
               <img *ngIf="!auth.isUserLoggedIn()" src="assets/home/menu/login.png" />
           </div>
           <h2 *ngIf="!auth.isUserLoggedIn()" (click)="openLogin()" style="text-align: center; color: #113274;">LOGIN</h2>
 
-          <div class="divLogado">
+          <div (click)="openPerfil()" class="divLogado">
               <img class="imagemLogado" *ngIf="auth.isUserLoggedIn()" [src]="auth.getCurrentUser().fotoUrl" />
           </div>
           <h6 *ngIf="auth.isUserLoggedIn()" style="text-align: center; color: #113274;">{{auth.getCurrentUser().nome}}</h6>

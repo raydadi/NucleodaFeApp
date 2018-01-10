@@ -65,6 +65,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { PushServiceProvider } from '../providers/push-service/push-service';
+import { NotificationProvider } from '../providers/notification/notification';
 
 @NgModule({
   declarations: [
@@ -163,7 +164,8 @@ import { PushServiceProvider } from '../providers/push-service/push-service';
     Camera,
     FilePath,
     PushServiceProvider,
-    ScreenOrientation
+    ScreenOrientation,
+    NotificationProvider
   ]
 })
 export class AppModule {}

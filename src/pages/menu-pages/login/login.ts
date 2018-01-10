@@ -250,5 +250,5 @@ export class LoginPage {
 //   email: string;
 //   fotoUrl: string;
 //   deviceToken: string;
-//   roles: Array<string> = ["anonimo"];
+//   roles: Array<string> = ["default"];
 // }
