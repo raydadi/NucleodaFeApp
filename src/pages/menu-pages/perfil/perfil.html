@@ -11,5 +11,27 @@
 
 
 <ion-content padding>
+    <div style="text-align: center">
+        <img [src]="auth.getCurrentUser().fotoUrl" />
+    </div>
+
+    <form (ngSubmit)="enviar()">
+      <ion-item>
+        <ion-label floating>NOME</ion-label>
+        <ion-input [(ngModel)]="auth.getCurrentUser().nome" [disabled]="true" name="nome" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>EMAIL</ion-label>
+        <ion-input [(ngModel)]="auth.getCurrentUser().email" name="email" type="text" [disabled]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ROLES</ion-label>
+        <ion-textarea [(ngModel)]="auth.getCurrentUser().roles" name="roles" rows="10" [disabled]="true"></ion-textarea>
+      </ion-item>
+
+      <button type="submit" full ion-button color="secondary">ATUALIZAR</button>
+    </form>
 
 </ion-content>
