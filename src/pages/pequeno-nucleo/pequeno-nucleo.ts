@@ -15,8 +15,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 export class PequenoNucleoPage {
   pequenosNucleos: AfoListObservable<any>;
   showSpinner: boolean = true;
-  imgsource: any;
-  // imgsource: Array<any> = [];
+  // imgsource: any;
+  imgsource: Array<any> = [];
   pequenosNucleosArray: Array<any> = [];
 
   @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
@@ -36,38 +36,38 @@ export class PequenoNucleoPage {
         }
       });
 
-      this.screen.lock(this.screen.ORIENTATIONS.LANDSCAPE);
+      // this.screen.lock(this.screen.ORIENTATIONS.LANDSCAPE);
   }
 
   ionViewDidLoad() {
-      firebase.storage().ref().child("pequeno-nucleo/normal.svg").getDownloadURL().then((url) => {
-        this.zone.run(() => {
-          this.imgsource = url;
+      // firebase.storage().ref().child("pequeno-nucleo/normal.svg").getDownloadURL().then((url) => {
+      //   this.zone.run(() => {
+      //     this.imgsource = url;
+      //   })
+      // })
+
+    this.pequenosNucleos.subscribe(data => {
+
+      this.pequenosNucleosArray = data;
+
+      data.forEach((pequenoNucleo, index) => {
+
+        firebase.storage().ref().child(pequenoNucleo.fotoRef).getDownloadURL().then((url) => {
+          this.zone.run(() => {
+            this.imgsource[pequenoNucleo.$key] = url;
+          })
         })
-      })
 
-    // this.pequenosNucleos.subscribe(data => {
-    //
-    //   this.pequenosNucleosArray = data;
-    //
-    //   data.forEach((pequenoNucleo, index) => {
-    //
-    //     firebase.storage().ref().child(pequenoNucleo.fotoRef).getDownloadURL().then((url) => {
-    //       this.zone.run(() => {
-    //         this.imgsource[pequenoNucleo.$key] = url;
-    //       })
-    //     })
-    //
-    //     if(index == data.length-1) {
-    //         this.showSpinner = false;
-    //     }
-    //   });
-    // });
+        if(index == data.length-1) {
+            this.showSpinner = false;
+        }
+      });
+    });
   }
 
-  ionViewWillLeave() {
-      this.screen.lock(this.screen.ORIENTATIONS.PORTRAIT);
-  }
+  // ionViewWillLeave() {
+  //     this.screen.lock(this.screen.ORIENTATIONS.PORTRAIT);
+  // }
 
   open(key) {
       this.navCtrl.push(PequenoNucleoDetailPage,{

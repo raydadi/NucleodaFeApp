@@ -309,7 +309,7 @@ export class AuthServiceProvider {
 
   getCurrentUserRoles() {
     if (this.user == null)
-      return ["anonimo"];
+      return ["default"];
     return this.user.roles;
   }
 
@@ -350,5 +350,5 @@ export class User {
   email: string;
   fotoUrl: string;
   deviceToken: string;
-  roles: Array<string> = ["anonimo"];
+  roles: Array<string> = ["default"];
 }

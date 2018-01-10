@@ -16,18 +16,18 @@
 <ion-content #popoverContent class="card-background-page popover-page">
   <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-  <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view" min-zoom="1" maxZoom="10">
+  <!-- <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view" min-zoom="1" maxZoom="10">
 
     <img (load)="showSpinnerMeth()" src="{{imgsource}}" />
-  </ion-scroll>
+  </ion-scroll> -->
 
 
 
-  <!-- <ion-card #popoverList *ngFor="let pn of pequenosNucleos | async" (click)="open(pn.$key)">
+  <ion-card #popoverList *ngFor="let pn of pequenosNucleos | async" (click)="open(pn.$key)">
         <img src="{{imgsource[pn.$key]}}" />
         <div class="card-title">
             <span>{{pn.nome}}</span>
             <p>{{pn.tipo}}</p>
         </div>
-    </ion-card> -->
+    </ion-card>
 </ion-content>
