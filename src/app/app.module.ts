@@ -50,6 +50,14 @@ import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 import { EnquetePage } from '../pages/enquete/enquete';
 import { PerfilPage } from '../pages/menu-pages/perfil/perfil';
 
+import { AvisosAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/avisos-acampamento/avisos-acampamento';
+import { DevocionalAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/devocional-acampamento/devocional-acampamento';
+import { QuemProcurarAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/quem-procurar-acampamento/quem-procurar-acampamento';
+import { ProgramacaoAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/programacao-acampamento/programacao-acampamento';
+import { QuartosAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/quartos-acampamento/quartos-acampamento';
+import { EscalasAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/escalas-acampamento/escalas-acampamento';
+import { CardapioAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/cardapio-acampamento/cardapio-acampamento';
+
 import { EquipePastoralDetailPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral-detail/equipe-pastoral-detail';
 
 import { PequenoNucleoPopoverPage } from '../pages/pequeno-nucleo/pequeno-nucleo-popover/pequeno-nucleo-popover';
@@ -101,7 +109,14 @@ import { NotificationProvider } from '../providers/notification/notification';
     PushGalleryPage,
     PnContatoPage,
     EnquetePage,
-    PerfilPage
+    PerfilPage,
+    AvisosAcampamentoPage,
+    DevocionalAcampamentoPage,
+    QuemProcurarAcampamentoPage,
+    ProgramacaoAcampamentoPage,
+    QuartosAcampamentoPage,
+    EscalasAcampamentoPage,
+    CardapioAcampamentoPage
   ],
   imports: [
     BrowserModule,
@@ -145,7 +160,14 @@ import { NotificationProvider } from '../providers/notification/notification';
     PushGalleryPage,
     PnContatoPage,
     EnquetePage,
-    PerfilPage
+    PerfilPage,
+    AvisosAcampamentoPage,
+    DevocionalAcampamentoPage,
+    QuemProcurarAcampamentoPage,
+    ProgramacaoAcampamentoPage,
+    QuartosAcampamentoPage,
+    EscalasAcampamentoPage,
+    CardapioAcampamentoPage
   ],
   providers: [
     StatusBar,

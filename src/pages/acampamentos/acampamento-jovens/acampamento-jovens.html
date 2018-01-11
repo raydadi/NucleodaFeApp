@@ -11,5 +11,41 @@
 
 
 <ion-content padding>
+  <ion-list class="list">
+    <ion-item (click)="navToRecomendacoes()" >
+      <ion-icon name="md-happy" item-start></ion-icon>
+      Recomendações
+    </ion-item>
 
+    <ion-item (click)="navToDevocionais()" >
+      <ion-icon name="ios-bookmarks" item-start></ion-icon>
+      Devocionais
+    </ion-item>
+
+    <ion-item (click)="navToQuemProcurar()" >
+      <ion-icon name="md-contacts" item-start></ion-icon>
+      Quem Procurar
+    </ion-item>
+
+    <ion-item (click)="navToProgramacao()" >
+      <ion-icon name="md-calendar" item-start></ion-icon>
+      Programação
+    </ion-item>
+
+    <ion-item (click)="navToQuartos()" >
+      <ion-icon name="ios-home" item-start></ion-icon>
+      Quartos
+    </ion-item>
+
+    <ion-item (click)="navToEscalas()" >
+      <ion-icon name="ios-list" item-start></ion-icon>
+      Escalas
+    </ion-item>
+
+    <ion-item (click)="navToCardapio()" >
+      <ion-icon name="md-pizza" item-start></ion-icon>
+      Cardápio Giga/Tera
+    </ion-item>
+
+  </ion-list>
 </ion-content>

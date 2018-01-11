@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AVISOS</ion-title>
+    <ion-buttons end>
+      <sino></sino>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
+  <ion-card *ngFor="let aviso of avisos | async">
+
+    <ion-card-content>
+      {{aviso.ordem}}. {{aviso.mensagem}}
+    </ion-card-content>
+
+  </ion-card>
+  <p class="center" *ngIf="avisos.length == 0 || !avisos">
+    Não existem avisos.<br/>
+  </p>
+</ion-content>

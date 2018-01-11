@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Quem Procurar</ion-title>
+    <ion-buttons end>
+        <sino></sino>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
+    <ion-card *ngFor="let quemProcurar of quemProcurarList | async">
+
+      <ion-card-content>
+        {{quemProcurar.ordem}}. {{quemProcurar.mensagem}}
+      </ion-card-content>
+
+    </ion-card>
+    <p class="center" *ngIf="quemProcurarList.length == 0 || !quemProcurarList">
+      Não existe lista.<br/>
+    </p>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cardapio</ion-title>
+    <ion-buttons end>
+        <sino></sino>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
+    <ion-card *ngFor="let cardapio of cardapios | async">
+
+      <ion-card-content>
+          <ion-row>
+            <ion-col col-9 push-3>
+              <div>{{cardapio.produto}}</div>
+            </ion-col>
+            <ion-col col-3 pull-9>
+              <div>{{cardapio.preco}}</div>
+            </ion-col>
+          </ion-row>
+      </ion-card-content>
+
+    </ion-card>
+
+    <p class="center" *ngIf="cardapios.length == 0 || !cardapios">
+      Não existe cardápio.<br/>
+    </p>
+
+</ion-content>
