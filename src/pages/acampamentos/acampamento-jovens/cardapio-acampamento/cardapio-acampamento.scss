@@ -1,3 +1,18 @@
-page-cardapio-acampamento {
+page-cardapio-acampamento ion-content {
+    background-color: #B8D4B1 !important;
+}
 
+page-cardapio-acampamento .toolbar-background {
+    background-color: #005221 !important;
+}
+
+page-cardapio-acampamento sino .button-md {
+    background-color: #005221 !important;
+}
+
+page-cardapio-acampamento ion-col {
+    font-size: 1.0em;
+    display: flex;
+justify-content: flex-start;; /* align horizontal */
+align-items: center; /* align vertical */
 }

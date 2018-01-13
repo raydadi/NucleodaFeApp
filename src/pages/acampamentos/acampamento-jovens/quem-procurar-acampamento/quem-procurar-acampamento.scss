@@ -1,3 +1,38 @@
-page-quem-procurar-acampamento {
+page-quem-procurar-acampamento ion-content {
+    background-color: #B8D4B1 !important;
+}
 
+page-quem-procurar-acampamento .toolbar-background {
+    background-color: #005221 !important;
+}
+
+page-quem-procurar-acampamento sino .button-md {
+    background-color: #005221 !important;
+}
+
+page-quem-procurar-acampamento .card-title {
+    background-color: rgb(230, 242, 255);
+    opacity: 0.50;
+}
+
+page-quem-procurar-acampamento .card-title span {
+    opacity: 1;
+    color: black;
+}
+
+page-quem-procurar-acampamento .card-background-page .card-title {
+    top: 70%;
+}
+
+page-quem-procurar-acampamento ion-card {
+    position: relative;
+    text-align: center;
+}
+
+.scroll-view{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

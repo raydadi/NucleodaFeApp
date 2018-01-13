@@ -3,20 +3,22 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 @IonicPage()
 @Component({
-  selector: 'page-quarto-detail',
-  templateUrl: 'quarto-detail.html',
+  selector: 'page-devocional-detail',
+  templateUrl: 'devocional-detail.html',
 })
-export class QuartoDetailPage {
+export class DevocionalDetailPage {
+    devocional: any;
 
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
       public viewCtrl: ViewController
   ) {
+      this.devocional = this.navParams.get('data');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad QuartoDetailPage');
+    console.log('ionViewDidLoad DevocionalDetailPage');
   }
 
   dismiss() {

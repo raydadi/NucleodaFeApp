@@ -23,7 +23,7 @@ export class QuartosAcampamentoPage {
   ) {
   }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     this.acampSvc.getAcampantes(this.startAt, this.endAt).subscribe(acampantes => {
         this.acampantes = acampantes
     });

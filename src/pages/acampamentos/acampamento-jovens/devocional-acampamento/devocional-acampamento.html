@@ -1,9 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Devocionais</ion-title>
+    <ion-title>DEVOCIONAIS</ion-title>
     <ion-buttons end>
-        <sino></sino>
+      <sino></sino>
     </ion-buttons>
   </ion-navbar>
 
@@ -11,5 +11,20 @@
 
 
 <ion-content padding>
-
+  <ion-card *ngFor="let devocional of devocionais | async" (click)="openDev(devocional)">
+    <ion-card-header>
+        <h2>{{devocional.titulo}}</h2>
+        <h4>{{devocional.versiculo}}</h4>
+    </ion-card-header>
+    <hr />
+    <ion-card-content>
+        <p>
+                {{getShortText(devocional.texto)}}
+        </p>
+    </ion-card-content>
+    <ion-row>
+        <ion-col class="data">{{devocional.data}}</ion-col>
+        <ion-col class="autor">{{devocional.autor}}</ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

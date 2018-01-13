@@ -50,6 +50,7 @@ import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 import { EnquetePage } from '../pages/enquete/enquete';
 import { PerfilPage } from '../pages/menu-pages/perfil/perfil';
 import {QuartoDetailPage} from "../pages/acampamentos/acampamento-jovens/quartos-acampamento/quarto-detail/quarto-detail";
+import { DevocionalDetailPage } from "../pages/acampamentos/acampamento-jovens/devocional-acampamento/devocional-detail/devocional-detail";
 
 import { AvisosAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/avisos-acampamento/avisos-acampamento';
 import { DevocionalAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/devocional-acampamento/devocional-acampamento';
@@ -119,7 +120,8 @@ import { AcampantesProvider } from '../providers/acampantes/acampantes';
     QuartosAcampamentoPage,
     EscalasAcampamentoPage,
     CardapioAcampamentoPage,
-    QuartoDetailPage
+    QuartoDetailPage,
+    DevocionalDetailPage
   ],
   imports: [
     BrowserModule,
@@ -171,7 +173,8 @@ import { AcampantesProvider } from '../providers/acampantes/acampantes';
     QuartosAcampamentoPage,
     EscalasAcampamentoPage,
     CardapioAcampamentoPage,
-    QuartoDetailPage
+    QuartoDetailPage,
+    DevocionalDetailPage
   ],
   providers: [
     StatusBar,

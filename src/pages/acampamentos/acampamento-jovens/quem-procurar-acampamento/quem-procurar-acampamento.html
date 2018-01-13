@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Quem Procurar</ion-title>
+    <ion-title>QUEM PROCURAR</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -10,16 +10,27 @@
 </ion-header>
 
 
-<ion-content padding>
-    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+<ion-content #popoverContent class="card-background-page popover-page">
+    <!-- <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
     <ion-card *ngFor="let quemProcurar of quemProcurarList | async">
 
       <ion-card-content>
-        {{quemProcurar.ordem}}. {{quemProcurar.mensagem}}
+        <span style="font-weight: bold">{{quemProcurar.categoria}}</span>: {{quemProcurar.responsavel}}
       </ion-card-content>
 
+    </ion-card> -->
+
+    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+
+    <ion-card #popoverList *ngFor="let quemProcurar of quemProcurarList | async">
+        <img src="{{imgsource[quemProcurar.$key]}}" />
+        <div class="card-title">
+            <span>{{quemProcurar.responsavel}}</span>
+            <p><span style="font-weight: bold">{{quemProcurar.categoria}}</span></p>
+        </div>
     </ion-card>
+
     <p class="center" *ngIf="quemProcurarList.length == 0 || !quemProcurarList">
       Não existe lista.<br/>
     </p>

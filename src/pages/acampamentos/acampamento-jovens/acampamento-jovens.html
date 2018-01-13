@@ -1,7 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ACAMPAMENTO</ion-title>
+    <ion-title>
+      <img style="max-width: 85%" src="assets/acampamento/logo-empowerment.png" />
+    </ion-title>
     <ion-buttons end>
       <sino></sino>
     </ion-buttons>
@@ -11,41 +13,37 @@
 
 
 <ion-content padding>
-  <ion-list class="list">
-    <ion-item (click)="navToRecomendacoes()" >
-      <ion-icon name="md-happy" item-start></ion-icon>
-      Recomendações
-    </ion-item>
 
-    <ion-item (click)="navToDevocionais()" >
-      <ion-icon name="ios-bookmarks" item-start></ion-icon>
-      Devocionais
-    </ion-item>
-
-    <ion-item (click)="navToQuemProcurar()" >
-      <ion-icon name="md-contacts" item-start></ion-icon>
-      Quem Procurar
-    </ion-item>
-
-    <ion-item (click)="navToProgramacao()" >
-      <ion-icon name="md-calendar" item-start></ion-icon>
-      Programação
-    </ion-item>
-
-    <ion-item (click)="navToQuartos()" >
-      <ion-icon name="ios-home" item-start></ion-icon>
-      Quartos
-    </ion-item>
-
-    <ion-item (click)="navToEscalas()" >
-      <ion-icon name="ios-list" item-start></ion-icon>
-      Escalas
-    </ion-item>
-
-    <ion-item (click)="navToCardapio()" >
-      <ion-icon name="md-pizza" item-start></ion-icon>
-      Cardápio Giga/Tera
-    </ion-item>
-
-  </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="navToRecomendacoes()" style="text-align: center">
+          <img src="assets/acampamento/recomendacoes.png" width="95" height="auto" />
+          <p>RECOMENDAÇÕES</p>
+        </ion-col>
+        <ion-col (click)="navToDevocionais()" style="text-align: center">
+          <img src="assets/acampamento/devocionais.png" width="95" height="auto" />
+          <p>DEVOCIONAIS</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col (click)="navToQuemProcurar()" style="text-align: center">
+          <img src="assets/acampamento/quem-procurar.png" width="95" height="auto" />
+          <p>QUEM PROCURAR</p>
+        </ion-col>
+        <ion-col (click)="navToProgramacao()" style="text-align: center">
+          <img src="assets/acampamento/programacao.png" width="95" height="auto" />
+          <p>PROGRAMAÇÃO</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col (click)="navToQuartos()" style="text-align: center">
+          <img src="assets/acampamento/quartos.png" width="95" height="auto" />
+          <p>QUARTOS</p>
+        </ion-col>
+        <ion-col (click)="navToCardapio()" style="text-align: center">
+          <img src="assets/acampamento/cardapios.png" width="95" height="auto" />
+          <p>CARDÁPIO</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>

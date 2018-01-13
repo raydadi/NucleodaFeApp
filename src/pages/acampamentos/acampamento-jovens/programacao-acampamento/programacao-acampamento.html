@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Programação</ion-title>
+    <ion-title>PROGRAMAÇÃO</ion-title>
     <ion-buttons end>
         <sino></sino>
     </ion-buttons>
@@ -13,14 +13,14 @@
 <ion-content padding>
     <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-    <ion-card *ngFor="let programacao of programações | async">
+    <ion-card *ngFor="let programacao of programacoes | async">
 
       <ion-card-content>
         {{programacao.ordem}}. {{programacao.mensagem}}
       </ion-card-content>
 
     </ion-card>
-    <p class="center" *ngIf="programações.length == 0 || !programações">
+    <p class="center" *ngIf="programacoes.length == 0 || !programacoes">
       Não existem programações.<br/>
     </p>
 </ion-content>

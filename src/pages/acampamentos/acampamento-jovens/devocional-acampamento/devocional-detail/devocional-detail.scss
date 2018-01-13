@@ -1,47 +1,51 @@
-page-devocional-acampamento ion-content {
+page-devocional-detail {
+
+}
+
+page-devocional-detail ion-content {
     background-color: #B8D4B1 !important;
 }
 
-page-devocional-acampamento .toolbar-background {
+page-devocional-detail .toolbar-background {
     background-color: #005221 !important;
 }
 
-page-devocional-acampamento sino .button-md {
-    background-color: #005221 !important;
-}
-
-page-devocional-acampamento ion-card-header {
+page-devocional-detail ion-card-header {
     white-space: inherit;
 }
 
-page-devocional-acampamento h2 {
+
+page-devocional-detail h2 {
     text-align: center;
     font-weight: bold !important;
+    font-size: 2rem !important;
 }
 
-page-devocional-acampamento h4 {
+page-devocional-detail h4 {
     text-align: center;
     margin-top: 10px !important;
     font-style: italic;
 }
 
-page-devocional-acampamento p {
+page-devocional-detail p {
     text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 10px !important;
 }
 
-page-devocional-acampamento .autor {
+page-devocional-detail .autor {
     text-align: right;
     margin-right: 5px;
     font-style: italic;
 }
 
-page-devocional-acampamento .data {
+page-devocional-detail .data {
     text-align: left;
     margin-left: 5px;
     font-style: italic;
 }
 
-page-devocional-acampamento hr {
+page-devocional-detail hr {
     height: 1px;
     background-color: black !important;
     max-width: 60%;
