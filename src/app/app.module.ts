@@ -49,6 +49,7 @@ import { MenuPage } from '../pages/menu-pages/menu/menu';
 import { InscricoesPage } from '../pages/inscricoes/inscricoes';
 import { EnquetePage } from '../pages/enquete/enquete';
 import { PerfilPage } from '../pages/menu-pages/perfil/perfil';
+import {QuartoDetailPage} from "../pages/acampamentos/acampamento-jovens/quartos-acampamento/quarto-detail/quarto-detail";
 
 import { AvisosAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/avisos-acampamento/avisos-acampamento';
 import { DevocionalAcampamentoPage } from '../pages/acampamentos/acampamento-jovens/devocional-acampamento/devocional-acampamento';
@@ -74,6 +75,7 @@ import * as CONST from '../constants';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { PushServiceProvider } from '../providers/push-service/push-service';
 import { NotificationProvider } from '../providers/notification/notification';
+import { AcampantesProvider } from '../providers/acampantes/acampantes';
 
 @NgModule({
   declarations: [
@@ -116,7 +118,8 @@ import { NotificationProvider } from '../providers/notification/notification';
     ProgramacaoAcampamentoPage,
     QuartosAcampamentoPage,
     EscalasAcampamentoPage,
-    CardapioAcampamentoPage
+    CardapioAcampamentoPage,
+    QuartoDetailPage
   ],
   imports: [
     BrowserModule,
@@ -167,7 +170,8 @@ import { NotificationProvider } from '../providers/notification/notification';
     ProgramacaoAcampamentoPage,
     QuartosAcampamentoPage,
     EscalasAcampamentoPage,
-    CardapioAcampamentoPage
+    CardapioAcampamentoPage,
+    QuartoDetailPage
   ],
   providers: [
     StatusBar,
@@ -187,7 +191,8 @@ import { NotificationProvider } from '../providers/notification/notification';
     FilePath,
     PushServiceProvider,
     ScreenOrientation,
-    NotificationProvider
+    NotificationProvider,
+    AcampantesProvider
   ]
 })
 export class AppModule {}

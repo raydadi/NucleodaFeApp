@@ -1,9 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Quartos</ion-title>
+    <ion-title>QUARTOS</ion-title>
     <ion-buttons end>
-        <sino></sino>
+      <sino></sino>
     </ion-buttons>
   </ion-navbar>
 
@@ -11,5 +11,19 @@
 
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Informe o nome"></ion-searchbar>
+
+  <ion-card *ngFor="let acampante of acampantes" (click)="mostraAcampante(acampante)">
+      <ion-card-content >
+          <h3>{{acampante?.nome}}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="acampantes?.length < 1">
+    <hr>
+    <p>
+      Acampante não encontrado :(
+    </p>
+  </div>
 
 </ion-content>
