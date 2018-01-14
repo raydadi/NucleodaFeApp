@@ -1,28 +1,3 @@
-page-welcome-tutorial {
-
-    video {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -100;
-        transform: translateX(-50%) translateY(-50%);
-    }
-}
-
-page-welcome-tutorial ion-slide h2 {
-    background-color: rgb(230, 242, 255);
-    opacity: 0.50;
-}
-
-page-welcome-tutorial ion-slide p {
-    background-color: rgb(230, 242, 255);
-    opacity: 0.50;
-}
-
 .black {
     opacity: 1;
     color: black;
@@ -34,12 +9,12 @@ page-welcome-tutorial ion-content {
 
 page-welcome-tutorial .welcome-toolbar {
     background-color: #D4ECFC !important;
-    opacity: 0;
+    // opacity: 0;
 }
 
-// .tutorial-page .slide-zoom {
-//     background-color: #D4ECFC !important;
-// }
+.tutorial-page .slide-zoom {
+    background-color: #D4ECFC !important;
+}
 
 page-welcome-tutorial {
     .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
@@ -50,8 +25,8 @@ page-welcome-tutorial {
 .tutorial-page {
 
   .toolbar-background {
-    background: #fff;
-    border-color: transparent;
+    background: #D4ECFC;
+    // border-color: transparent;
   }
 
   .slide-zoom {

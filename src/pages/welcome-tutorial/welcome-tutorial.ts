@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { WelcomeVideoPage } from '../welcome-video/welcome-video';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
@@ -45,6 +45,6 @@ export class WelcomeTutorialPage {
       .then(() => console.log('Stored item!'),
       error => console.error('Error storing item', error
       ));
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(WelcomeVideoPage);
   }
 }

@@ -1,0 +1,19 @@
+<ion-content>
+    <img src="assets/home/Logo-Nucleo.png" />
+    <video autoplay loop src="assets/landing-page/abertura.mp4"></video>
+</ion-content>
+
+<ion-footer>
+    <ion-grid>
+        <ion-row style="text-align: center">
+            <ion-col>
+                <button (click)="navToLogin()" ion-button color="light" full>Entrar</button>
+            </ion-col>
+            <ion-col>
+                <button (click)="navToHome()" ion-button icon-only color="secondary" full icon-left>
+                    <ion-icon name="md-home"></ion-icon> Home
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -37,6 +37,7 @@ import { ContatoModalPage } from '../pages/ministerios/contato-modal/contato-mod
 import { MinisterioDetailPage } from '../pages/ministerios/ministerio-detail/ministerio-detail';
 import { PopoverNotificationPage } from '../pages/menu-pages/popover-notification/popover-notification';
 import { AvisosPage } from '../pages/avisos/avisos';
+import { WelcomeVideoPage } from '../pages/welcome-video/welcome-video';
 import { WelcomeTutorialPage } from '../pages/welcome-tutorial/welcome-tutorial';
 import { AwardsJovensPage } from '../pages/awards/awards-jovens/awards-jovens';
 import { AcampamentoJovensPage } from '../pages/acampamentos/acampamento-jovens/acampamento-jovens';
@@ -121,7 +122,8 @@ import { AcampantesProvider } from '../providers/acampantes/acampantes';
     EscalasAcampamentoPage,
     CardapioAcampamentoPage,
     QuartoDetailPage,
-    DevocionalDetailPage
+    DevocionalDetailPage,
+    WelcomeVideoPage
   ],
   imports: [
     BrowserModule,
@@ -174,7 +176,8 @@ import { AcampantesProvider } from '../providers/acampantes/acampantes';
     EscalasAcampamentoPage,
     CardapioAcampamentoPage,
     QuartoDetailPage,
-    DevocionalDetailPage
+    DevocionalDetailPage,
+    WelcomeVideoPage
   ],
   providers: [
     StatusBar,

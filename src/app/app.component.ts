@@ -9,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 
-import { HomePage } from '../pages/home/home';
+import { WelcomeVideoPage } from '../pages/welcome-video/welcome-video';
 import { LoginPage } from '../pages/menu-pages/login/login';
 import { SobrePage } from '../pages/menu-pages/sobre/sobre';
 import { EquipePastoralPage } from '../pages/menu-pages/equipe-pastoral/equipe-pastoral';
@@ -77,7 +77,7 @@ export class MyApp {
 
 	async changeRootPage(nativeStorage: NativeStorage, app: App) {
 		await nativeStorage.getItem('welcome').then((data) => {
-			app.getRootNav().setRoot(HomePage);
+			app.getRootNav().setRoot(WelcomeVideoPage);
 		}, (error) => {
 			app.getRootNav().setRoot(WelcomeTutorialPage);
 		});
