@@ -1,0 +1,110 @@
+[
+    {
+		"ordem": 0,
+		"dia": "SEXTA-FEIRA",
+		"atividades":
+        [
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            }
+        ]
+    },
+    {
+		"ordem": 1,
+		"dia": "SÁBADO",
+		"atividades":
+        [
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            },
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            }
+        ]
+    },
+    {
+		"ordem": 2,
+		"dia": "DOMINGO",
+		"atividades":
+        [
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            },
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            },
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            }
+        ]
+
+    },
+    {
+		"ordem": 3,
+		"dia": "SEGUNDA-FEIRA",
+		"atividades":
+        [
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            },
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            }
+        ]
+    },
+    {
+		"ordem": 4,
+		"dia": "TERCA-FEIRA",
+		"atividades":
+        [
+			{
+                "horario": "20:00",
+                "atividade": "Culto"
+            },
+            {
+                "horario": "21:00",
+                "atividade": "Lanche"
+            }
+        ]
+    }
+]

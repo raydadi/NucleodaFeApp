@@ -10,6 +10,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class ProgramacaoAcampamentoPage {
     programacoes: FirebaseListObservable<any>;
     showSpinner: boolean = true;
+    programacaoList: Array<any> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase) {
       this.programacoes = db.list("/acampamento-jovens/programacao", {
@@ -22,7 +23,7 @@ export class ProgramacaoAcampamentoPage {
   ionViewDidLoad() {
       this.programacoes.subscribe(data => {
           this.showSpinner = false;
-      })
+      });
   }
 
 }

@@ -3,7 +3,7 @@
   <ion-navbar>
     <ion-title>PROGRAMAÇÃO</ion-title>
     <ion-buttons end>
-        <sino></sino>
+      <sino></sino>
     </ion-buttons>
   </ion-navbar>
 
@@ -11,9 +11,205 @@
 
 
 <ion-content padding>
-    <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
+  <loading-spinner margin="100px auto" color="black" *ngIf="showSpinner"></loading-spinner>
 
-    <ion-card *ngFor="let programacao of programacoes | async">
+  <ion-grid>
+      <div *ngFor="let programacao of programacoes | async">
+
+    <ion-row>
+      <ion-col class="header">{{programacao.dia}}</ion-col>
+    </ion-row>
+
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let atividade of programacao.atividades; let odd=odd; let even=even" [ngClass]="{ odd: odd, even:even}" >
+      <ion-col>
+        <div>{{atividade.horario}}</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>{{atividade.atividade}}</div>
+      </ion-col>
+      <ion-col>
+        <div>{{atividade?.preletor}}</div>
+      </ion-col>
+    </ion-row>
+
+</div>
+
+
+
+
+
+
+
+
+    <!-- <ion-row>
+      <ion-col class="header">{{programacaoList[0].$key}}</ion-col>
+    </ion-row>
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>20:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>CHECK-IN</div>
+      </ion-col>
+      <ion-col>
+        <div></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="impar">
+      <ion-col>
+        <div>21:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>SAÍDA</div>
+      </ion-col>
+      <ion-col>
+        <div></div>
+      </ion-col>
+    </ion-row>
+
+<br/>
+
+
+    <ion-row>
+      <ion-col class="header">{{programacaoList[1].$key}}</ion-col>
+    </ion-row>
+
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>06:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>MONTE</div>
+      </ion-col>
+      <ion-col>
+        <div>PR LUCINHO</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="header">{{programacaoList[2].$key}}</ion-col>
+    </ion-row>
+
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>06:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>MONTE</div>
+      </ion-col>
+      <ion-col>
+        <div>PR LUCINHO</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="header">{{programacaoList[3].$key}}</ion-col>
+    </ion-row>
+
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>06:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>MONTE</div>
+      </ion-col>
+      <ion-col>
+        <div>PR LUCINHO</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="header">{{programacaoList[4].$key}}</ion-col>
+    </ion-row>
+
+    <ion-row class="subheader">
+      <ion-col>
+        <div>HORA</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>ATIVIDADE</div>
+      </ion-col>
+      <ion-col>
+        <div>PRELETOR</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>06:00</div>
+      </ion-col>
+      <ion-col col-6>
+        <div>MONTE</div>
+      </ion-col>
+      <ion-col>
+        <div>PR LUCINHO</div>
+      </ion-col>
+    </ion-row> -->
+
+  </ion-grid>
+
+  <!-- <ion-card *ngFor="let programacao of programacoes | async">
 
       <ion-card-content>
         {{programacao.ordem}}. {{programacao.mensagem}}
@@ -22,5 +218,5 @@
     </ion-card>
     <p class="center" *ngIf="programacoes.length == 0 || !programacoes">
       Não existem programações.<br/>
-    </p>
+    </p> -->
 </ion-content>
