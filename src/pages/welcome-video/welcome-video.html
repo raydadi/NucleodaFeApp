@@ -6,8 +6,8 @@
 <ion-footer>
     <ion-grid>
         <ion-row style="text-align: center">
-            <ion-col>
-                <button (click)="navToLogin()" ion-button color="light" full>Entrar</button>
+            <ion-col *ngIf="!auth.isUserLoggedIn()">
+                <button (click)="navToLogin()" ion-button color="light" full>Login</button>
             </ion-col>
             <ion-col>
                 <button (click)="navToHome()" ion-button icon-only color="secondary" full icon-left>
