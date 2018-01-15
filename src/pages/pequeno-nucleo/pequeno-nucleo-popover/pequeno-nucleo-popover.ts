@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
@@ -17,7 +17,9 @@ export class PequenoNucleoPopoverPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public zone: NgZone,
-              public alertCtrl: AlertController) {
+              public alertCtrl: AlertController,
+              public viewCtrl: ViewController
+          ) {
 
   }
 
@@ -35,7 +37,7 @@ export class PequenoNucleoPopoverPage {
 }
 
   cancelar() {
-
+      this.viewCtrl.dismiss();
   }
 
   showTipos() {
